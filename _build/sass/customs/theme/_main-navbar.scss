@@ -1,0 +1,204 @@
+
+#main-navbar{
+
+	@include breakpoint-max($main-navbar-expand-max){ 
+		.navbar-nav{
+			.nav-item[class*="as-btn-"]{
+				margin:$grid-gutter/2 0;
+			}
+			.nav-item:not([class*="as-btn-"]){
+				.nav-link{
+					 
+				}
+			}
+		}
+	}
+
+	.navbar-brand{
+		padding:0;
+		
+		svg,
+		img{
+			max-width: none;
+			width: 85px; 
+		} 
+	} 
+
+	.navbar-toggler{
+		margin-top: 21px;
+		@include border-radius(0);
+		&.animate {
+			.navbar-toggler-icon{
+				width: 26px;
+				&:before{
+					margin-top: -10px;
+					    left: -10px;
+				}
+				&:after{
+					margin-top: 10px;
+					    left: -10px;
+				}
+			}
+		}
+
+		&[aria-expanded="true"]{
+			.navbar-toggler-icon:before {
+		    margin-top: 8px;
+		    left: -4px;
+			}
+			.navbar-toggler-icon:after {
+		    margin-top: 8px;
+		    left: -4px;
+			}
+		}
+	} 
+
+	.nav-link{
+		line-height: 1.63;
+  	letter-spacing: 0.29px; 
+  	padding-top: 11px;
+    padding-bottom: 11px;
+	}
+	
+	.as-btn-primary{
+		.nav-link{
+			@include WBPC_make_as_btn($primary,$primary, #fff);
+			padding-right: 22px;
+			padding-left: 22px;
+		}
+	} 
+
+	#collapse-custom{
+		.navbar-toggler{
+				margin-top: -11px;
+			}
+	}
+
+	@include breakpoint($main-navbar-expand){ 
+
+		.navbar-brand{
+			padding:23.5px 0;
+			svg,
+			img{
+				width: 120px;
+			}
+		}
+		#collapse-custom{ 
+			margin-top:31px; 
+		} 
+		#menu-menu-principal{
+			.nav-link{
+				margin-right: 22px;
+				margin-left: 22px;
+				color:$dark;
+			}
+		}
+		#navbar-right_menu{
+			.nav-link{
+				margin-right: 12px;
+				margin-left: 12px; 
+			}
+			.nav-item:last-child{ 
+				.nav-link{
+					margin-right: 0;
+				}
+			}
+		}
+		
+	}
+
+
+}
+
+
+// @include transition();
+
+body.scrolling-mainNavbar{
+	#main-navbar[data-toggle="nav-affix"]{
+		@include breakpoint($main-navbar-expand){ 
+			@include translate(0, -50%);
+			.navbar-brand{ 
+				padding: 47px 0 0 0;
+				svg,
+				img{ 
+					 width: 85px;
+				} 
+			}
+			#collapse-custom{ 
+				    margin-top: 51px;
+				[class*="as-btn-"] { 
+					.nav-link{
+						 
+					}
+				}
+			} 
+		}
+	}
+}
+
+@each $color, $value in $theme-colors { 
+
+  #main-navbar.bg-#{$color}{
+		.container > .navbar-toggler{
+			.navbar-toggler-icon{
+				&,&:after,&:before{
+					background-color:#fff!important;
+				}
+			} 
+		}
+		.navbar-brand{
+			svg{
+				polygon,
+				path{
+					fill:#fff!important;
+				}
+			}
+		}
+		@include breakpoint($main-navbar-expand){ 
+			#menu-menu-principal .nav-link,
+			.nav-link{
+				color: #fff;
+			}
+			[class*="as-btn-"] { 
+				.nav-link{
+					background-color:#fff;  
+					border-color:$value;
+					color:$value; 
+				}
+			}
+		} 
+
+	}
+}
+
+
+
+#main-navbar.using_pasos_nav{
+
+	.pasos_main_nav{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 20px;
+			z-index: -1;
+		}
+
+	@include breakpoint($main-navbar-expand){ 
+		.pasos_main_nav{
+			top: 40px;
+		}
+		.navbar-toggler{
+			margin-top:42px;
+		}
+		#menu-menu-secundario,
+		#menu-menu-principal {
+			.nav-link{
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+		#collapse-custom{
+			margin-top:0;
+		}
+	}
+}

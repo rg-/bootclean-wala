@@ -1,0 +1,225 @@
+$main-navbar-expand:xl;
+$main-navbar-expand-max:lg;
+
+html,body {
+	height:100%; 
+}
+
+@include breakpoint-max(md){
+	.container{
+		max-width: 100%;
+	}
+}
+
+
+ 
+.affix-target-bottom{
+	
+	&.target-affix-bottom{
+		
+	}
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);  
+
+		.affix-container-absolute[data-affix-breakpoint="#{$breakpoint}"]{
+			position:absolute;
+			top:0;
+			left:0;
+			right: 0;
+			@include transition();
+
+			.affix-column	{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+			} 
+
+			&.this-affix.affix{
+				position:fixed;  
+				.affix-column	{
+					&.row{
+						margin-right: 0;
+						margin-left: 0;
+					}
+				} 
+				.hide-on-affix{
+					display: none!important;
+				} 
+
+				// Whem reach bottom of target (simulate a stop affixing)
+				&.elem-affix-bottom{
+					position:absolute;
+					bottom: 0;
+					top: inherit;
+					.affix-column	{
+						bottom: 0;
+						top: inherit;
+						&.row{
+							margin-right: -($grid-gutter);
+							margin-left: -($grid-gutter);
+						}
+					}
+				}
+			}
+
+			.affix-container{
+				position:relative; 
+				&.container{ 
+					@include make-container-max-widths(); 
+					padding-right: $grid-gutter;
+  				padding-left: $grid-gutter;
+				} 
+			}
+			
+		}
+
+		.container .affix-container-absolute[data-affix-breakpoint="#{$breakpoint}"]{
+			left: -($grid-gutter);
+			right: -($grid-gutter);
+		}
+
+		
+	}
+} 
+
+ 
+
+.ui-badge{ 
+	border-radius: 3px;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.23px;
+	padding: 5.5px 7px 5.5px 7px;
+}
+
+.ui-ingrediente-thumb{
+	width: 120px;
+	height: 120px;
+	border-radius:100%;
+	border: solid 1px #e6e6e6;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.ui-box-paso{
+	.embed-responsive{
+		margin-bottom: 20px;
+	}
+	.title{
+		font-size: 18px;
+  	font-weight: 500;
+  	line-height: 1.22;
+	  letter-spacing: 0.32px;
+	  color: $primary;
+	  margin-bottom: 10px;
+	}
+	.content{
+		font-size: 13px;
+		line-height: 1.54;
+		letter-spacing: 0.23px;
+	}
+}
+
+.ui-step{
+	background-color: $primary;
+	width: 30px;
+	height: 30px;
+	color:#fff;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	font-size: 15px;
+	font-weight: 500;
+	margin-right: 8px;
+	border-radius: 100%;
+}
+
+.table-sm th, .table-sm td {
+ 	font-size: 15px;
+	padding: 8px 8px;
+}
+
+
+
+
+
+[data-is-inview="detect"]{
+	overflow: hidden;
+}
+ 
+
+.content-wrap{ 
+	img{
+		max-width:100%;
+		height:auto;
+	}
+}
+
+.collapse-custom-overlay{
+	background-color: #ffffff;
+}
+
+.ajax-load-holder{
+	position:relative;
+	&.ajax-loading{
+		min-height: 50vh;
+		&:after{
+			/*
+		
+			$position:fixed,
+			$z-index:9999, 
+			$display:none, 
+			$bg-color: $BC-body-loader-color, 
+			$bg-img: ../images/loaders/tail-spin-000000.svg, 
+			$bg-size: $BC-body-loader-size, 
+			$transition: $BC-body-loader-transition 
+
+			*/
+			content: "";
+			@include make-loader(absolute, 9999, block, rgba(#fff,.6), '../images/loaders/tail-spin-000000.svg', $BC-body-loader-size, $BC-body-loader-transition );
+		}
+	}
+}
+
+.paginate_links{
+	.page-numbers{
+		margin:$grid-gutter/3;
+		@include WBPC_make_as_btn($rosa-claro, $rosa-claro, #fff);
+		font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    min-width: 31px;
+    &.current{
+    	background-color:$primary;
+    	border-color:$primary;
+    	color:#fff;
+    }
+		&.prev,
+		&.next{
+
+		}
+	}
+}
+
+@import "theme/color-elements";
+@import "theme/typo"; 
+@import "theme/btn";
+@import "theme/form";
+@import "theme/slick";
+
+@import "theme/main-navbar";
+@import "theme/main-page-header"; 
+@import "theme/main-footer"; 
+
+
+
+@import "theme/data-btn-fx";
+@import "theme/data-is-inview"; 
+ 
+@import "theme/ui-box"; 
+
+@import "theme/woo";
+@import "theme/wp-posts"; 

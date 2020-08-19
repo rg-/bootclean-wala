@@ -1,0 +1,27 @@
+// ------------------------------------------------------------------------------- //
+// Required 
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/functions";
+
+// ------------------------------------------------------------------------------- //
+// BC Builder
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/functions";
+@import "customs/variables"; 
+// ------------------------------------------------------------------------------- //
+// Required
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/variables";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/mixins"; 
+
+// ------------------------------------------------------------------------------- //
+// Customs
+@import "customs/custom-variables"; 
+
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/all";  
+// BC Core
+
+
+// Just theme
+@import "customs/theme"; 
+
+// Just WP Clean Up things (optional)
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/wordpress/wp";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/wordpress/woocommerce";

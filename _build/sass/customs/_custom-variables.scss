@@ -1,0 +1,87 @@
+/*
+	Custom variables for bootclean theme version 9
+	
+	Variables also used under [project]/_build/sass/customs/theme/...
+*/
+
+/*
+
+	This variables are used globaly
+
+*/
+
+	$grid-gutter: $grid-gutter-width / 2 !default;
+	$theme-grid-gutter: $grid-gutter;
+	$BC-grid-gutter: $grid-gutter;
+
+/*
+
+	And this variables are used over bootclean/sass/core/ folder
+	IF not used, defaults will be used, see each file for defaults
+
+*/
+	
+/* _body-loader.scss */
+
+$BC-body-loader-color: 		$primary!default;
+$BC-body-loader-image: 		'../images/loaders/tail-spin.svg'!default;
+$BC-body-loader-size: 		50px auto!default;
+$BC-body-loader-transition: all .5s ease!default;
+
+$BC-body-loader-color-ajax: transparent!default;
+$BC-body-loader-image-ajax: '../images/loaders/tail-spin.svg'!default; 
+$BC-body-overlay-color-ajax: transparent!default; 
+$BC-body-loader-height-ajax: 60px!default;
+
+
+$BC-body-loader-btn-loading-opacity: .6!default;
+$BC-body-loader-btn-image-ajax: $BC-body-loader-image-ajax!default; 
+	
+/* _navbar-toggler.scss */
+
+$navbar-toggler-bar-color: #fff!default;
+$navbar-toggler-width: 36px!default;
+$navbar-toggler-bar-height: 3px!default; 
+$navbar-toggler-height: $navbar-toggler-bar-height * 11!default;
+$navbar-toggler-bar-border-radius: 0!default; 
+	
+/* cubic-bezier */
+	
+$easeInCubic:  cubic-bezier(0.550, 0.055, 0.675, 0.190)!default;
+$easeOutCubic:  cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeInOutCubic :  cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+// Circ
+$easeInCirc:  cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeOutCirc:  cubic-bezier(0.075, 0.820, 0.165, 1.000);
+$easeInOutCirc:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
+
+// Expo
+$easeInExpo:  cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeOutExpo:  cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$easeInOutExpo:  cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+// Quad
+$easeInQuad:  cubic-bezier(0.550, 0.085, 0.680, 0.530);
+$easeOutQuad:  cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$easeInOutQuad:  cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Quart
+$easeInQuart:  cubic-bezier(0.895, 0.030, 0.685, 0.220);
+$easeOutQuart:  cubic-bezier(0.165, 0.840, 0.440, 1.000);
+$easeInOutQuart :  cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+// Quint
+$easeInQuint:  cubic-bezier(0.755, 0.050, 0.855, 0.060);
+$easeOutQuint:  cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$easeInOutQuint :  cubic-bezier(0.860, 0.000, 0.070, 1.000);
+
+// Sine
+$easeInSine:  cubic-bezier(0.470, 0.000, 0.745, 0.715);
+$easeOutSine:  cubic-bezier(0.390, 0.575, 0.565, 1.000);
+$easeInOutSine:  cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+// Back
+$easeInBack:  cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeOutBack:  cubic-bezier(0.175,	0.885, 0.320, 1.275);
+$easeInOutBack:  cubic-bezier(0.680, -0.550, 0.265, 1.550);

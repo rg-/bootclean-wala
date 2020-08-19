@@ -1,0 +1,41 @@
+.ui-footer-copy{
+	font-size: 12px;
+	color: #666666;
+}
+
+.navbar-nav-footer{
+	.nav-item{
+		margin:3px 0;
+		a:not(.js-enabled){
+			font-size: 15px!important;
+		}
+	}
+}
+#main-footer{
+	.border-right{
+		@include breakpoint-max(md){
+			border-right:0!important;
+		}
+	}
+
+	.footer-brand{
+		position:relative;
+		z-index: 10;
+	}
+	.footer-copyright{
+		position: absolute;
+		z-index: 0;
+		left:0;
+		right: 0;
+		bottom:0;
+	}
+
+	@include breakpoint-max($main-navbar-expand-max){ 
+		.footer-brand{
+			max-width: none;
+			width: 85px;
+			
+		} 
+
+	}
+} 

@@ -1,0 +1,11 @@
+@each $color, $value in $theme-colors {
+  .fill-#{$color}{
+    fill:$value;
+  }
+  .slick-dots-#{$color} .slick-dots li button:before{
+		color:$value; 
+	} 
+}
+.badge{
+	color: #fff;
+}

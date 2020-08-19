@@ -1,0 +1,29 @@
+.section-title{
+	font-size: 1.25rem;
+	letter-spacing: 0.54px;
+	&.lg{
+		font-size: 2.5rem;
+		letter-spacing: 0.71px;
+	} 
+	@include breakpoint(sm){
+		font-size: 1.875rem;
+	}
+} 
+
+.section-subtitle{
+	font-size: 1.313rem;
+	letter-spacing: 0.38px;
+	&.lg{
+		font-size: 1.875rem;
+		letter-spacing: 0.54px;
+	} 
+}
+
+.font-size-13{
+	font-size: 13px;
+	letter-spacing: 0.27px;
+}
+.font-size-15{
+	font-size: 15px;
+	letter-spacing: 0.27px;
+}

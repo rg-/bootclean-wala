@@ -1,0 +1,70 @@
+[data-btn="fx"].js-enabled{
+	 
+	position:relative;
+	overflow: hidden;
+	.fx-w, .fx-x{
+		display: inline-block; 
+		@include transition();
+		@include translate(0,0);
+	} 
+	.fx-w{
+		position:relative;
+	}
+	.fx-x{
+		position:absolute;
+		top:-100%;
+		left:0;
+		right: 0;
+	} 
+
+	&:hover{
+		.fx-w, .fx-x{
+			@include translate(0,100%);
+		} 
+	}
+
+
+	&[data-fx="up"]{ 
+		.fx-x{
+			top:100%;
+		}
+		&:hover{
+			.fx-w, .fx-x{
+				@include translate(0,-100%);
+			} 
+		} 
+	}
+
+	&[data-fx="left"]{ 
+		.fx-x{
+			top:0;
+			left: 100%;
+			width: 100%;
+		}
+		&:hover{
+			.fx-w, .fx-x{
+				@include translate(-100%,0);
+			} 
+		} 
+	}
+	&[data-fx="right"]{ 
+		.fx-x{
+			top:0;
+			left: -100%;
+			width: 100%;
+		}
+		&:hover{
+			.fx-w, .fx-x{
+				@include translate(100%,0);
+			} 
+		} 
+	}
+
+	&[data-fx-padding="no"]{
+		display: inline-block;
+		.fx-w, .fx-x{
+			padding:0!important;
+		} 
+	}
+
+}

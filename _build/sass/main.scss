@@ -1,0 +1,56 @@
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// main (basicly is same as bootstrap.scss from root except "customs/variables" )
+// Required 
+@import "customs/variables";
+
+// Required
+// @import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/bootstrap";
+
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/functions";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/variables";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/mixins";
+
+$colors: () !default; 
+$colors: map-remove($colors, "blue", "indigo", "purple", "pink", "red", "orange", "yellow", "green", "teal", "cyan");
+
+
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/root";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/reboot";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/type";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/images";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/code";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/grid";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/tables";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/forms";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/buttons";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/transitions";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/dropdown";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/button-group";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/input-group";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/custom-forms";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/nav";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/navbar";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/card";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/breadcrumb";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/pagination";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/badge";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/jumbotron";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/alert";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/progress";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/media";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/list-group";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/close";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/toasts";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/modal";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/tooltip";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/popover";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/carousel";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/spinners";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/utilities";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/print";

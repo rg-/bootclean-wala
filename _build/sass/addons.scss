@@ -1,0 +1,32 @@
+// ------------------------------------------------------------------------------- //
+// Required
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/functions";
+
+// ------------------------------------------------------------------------------- //
+// BC Builder
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/functions"; 
+// Customs !!!!
+@import "customs/variables";
+
+// ------------------------------------------------------------------------------- //
+// Required
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/variables";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootstrap/sass/mixins";
+
+// Customs !!!!
+@import "customs/custom-variables";
+// ------------------------------------------------------------------------------- //
+// Extra/Plugins
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/extra/animate";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/extra/slick";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/extra/bootstrap-select";
+
+// ------------------------------------------------------------------------------- //
+// Addons 
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/addons/bootstrap-range-slider"; 
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/addons/data-animated";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/addons/bootstrap-dropdown-hover";  // see scripts/js/bootstrap-dropdown-hover.js
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/addons/bootstrap-nav-affix"; // see scripts/js/bootstrap-affix.js
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/addons/bootstrap-better-nav"; // see scripts/js/bootstrap-better-nav.js
+
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/addons/wpbc-full-aside-cols";
