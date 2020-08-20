@@ -76,8 +76,10 @@ add_filter('wpbc/filter/layout/main-navbar/defaults', function($args){
 	
 	$expand = 'navbar-expand-xl'; 
 	$color = 'bg-transparent';
-	if( is_account_page() ){
-		$color = 'bg-white';
+	if( class_exists( 'WooCommerce' ) ){
+		if(is_account_page()){
+			$color = 'bg-white';
+		} 
 	}
 
 	$args['class'] = 'navbar navbar-expand-aside collapse-right fasdfa '.$color.' '.$expand; 
@@ -168,11 +170,11 @@ function add_admin_link($items, $args){
 
   if( $args->theme_location == 'right_menu' ){ 
 
-  	$start_menu_item .= '<li class="nav-item menu-item">'; 
+  	$start_menu_item = '<li class="nav-item menu-item">'; 
 		$start_menu_item .= '<a title="'.$myaccount_page_title.'" href="'.$myaccount_page_url.'" class="nav-link">'.$myaccount_menu_label.'</a>';
 		$start_menu_item .= '</li>';
 
-		if( !_wpbc_woo_if_use_pasos_nav() ){ 
+		if( function_exists('_wpbc_woo_if_use_pasos_nav') && !_wpbc_woo_if_use_pasos_nav() ){ 
 
 			$start_menu_item .= '<li class="nav-item menu-item">'; 
 			$start_menu_item .= '<a title="'.$ordenar_page_title.'" href="'.$ordenar_page_url.'" class="btn btn-primary" data-btn="fx">'.$ordenar_page_label.'</a>';

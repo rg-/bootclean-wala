@@ -30,7 +30,7 @@ add_filter('acf/fields/flexible_content/layout_title', function($title, $field, 
     	$value = $_POST['value'];  
     }else{
     	// code normal php load
-    	$value = $field['value'][$i];
+    	$value = !empty($field['value'][$i]) ? $field['value'][$i] : '';
     }
     $t = '';
     if(!empty($value)){ 
@@ -49,9 +49,12 @@ add_filter('acf/fields/flexible_content/layout_title', function($title, $field, 
     		$t = $value['field_'.$layout['name'].'__section-title']; 
     		$title = '<small class="wpbc-badge" style="background-color:#6639b7">'.$title.'</small> '.$t;
     	}
-    	$section_options = $value['field_'.$layout['name'].'__section_options'];
-    	$layout_style = $section_options['field_'.$layout['name'].'__section_options_style']; 
+    	$section_options = !empty($value['field_'.$layout['name'].'__section_options']) ? $value['field_'.$layout['name'].'__section_options'] : '';
+
+    	$layout_style = !empty($section_options['field_'.$layout['name'].'__section_options_style']) ? $section_options['field_'.$layout['name'].'__section_options_style'] : ''; 
+    	
     	//_print_code($value);
+    	
     	if(!empty($layout_style)){
 				$title = '<small title="Esquema de color" style="background-color:var(--'.$layout_style.');" class="wpbc-badge wpbc-badge-style bg-'.$layout_style.'">'.$layout_styl.'</small> ' . $title;
     	}
