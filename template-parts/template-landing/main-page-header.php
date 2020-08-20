@@ -14,7 +14,7 @@
 
 $acf_field = $args['acf_field'];   
 $page_header_type = $acf_field['page_header_type']; 
-$page_header_args = $acf_field['page_header_'.$page_header_type]; 
+$page_header_args = !empty($acf_field['page_header_'.$page_header_type]) ? $acf_field['page_header_'.$page_header_type] : ''; 
 
 if($page_header_type=='none') return;
 
