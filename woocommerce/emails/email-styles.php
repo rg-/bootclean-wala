@@ -207,6 +207,10 @@ a {
 	text-decoration: underline;
 }
 
+#body_content table td a{
+	color: <?php echo esc_attr( $text ); ?>;
+}
+
 img {
 	border: none;
 	display: inline-block;
