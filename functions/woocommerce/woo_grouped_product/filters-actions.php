@@ -147,8 +147,7 @@ $is_order = false;
 add_action('woocommerce_order_details_after_order_table_items', function($order) use ($is_cart, $is_order){
 	woocommerce_before_cart_contents_custom($is_cart, $order);
 },10,1);
-
-
+ 
 function woocommerce_before_cart_contents_custom($is_cart=true,$order=false){
 	
 	//$cart = WC_CP()->cart;

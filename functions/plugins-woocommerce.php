@@ -56,7 +56,8 @@ include('woocommerce/woo_grouped_product.php');
 include('woocommerce/layout.php'); 
 include('woocommerce/layout-single-product.php'); 
 include('woocommerce/layout-my-account.php'); 
-include('woocommerce/layout-checkout.php'); 
+include('woocommerce/layout-checkout.php');  
+include('woocommerce/layout-emails.php'); 
 
 include('woocommerce/acf-woo_single_product.php');
 include('woocommerce/acf-woo_extra_taxonomy.php'); 
