@@ -23,7 +23,7 @@ if(!empty($get_category_ids)){
 	} 
 }
 ?>
-<div class="gpl-md-2">
+<div class="">
 
 	<h2 class="section-title gmb-1"><?php echo $product->get_name(); ?></h2>
 

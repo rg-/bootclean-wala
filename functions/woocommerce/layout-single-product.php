@@ -121,3 +121,8 @@ add_action('woocommerce_after_single_product_summary',function(){
 		WPBC_get_template_part('woocommerce/single-product_paso-a-paso', $product);  
 	} 
 },5);
+ 
+
+add_filter( 'woocommerce_gallery_image_size', function( $size ) {
+    return 'full';
+} );

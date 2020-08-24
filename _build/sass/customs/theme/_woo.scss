@@ -898,6 +898,12 @@ body.woocommerce-cart .button[name="update_cart"]{
 
 .single-product{
 
+	div.images{
+		@include breakpoint(md){
+			padding-right:50px!important;
+		}
+		
+	}
 
 	.ui-box-meta{
 		.meta{
