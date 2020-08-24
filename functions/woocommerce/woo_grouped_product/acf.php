@@ -165,15 +165,23 @@ add_action('admin_head',function(){
       	?>
 <style>
 
-	#acf-group_woo_grouped_product > .handlediv .toggle-indicator{
-		color:#fff;
+	#acf-group_woo_grouped_product .handle-actions button{
+		color:#fff!important;
 	}
-	#acf-group_woo_grouped_product > .ui-sortable-handle{
-		background-color: #6639b7;
-		color:#fff;
+	#acf-group_woo_grouped_product .handle-actions .toggle-indicator{
+		color:#fff!important;
 	}
-	#acf-group_woo_grouped_product > .ui-sortable-handle svg{
+	#acf-group_woo_grouped_product .postbox-header{
+		background-color: #6639b7; 
+	}
+	#acf-group_woo_grouped_product .postbox-header .ui-sortable-handle{
+		color: #fff;
+    text-align: left;
+    justify-content: flex-start;
+	}
+	#acf-group_woo_grouped_product .ui-sortable-handle svg{
 		vertical-align: -7px;
+		margin-right: 10px;
 	}
 
 </style>

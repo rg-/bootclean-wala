@@ -1,7 +1,10 @@
 
 
-- 10-20 min, esto como se quiere ingresar en cada Receta?
+- - Area ¿PORQUÉ Walá?, poner las 2 fotos y gráficos tal cual diseño, eso ya queda medio fijo
 
-- Ingredientes, ¿como seria la idea bien? por ej. no seria conveniente que cada ingrediente, nombre/img
+	r: no esta para sacar en png svg eso
 
-- Paso a paso?
+
+- - falta la opción de registrarse rápido con FB o Google, no?
+
+- - pelar el aviso del carrito "“Receta OCHO” y “Receta SIETE” han sido añadidos a tu carrito." 
