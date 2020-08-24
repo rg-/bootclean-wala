@@ -14,7 +14,7 @@
 
 			<h2 class="section-title"><?php echo $grouped_personas_title; ?></h2>
 
-			<div data-ordenar-field="#grouped_personas" class="d-flex justify-content-center gpy-2">
+			<div data-ordenar-field="#grouped_personas" class="d-flex flex-wrap justify-content-center gpy-2">
 
 				<?php
 				
