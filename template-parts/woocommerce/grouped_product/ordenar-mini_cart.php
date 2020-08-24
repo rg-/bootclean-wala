@@ -37,7 +37,7 @@
 		<span class="rest_count <?php echo $rest_count_class; ?>">
 			<span class="singular <?php echo $singular_class; ?>">receta pendiente para elegir</span>
 			<span class="plural <?php echo $plural_class; ?>">recetas pendientes para elegir</span>
-			<span class="msg"><span class="ui-badge badge badge-success">Has completado 3 recetas</span></span>
+			<span class="msg"><span class="ui-badge badge badge-success">Has completado <?php echo !empty($grouped_recetas) ? $grouped_recetas : '0'; ?> recetas</span></span>
 		</span>
 	
 	</p>
