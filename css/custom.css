@@ -8931,7 +8931,11 @@ html, body {
     .btn.btn-icon svg {
       vertical-align: -5px; }
   .btn.btn-action {
-    border-radius: 4px; }
+    border-radius: 4px;
+    font-family: 'Roboto Mono';
+    font-size: 16px;
+    letter-spacing: 0.29px;
+    padding: 0.85rem 2.5rem; }
     .btn.btn-action.disabled, .btn.btn-action:disabled {
       background-color: #e5e5e5 !important;
       border-color: #e5e5e5 !important; }
@@ -9020,7 +9024,7 @@ button:active {
   display: block;
   padding: 31px 0;
   color: #222222 !important;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: bold;
   text-align: left;
   padding-right: 60px;
@@ -9067,6 +9071,9 @@ button:active {
 .wpcf7-form .form-controls-alt .input-group > .input-group-append:last-child > .btn:last-child {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px; }
+.wpcf7-form .input-group > .input-group-append:last-child > .btn {
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important; }
 .wpcf7-form .input-group > .wpcf7-form-control-wrap {
   position: relative;
   flex: 1 1 auto;
@@ -9178,6 +9185,8 @@ span.lazybackground-loader{
   letter-spacing: 0.29px;
   padding-top: 11px;
   padding-bottom: 11px; }
+#main-navbar #menu-menu-principal .nav-link:hover {
+  color: #6639b7; }
 #main-navbar .as-btn-primary .nav-link {
   display: inline-block;
   font-weight: 400;
@@ -9244,6 +9253,8 @@ span.lazybackground-loader{
     margin-right: 22px;
     margin-left: 22px;
     color: #222222; }
+  #main-navbar #menu-menu-secundario li:last-child {
+    margin-left: 30px; }
   #main-navbar #navbar-right_menu .nav-link {
     margin-right: 12px;
     margin-left: 12px; }
@@ -9718,11 +9729,7 @@ span.lazybackground-loader{
       .ui-hover-shadow .image-cover {
         transition: none; } }
   .ui-hover-shadow:hover {
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
-    border-color: transparent; }
-    .ui-hover-shadow:hover:before {
-      border-color: #222222;
-      border-width: 1px; }
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1); }
     .ui-hover-shadow:hover .image-cover {
       -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -9768,6 +9775,8 @@ a.ui-box-card {
       font-size: 18px; }
     .ui-box-card .ui-box-content p {
       font-size: 13px; }
+    .ui-box-card .ui-box-content .ui-box-meta svg {
+      vertical-align: -7px; }
 
 .ui-box-thumb-rows .ui-box-image {
   border-radius: 19px;
@@ -9790,7 +9799,12 @@ a.ui-box-card {
     font-size: 16px;
     list-style: none;
     margin: 30px 0;
-    letter-spacing: 0.29px; }
+    letter-spacing: 0.29px;
+    position: relative; }
+    .ui-list-tip li > svg {
+      position: absolute;
+      top: 0;
+      left: -32px; }
 
 .woocommerce-cart-form,
 .cart_totals,
@@ -10039,12 +10053,20 @@ body.woocommerce-edit-address form > h3,
 /* buttons sm radius general */
 .woocommerce-orders-table__cell a.button.view,
 .woocommerce-Address-title .edit {
-  background-color: #8ed74e !important;
-  border-color: #8ed74e !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
   font-family: 'Roboto';
+  color: #6639b7 !important;
   font-size: 13px !important;
   padding: 5px 10px !important;
-  border-radius: 4px !important; }
+  border-radius: 4px !important;
+  text-decoration: underline !important;
+  box-shadow: none !important; }
+  .woocommerce-orders-table__cell a.button.view:hover, .woocommerce-orders-table__cell a.button.view:focus, .woocommerce-orders-table__cell a.button.view:active,
+  .woocommerce-Address-title .edit:hover,
+  .woocommerce-Address-title .edit:focus,
+  .woocommerce-Address-title .edit:active {
+    color: #6639b7 !important; }
 
 /* tables */
 .woocommerce table.shop_table {
@@ -10152,6 +10174,8 @@ body.woocommerce-edit-address .woocommerce-address-fields,
   position: absolute;
   left: -9999em;
   visibility: hidden; }
+  .big-radio input[type="radio"] + label.btn-big-radio {
+    color: #999999; }
 
 .big-radio input[type="radio"]:checked + label.btn-big-radio {
   background-color: #6639b7;
@@ -10343,6 +10367,31 @@ body.woocommerce-edit-address .woocommerce-address-fields,
       -moz-opacity: 1;
       opacity: 1; }
 
+@media (max-width: 767.98px) {
+  body.woo_using_pasos_nav #main-navbar .navbar-toggler {
+    display: none; }
+  body.woo_using_pasos_nav .pasos_main_nav .pasos:after {
+    top: 7px;
+    left: 30px;
+    right: 30px; }
+  body.woo_using_pasos_nav .pasos_main_nav .paso {
+    min-width: 58px; }
+    body.woo_using_pasos_nav .pasos_main_nav .paso .label {
+      font-size: 7px; }
+    body.woo_using_pasos_nav .pasos_main_nav .paso .dot {
+      width: 16px;
+      height: 16px; } }
+
+/* 
+
+	Mini Cart show/hide messages
+
+	Ver 
+
+		template-parts/woocommerce/grouped_product/ordenar-mini_cart.php
+		functions/woocommcerce/woo_grouped_product/js/script.js
+
+*/
 .is_singular .plural {
   display: none; }
 .is_singular .msg {
@@ -10360,8 +10409,67 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 .is_none .singular {
   display: none; }
 
+#grouped_recetas_mini_cart #grouped_recetas_add_to_cart {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+@media (max-width: 991.98px) {
+  #grouped_recetas_form [data-toggle="nav-affix"] {
+    position: fixed;
+    bottom: 0;
+    top: inherit; }
+    #grouped_recetas_form [data-toggle="nav-affix"] .affix-column {
+      top: inherit;
+      bottom: 0;
+      padding: 0; }
+  #grouped_recetas_form #grouped_recetas_mini_cart {
+    border-radius: 0;
+    background-color: #eaab00;
+    color: #fff;
+    padding: 8px 9px 18px 9px; }
+  #grouped_recetas_form #grouped_recetas_rest_count {
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 14px;
+    color: #eaab00;
+    font-family: Rubik;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 500;
+    display: inline-block; }
+  #grouped_recetas_form #grouped_recetas_rest_amout {
+    text-align: center;
+    margin-bottom: 6px; }
+    #grouped_recetas_form #grouped_recetas_rest_amout .rest_count {
+      font-family: Rubik;
+      font-size: 15px;
+      font-weight: 500;
+      text-transform: uppercase; }
+  #grouped_recetas_form #grouped_recetas_add_to_cart {
+    padding: 7px 20px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: auto !important; }
+  #grouped_recetas_form .container.affix-container {
+    max-width: 100% !important;
+    padding: 0 !important; }
+  #grouped_recetas_form .hide_on_mobile {
+    display: none !important; } }
+
 body.woocommerce-cart .button[name="update_cart"] {
   display: none !important; }
+
+/*
+ * single-product
+*/
+.single-product .ui-box-meta .meta {
+  font-size: 16px; }
+.single-product .ui-box-meta .btn.btn-sm {
+  padding: 3.5px 10px; }
+.single-product .table-ingredientes .cantidad {
+  font-size: 15px; }
 
 .hentry .entry-header {
   margin-bottom: 15px; }
@@ -12385,6 +12493,9 @@ body.woocommerce.col-images-offset-11 div.product div.images, body.woocommerce.c
 
 body.col-col2-container .woocommerce .col2-set, body.col-col2-container .woocommerce-page .col2-set {
   width: 100%; }
+
+body.col-col2-flex-column .woocommerce .col2-set, body.col-col2-flex-column .woocommerce-page .col2-set {
+  flex-direction: column; }
 
 body.woocommerce .woocommerce .col2-set .col-1,
 body.woocommerce .woocommerce-page .col2-set .col-1,

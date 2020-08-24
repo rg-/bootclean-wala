@@ -34,10 +34,8 @@
 	&:hover{
 		@include box-shadow(0 0 10px 3px rgba(0,0,0,.1));
 		
-		border-color:transparent;
-		&:before{
-			border-color:$dark;
-			border-width:1px;
+		//border-color:transparent;
+		&:before{ 
 		}
 		.image-cover{
 			@include scale(1.2);
@@ -97,6 +95,11 @@ a.ui-box-card{
 		p{
 			font-size: 13px;
 		}
+		.ui-box-meta{
+			svg{
+				vertical-align: -7px;
+			}
+		}
 	}
 }
 
@@ -136,6 +139,12 @@ a.ui-box-card{
 		list-style: none;
 		margin: $grid-gutter*2 0; 
 		letter-spacing: 0.29px;
+		position:relative;
+		> svg{
+			position: absolute;
+			top: 0;
+			left: -32px;
+		}
 	}
 
 } 

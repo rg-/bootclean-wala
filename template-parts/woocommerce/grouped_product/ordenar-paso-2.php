@@ -1,7 +1,7 @@
 <?php // $args passed ?>
 <div id="ordenar-paso-2" class="ordenar-paso <?php if(!$args['show_paso_2']){echo "disabled";} ?>">
 
-		<div class="row gpb-3">
+		<div class="row gpb-4">
 			<?php
 			
 			global $product; 

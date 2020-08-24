@@ -8,7 +8,7 @@
 			  <div class="accordion-item">
 			    <div class="accordion-item-header" id="headingOne">
 			      <h5 class="mb-0">
-			        <button class="btn btn-accordion" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			        <button class="btn btn-accordion font-rubik" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 			          ¿Fusce lacinia risus lectus, tincidunt viverra sem gravida rutrum?
 			        </button>
 			      </h5>
@@ -23,7 +23,7 @@
 			  <div class="accordion-item">
 			    <div class="accordion-item-header" id="headingTwo">
 			      <h5 class="mb-0">
-			        <button class="btn btn-accordion collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			        <button class="btn btn-accordion font-rubik collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 			          ¿Risus lectus, tincidunt viverra sem gravida rutrum?
 			        </button>
 			      </h5>
@@ -37,7 +37,7 @@
 			  <div class="accordion-item">
 			    <div class="accordion-item-header" id="headingThree">
 			      <h5 class="mb-0">
-			        <button class="btn btn-accordion collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+			        <button class="btn btn-accordion font-rubik collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 			          Aliquam ultrices quam a diam tempor, non convallis leo tristique
 			        </button>
 			      </h5>

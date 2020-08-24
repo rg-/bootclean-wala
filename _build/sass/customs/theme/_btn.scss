@@ -17,6 +17,10 @@
 	}
 	&.btn-action{
 		@include border-radius(4px);
+		font-family: 'Roboto Mono';
+		font-size: 16px;
+		letter-spacing: 0.29px;
+		padding: 0.85rem 2.5rem;
 		&.disabled, &:disabled{
 			background-color:#e5e5e5!important;
 			border-color:#e5e5e5!important;
@@ -78,7 +82,7 @@ button{
 		display: block;
 		padding: 31px 0;
 		color:$dark!important;
-		font-size: 21px;
+		font-size: 20px;
 	  font-weight: bold; 
 	  text-align: left;
 	  padding-right:60px;

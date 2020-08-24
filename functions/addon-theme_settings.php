@@ -85,6 +85,22 @@ function WPBC_child_custom_theme_settings__general($fields){
 		'ui' => 0,
 	));
 
+	$fields[] = WPBC_acf_make_post_object_wpbc_template(array(
+		'name' => 'general_single_product_template',
+		'label' => 'Incluír este template al pié de la página de cada Receta',
+		'instructions' => '', 
+		'width' => '60%',
+		'multiple' => 0, 
+		'ui' => 0,
+	));
+
+	$fields[] = WPBC_acf_make_true_false_field(array(
+		'name' => 'general_single_product_prefooter',
+		'label' => '¿Mostrar Subscribirse?',
+		'default_value' => 1,
+		'width' => '40%',
+	));
+
 
 	$choices_cats = array();
 		$args = array(

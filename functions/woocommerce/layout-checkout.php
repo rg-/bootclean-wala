@@ -43,7 +43,7 @@ add_filter('wpbc/filter/woocommerce/config', function ($wpbc_woocommerce_config)
 
 add_filter('wpbc/filter/page/single/class',function($class){
 	if( is_checkout() ){
-		$class .= ' woo-is_checkout gpb-5 ui-loader';
+		$class .= ' woo-is_checkout gpb-2 gpb-md-5 ui-loader';
 	} 
 	return $class;
 },10,1); 
@@ -119,7 +119,7 @@ add_action('woocommerce_checkout_after_customer_details', function(){
 
 			<?php woocommerce_checkout_payment(); ?>
 
-			<div class="d-flex align-items-center">
+			<div class="align-items-center d-none d-md-flex">
 				<p class="m-0 small"><a data-woo="empty-cart" data-loading-target=".woo-is_checkout" href="<?php echo get_the_permalink($ordenar_page_id); ?>"><i class="fa fa-angle-left"></i> Cambiar Plan</a></p>
 
 			<?php
@@ -130,10 +130,10 @@ add_action('woocommerce_checkout_after_customer_details', function(){
 		</div>
 	</div> 
 
-<div id="affix-column" class="affix-container-absolute z-index-40" data-toggle="nav-affix" data-affix-position="top" data-affix-breakpoint="lg" data-affix-target="#affix-checkout-area" data-affix-simulate="false" data-affix-scrollify="true" data-affix-detect="bottom" data-affix-inner-element=".affix-column">
+<div id="affix-column" class="affix-container-absolute z-index-40" data-toggle="nav-affix" data-affix-position="top" data-affix-breakpoint="md" data-affix-target="#affix-checkout-area" data-affix-simulate="false" data-affix-scrollify="true" data-affix-detect="bottom" data-affix-inner-element=".affix-column">
 	<div class="container affix-container"> 
 		<!-- woo-custom-checkout-review-order column  -->
-		<div class="col-lg-4 order-md-2 ml-auto affix-column">
+		<div class="col-md-6 col-lg-4 order-md-2 ml-auto affix-column px-0 gpx-md-1">
 			<div class="woo-custom-checkout-review-order">
 				<?php
 			 	woocommerce_order_review();
@@ -160,9 +160,14 @@ add_action( 'woocommerce_review_order_before_cart_contents', function(){
 add_action( 'woocommerce_review_order_after_order_total', function(){
 	$ordenar_page_id = WPBC_get_theme_settings('general_post_object_ordenar');
 	?>
-	<tr><td colspan="6" class="ml-0">
-<p class="text-center gmt-1 m-0 small">
+	<tr><td colspan="6" class="ml-0 w-100">
+<p class="d-sm-flex text-center align-items-center justify-content-start gmt-1 m-0 small">
 	<a data-woo="empty-cart" data-loading-target=".woo-is_checkout" href="<?php echo get_the_permalink($ordenar_page_id); ?>"><i class="fa fa-angle-left"></i> Cambiar Plan</a>
+
+	<?php
+			$order_button_text = 'Realizar Pedido';
+			echo '<button type="submit" class="ml-auto btn btn-action btn-primary d-md-none" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>'; // @codingStandardsIgnoreLine ?>
+
 </p>
 </td></tr>
 	<?php

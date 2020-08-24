@@ -30,7 +30,7 @@
 			$product_class = esc_attr( implode( ' ', wc_get_product_class( '', $grouped_product_child ) ) );
 			$product_class = str_replace('product', 'receta', $product_class);
 
-			$product_class .= ' col-md-6 col-lg-4 gmb-2';
+			$product_class .= ' '.$args['item_class'];
 			
 			$grouped_product_price = $grouped_product_child->get_price(); 
 			

@@ -141,6 +141,13 @@ if(empty($product)){
 		</div>
 	</div>
 
+	<?php
+
+		$col_content_class = 'col-lg-8 col-xl-9 order-md-1';
+		$col_aside_class = 'col-lg-4 col-xl-3 order-md-2 ml-auto';
+
+	?>
+
 	<div id="grouped_recetas_form" class="position-relative">
 
 		<form class="cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
@@ -150,12 +157,13 @@ if(empty($product)){
 				<div class="row"> 
 
 					<!-- col order -->
-					<div class="col-md-9 order-md-1">
+					<div class="<?php echo $col_content_class; ?>">
 						<?php
 						// Elegir Recetas
 						WPBC_get_template_part('woocommerce/grouped_product/ordenar-paso-3', array(
 							'show_paso_2' => $show_paso_2,
 							'show_paso_3' => $show_paso_3,
+							'item_class' => 'col-md-4 col-lg-6 col-xl-4 gmb-2',
 						)); ?>
 					</div>
 					<!-- col order END --> 
@@ -164,11 +172,12 @@ if(empty($product)){
 
 			</div>
 
-			<div id="affix-column" class="affix-container-absolute z-index-40" data-toggle="nav-affix" data-affix-position="top" data-affix-breakpoint="md" data-affix-target="#grouped_recetas_form" data-affix-simulate="false" data-affix-scrollify="true" data-affix-detect="bottom" data-affix-inner-element=".affix-column">
+			<div id="affix-column" class="affix-container-absolute z-index-40" data-toggle="nav-affix" data-affix-position="top" data-affix-breakpoint="xs" data-affix-target="#grouped_recetas_form" data-affix-simulate="false" data-affix-scrollify="true" data-affix-detect="bottom" data-affix-inner-element=".affix-column">
+
 				<div class="container affix-container">
 					
 					<!-- Columna mini fake cart  -->
-					<div class="col-md-3 order-md-2 ml-auto affix-column">
+					<div class="<?php echo $col_aside_class; ?> affix-column">
 						<?php
 						// Elegir Recetas
 						WPBC_get_template_part('woocommerce/grouped_product/ordenar-mini_cart', array(

@@ -138,7 +138,7 @@ function WPBC_woo_grouped_editor_support() {
     $current_screen = $get_screen->post_type; 
     if ($current_screen == 'product' && isset($_GET['post']) ) {  
     		$product = wc_get_product( $_GET['post'] );
-    		if($product->get_type() == 'grouped'){
+    		if( is_object($product) && $product->get_type() == 'grouped'){
         	remove_post_type_support( $current_screen, 'editor' );   
         }
     }  
@@ -149,7 +149,7 @@ add_filter('admin_body_class', function($classes){
   $current_screen = $get_screen->post_type; 
   if ($current_screen == 'product' && isset($_GET['post']) ) {  
   		$product = wc_get_product( $_GET['post'] );
-  		if($product->get_type() == 'grouped'){
+  		if( is_object($product) && $product->get_type() == 'grouped'){
       	$classes .= ' woo_grouped_product';
       }
   }  
@@ -161,7 +161,7 @@ add_action('admin_head',function(){
   $current_screen = $get_screen->post_type; 
   if ($current_screen == 'product' && isset($_GET['post']) ) {  
   		$product = wc_get_product( $_GET['post'] );
-  		if($product->get_type() == 'grouped'){
+  		if(is_object($product) && $product->get_type() == 'grouped'){
       	?>
 <style>
 

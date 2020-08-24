@@ -26,9 +26,9 @@
 	}
 
 ?>
-<div class="pasos_main_nav order-2 d-flex">
+<div class="pasos_main_nav order-2 d-flex gpr-1 gpr-md-0">
 
-	<div class="pasos d-flex mx-auto">
+	<div class="pasos d-flex ml-auto mx-md-auto">
 
 		<div class="paso d-flex flex-column align-items-center justify-content-start paso-plan <?php echo $show_paso_inicio ? 'current' : '';?> <?php echo $show_paso_3 ? 'current completed' : '';?>">
 			<span class="dot"><i class="icon fa fa-check"></i></span>
@@ -49,7 +49,7 @@
 
 </div>
 
-<div class="user_main_nav order-3 ml-auto pt-3 mt-2 gmr-1">
+<div class="user_main_nav order-3 ml-auto mt-1 pt-xl-3 mt-xl-2 gmr-1 d-none d-md-block">
 	<?php
 	$myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' ); 
 	$myaccount_page_title = get_the_title($myaccount_page_id);

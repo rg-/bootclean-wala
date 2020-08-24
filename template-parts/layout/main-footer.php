@@ -10,7 +10,7 @@ if($use_footer=='none') return;
 // _print_code($use_footer); 
 ?>
 
-<footer id="main-footer">
+<footer id="main-footer" class="bg-white">
 
 	<?php
 	$show_prefooter = WPBC_get_field('layout_general_show_prefooter');
@@ -68,6 +68,22 @@ if($use_footer=='none') return;
 						);
 						wp_nav_menu($m_ar);
 						?>
+						<p class="ui-footer-social"><?php
+
+							$social = WPBC_get_theme_settings("general_social"); 
+							if(!empty($social)){
+								foreach ($social as $key => $value) {
+									$type = $value['social_items_type'];
+									$href = $value['social_items_url'];
+									?>
+									<a data-btn="fx" class="btn btn-icon btn-square" href="<?php echo $href; ?>">
+										<?php echo do_shortcode('[social_'.$type.' color="#999"]'); ?>
+									</a>
+									<?php
+								}
+							}
+
+						?></p>
 					</div>
 				</div>
 			</div>
@@ -99,22 +115,9 @@ if($use_footer=='none') return;
 			</div>
 
 			<div class="col-md-6 text-center text-md-right">
-				<p class="ui-footer-social"><?php
-
-					$social = WPBC_get_theme_settings("general_social"); 
-					if(!empty($social)){
-						foreach ($social as $key => $value) {
-							$type = $value['social_items_type'];
-							$href = $value['social_items_url'];
-							?>
-							<a data-btn="fx" class="btn btn-icon btn-square" href="<?php echo $href; ?>">
-								<?php echo do_shortcode('[social_'.$type.' color="#999"]'); ?>
-							</a>
-							<?php
-						}
-					}
-
-				?></p>
+				<div class="d-flex flex-wrap d-flex flex-wrap flex-row align-items-center justify-content-center justify-content-md-end">
+					<img width="61" class="mx-1" src="[WPBC_get_stylesheet_directory_uri]/images/theme/visa@2x.png" alt="VISA" /> <img width="64" class="mx-1" src="[WPBC_get_stylesheet_directory_uri]/images/theme/mastercard@2x.png" alt="Mastercard" />
+				</div>
 			</div>
 		
 		</div>
@@ -129,7 +132,7 @@ if($use_footer=='none') return;
 
 			<div class="d-flex justify-content-start align-items-center">
 
-				<div class="text-center text-md-left">
+				<div class="text-center text-md-left mx-auto mx-md-0">
 					<?php
 					$logo = '[WPBC_get_stylesheet_directory_uri]/images/theme/wala-violet.svg'; 
 					?>

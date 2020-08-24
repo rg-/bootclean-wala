@@ -100,6 +100,6 @@ add_action('wpbc/layout/start', function(){
 			?></div><?php
 		}
 
-	}
+	} 
 
 }, 50 );

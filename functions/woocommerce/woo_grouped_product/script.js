@@ -58,6 +58,18 @@
 	    }
 		});
 
+	/*
+
+	Receta quantity buttons click actions
+
+		Agrega o resta al minicart, calcula el total via ajax, muestra/oculta los mensajes correspondientes
+
+		Ver
+			-> _build/sass/customs/theme/_woo.scss -> 
+			-> template-parts/woocommerce/grouped_product/ordenar-mini_cart.php
+
+	*/
+
 	$(document.body).on('click', '[data-ordenar="receta"] .quantity-buttons .btn', function() {
 		var $button = $(this);
 	  var oldValue = $button.parent().parent().find("input.qty").val();
@@ -72,13 +84,18 @@
 	  var list = $('#grouped_recetas_list');
 	  var list_totals = $('#grouped_recetas_list_totals');
 
-	  var list_count = list.find('div').length;
+	  var list_count = list.find('div').length; 
 
-	  if( list_count==max && $button.hasClass('btn-plus') ){
+	  // If max reached, show modal
+	  if( list_count == max && $button.hasClass('btn-plus') ){
 	  	// alert("max");
 	  	$('#modal_cart_max').modal('show')
 	  	return;
 	  } 
+	  // If minus clicked but empty list (you can´t rest anything), just do nothing.
+	  if( list_count === 0 && $button.hasClass('btn-minus') ){
+	  	return;
+	  }
 
 	  if ($button.hasClass('btn-plus') ) { 
 
@@ -107,12 +124,16 @@
 	  var list_count = list.find('div').length; 
 
 		var total_calculated = 0;
+		
 		list_totals.find('div').each(function(){
 			total_calculated = total_calculated + parseFloat($(this).html());
 		});
+		
 		$('#grouped_recetas_items').addClass('loading');
 		$('#grouped_recetas_mini_cart').addClass('loading');
+ 		
  		var ajax_url = $('#total_calculated').attr('data-ajax-url')+'&price='+total_calculated;
+
 		$.ajax({ type: "GET",   
 		     url: ajax_url,   
 		     success : function(text)
@@ -121,12 +142,15 @@
 		     		$('#grouped_recetas_rest').html(list_count); 
 
 		     		var rest_count = max - list_count;
+
 		     		if(rest_count > 1){ 
 		     			$('#grouped_recetas_rest_amout .rest_count').addClass('is_plural');
 		     			$('#grouped_recetas_rest_amout .rest_count').removeClass('is_singular');
+		     			$('#grouped_recetas_rest_amout .rest_count').removeClass('is_none');
 		     		}else{
 		     			$('#grouped_recetas_rest_amout .rest_count').addClass('is_singular');
 		     			$('#grouped_recetas_rest_amout .rest_count').removeClass('is_plural');
+		     			$('#grouped_recetas_rest_amout .rest_count').removeClass('is_none');
 		     		}
 		     		if(rest_count == 0){
 		     			$('#grouped_recetas_rest_amout .rest_count').addClass('is_none');
@@ -136,6 +160,11 @@
 		     		}
 		     		
 		     		$('#grouped_recetas_rest_count').html( rest_count ); 
+		     		if(rest_count==0){
+		     			$('#grouped_recetas_rest_count').addClass('d-none');
+		     		}else{
+		     			$('#grouped_recetas_rest_count').removeClass('d-none');
+		     		}
 
 						if( list_count==max ){
 							$('#grouped_recetas_add_to_cart').attr('disabled',false); 

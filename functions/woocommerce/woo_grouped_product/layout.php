@@ -111,6 +111,10 @@ add_filter('wpbc/body/class', function($class){
 			$ordenar_page_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar');
 			$show_prefooter = WPBC_get_field('layout_general_show_prefooter', $ordenar_page_id);
 		} 
+		$ordenar_product_id = WPBC_get_theme_settings('general_post_object_ordenar_product');
+		if( is_product() && !is_single($ordenar_product_id) ){
+			$show_prefooter = get_option('options_wpbc_theme_settings__general_single_product_prefooter');
+		}
 		return $show_prefooter;
 	},10,1);
 

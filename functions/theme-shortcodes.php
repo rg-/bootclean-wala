@@ -99,8 +99,12 @@ function _get_icon_FX($args, $content=NULL, $tag){
     $icon = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path '.$class.' fill="'.$fill.'" d="M18 2.01L6 2c-1.1 0-2 .89-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.11-.9-1.99-2-1.99zM18 20H6v-9.02h12V20zm0-11H6V4h12v5zM8 5h2v3H8zm0 7h2v5H8z"/></svg>';
   }
 
-   if($tag=='icon_pasos'){
+  if($tag=='icon_pasos'){
     $icon = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path '.$class.' fill="'.$fill.'" d="M20 4h-4l-4-4-4 4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H4V6h4.52l3.52-3.5L15.52 6H20v14zM18 8H6v10h12"/></svg>';
+  }
+
+  if($tag=='icon_list_tip'){
+    $icon = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path '.$class.' fill="'.$fill.'" d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>';
   }
 
   return $icon;
@@ -112,6 +116,7 @@ add_shortcode('icon_pasos','_get_icon_FX');
 add_shortcode('icon_heladera','_get_icon_FX');
 add_shortcode('icon_money','_get_icon_FX');
 add_shortcode('icon_time','_get_icon_FX');
+add_shortcode('icon_list_tip','_get_icon_FX');
 add_shortcode('icon_porciones','_get_icon_FX');
 add_shortcode('social_facebook','_get_icon_FX');
 add_shortcode('social_instagram','_get_icon_FX');
@@ -172,22 +177,20 @@ function _get_ui_list_tip_FX($args, $content=NULL, $tag){
   } 
   $args = array_merge($defs, $args); 
 
-  //$content = str_replace("\n", "AJAJA", $content);
+  $lines = explode("\n", $content);
+  $content_list = '';
+  if ( !empty($lines) ) {
+    $content_list = '<ul class="ui-list-tip">';
+    foreach ( $lines as $line ) {
+      $content_list .= '<li>'. trim( $line ) .'</li>';
+    }
+    $content_list .= '</ul>';
+  } 
+  $content_list = str_replace('<li></li>', '', $content_list); 
 
-  $tmp_arr1= explode("\n\n",$content);
-  $final_arr=array();
-  // now $tmp_arr1 has n number of sections;
-  foreach($tmp_arr1 as $section){
-      $final_arr[]= explode("\n",$section);
-  }
-  $content="";
-  foreach($final_arr as $section){
-      $content.="<ul class='ui-list-tip'><li>";
-      $content.=implode("</li><li>",$section);
-      $content.="</li></ul>";
-  }
+  $content_list = str_replace('<li>', '<li>[icon_list_tip] ', $content_list); 
 
-  return $content;
+  return $content_list;
   //return nl2br($content,false);
 
 }

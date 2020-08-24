@@ -27,13 +27,13 @@ if(!empty($get_category_ids)){
 
 	<h2 class="section-title gmb-1"><?php echo $product->get_name(); ?></h2>
 
-	<div class="text-violeta d-flex align-items-center pt-2 gmb-1">
+	<div class="text-violeta d-flex align-items-center pt-2 gmb-1 font-roboto ui-box-meta">
 
 		<?php
 		$receta_tiempo = WPBC_get_field('receta_tiempo', $product_id);
 		if(!empty($receta_tiempo)){
 			?>
-			<span><?php echo do_shortcode('[icon_time class="fill-violeta"]'); ?> <?php echo $receta_tiempo; ?></span> <span class="gmx-1">|</span>
+			<span class="meta"><?php echo do_shortcode('[icon_time class="fill-violeta"]'); ?> <?php echo $receta_tiempo; ?></span> <span class="gmx-1">|</span>
 			<?php
 		}
 		?>
@@ -41,7 +41,7 @@ if(!empty($get_category_ids)){
 		$receta_porciones = WPBC_get_field('receta_porciones', $product_id);
 		if(!empty($receta_porciones)){
 			?>
-			<span><?php echo do_shortcode('[icon_porciones class="fill-violeta"]'); ?> <?php echo $receta_porciones; ?> Porciones</span> <span class="gmx-1">|</span>
+			<span class="meta"><?php echo do_shortcode('[icon_porciones class="fill-violeta"]'); ?> <?php echo $receta_porciones; ?> Porciones</span> <span class="gmx-1">|</span>
 			<?php
 		}
 		?>

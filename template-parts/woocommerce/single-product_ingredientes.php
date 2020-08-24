@@ -43,9 +43,9 @@
 
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 gml-lg-n-4">
 
-			<table class="table table-sm table-borderless font-roboto-mono">
+			<table class="table table-sm table-borderless font-roboto-mono table-ingredientes">
 				<tbody>
 					<?php foreach ($receta_ingredientes as $key => $value) {
 						$ingrediente_cantidad = $value['receta_ingredientes_cantidad'];
@@ -53,7 +53,7 @@
 						$ingrediente_name = get_the_title($ingrediente_id); 
 						?>
 						<tr>
-				      <td class="text-violeta text-right"><?php echo $ingrediente_cantidad; ?></td>
+				      <td class="text-violeta text-right font-roboto cantidad"><?php echo $ingrediente_cantidad; ?></td>
 				      <td><?php echo $ingrediente_name; ?></td>
 				    </tr>
 					<?php } ?>

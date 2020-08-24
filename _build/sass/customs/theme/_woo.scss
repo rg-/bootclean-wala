@@ -310,12 +310,18 @@ body.woocommerce-edit-address form > h3,
 
 .woocommerce-orders-table__cell a.button.view,
 .woocommerce-Address-title .edit{
-	background-color: $success!important;
-	border-color: $success!important;
+	background-color: transparent!important;
+	border-color: transparent!important;
 	font-family: 'Roboto';
+	color:$primary!important;
 	font-size: 13px!important;
 	padding:5px 10px!important;
 	@include border-radius(4px!important);
+	text-decoration: underline!important;
+	box-shadow:none!important;
+	&:hover,&:focus,&:active{
+		color:$primary!important;
+	}
 }
 
 /* tables */
@@ -472,6 +478,9 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 	position: absolute;
 	left: -9999em;
 	visibility: hidden;
+	+ label.btn-big-radio{
+		color: #999999;
+	}
 }
 .big-radio input[type="radio"]:checked + label.btn-big-radio {
   background-color: $primary; 
@@ -729,6 +738,58 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 	}
 }
 
+body.woo_using_pasos_nav{
+	@include breakpoint-max(sm){
+
+		#main-navbar .navbar-toggler{
+			display: none;
+		}
+
+		.pasos_main_nav{
+			.pasos{
+				&:after{ 
+					top: 7px;
+					left: 30px;
+					right: 30px; 
+				}
+			}
+			.paso{
+				min-width: 58px;
+				&.paso-plan{
+
+				}
+				&.paso-seleccion{
+
+				}
+				&.paso-checkout{
+
+				}
+
+				.label{ 
+					font-size: 7px; 
+				}
+
+				.dot{
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+		}
+
+	}
+}
+
+/* 
+
+	Mini Cart show/hide messages
+
+	Ver 
+
+		template-parts/woocommerce/grouped_product/ordenar-mini_cart.php
+		functions/woocommcerce/woo_grouped_product/js/script.js
+
+*/
 
 .is_singular{
 	.plural{
@@ -752,7 +813,105 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 	}
 }
 
+#grouped_recetas_mini_cart{
+	
+	#grouped_recetas_add_to_cart{
+		padding-left: 10px;
+		padding-right: 10px;
+	} 
+
+}
+#grouped_recetas_form{
+	@include breakpoint-max(md){
+		
+		[data-toggle="nav-affix"]{
+			position: fixed;
+			bottom: 0;
+			top: inherit;
+			.affix-column{
+				top: inherit;
+				bottom: 0;
+				padding: 0;
+			}
+		}
+
+		#grouped_recetas_mini_cart{
+			@include border-radius(0);
+			background-color:$secondary;
+			color:#fff;
+			padding: 8px 9px 18px 9px;
+		}
+		#grouped_recetas_rest_count{
+			text-align: center;
+			width: 28px;
+			height: 28px;
+			background-color:#fff;
+			@include border-radius(14px);
+			color:$secondary;
+			font-family: Rubik;
+			font-size: 15px;
+			line-height: 28px;
+			font-weight: 500;
+			display: inline-block;
+		}
+		#grouped_recetas_rest_amout{
+			text-align: center;
+			    margin-bottom: 6px;
+			.rest_count{
+				font-family: Rubik;
+				font-size: 15px;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+		}
+
+		#grouped_recetas_add_to_cart{ 
+			padding: 7px 20px!important;
+			display: block!important;
+			margin: 0 auto!important;
+			width: auto!important;
+		}
+
+		.container.affix-container{
+			max-width: 100%!important;
+			padding:0!important;
+		}
+
+		.hide_on_mobile{
+			display: none!important;
+		}
+	}
+}
+
+
+
 
 body.woocommerce-cart .button[name="update_cart"]{
 	display: none!important;
+}
+
+
+
+/*
+ * single-product
+*/
+
+.single-product{
+
+
+	.ui-box-meta{
+		.meta{
+			font-size: 16px;
+		}
+		.btn.btn-sm{
+			padding: 3.5px 10px;
+		}
+	}
+
+	.table-ingredientes{
+		.cantidad{
+			font-size: 15px;
+		}
+	}
+
 }

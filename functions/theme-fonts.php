@@ -46,6 +46,19 @@ function wpbc_child_wp_head__fonts() {
 }
 
 @font-face {
+    font-family: 'Rubik';
+    src: url('<?php echo $theme_uri; ?>subset-Rubik-Medium.eot');
+    src: url('<?php echo $theme_uri; ?>subset-Rubik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('<?php echo $theme_uri; ?>subset-Rubik-Medium.woff2') format('woff2'),
+        url('<?php echo $theme_uri; ?>subset-Rubik-Medium.woff') format('woff'),
+        url('<?php echo $theme_uri; ?>subset-Rubik-Medium.ttf') format('truetype'),
+        url('<?php echo $theme_uri; ?>subset-Rubik-Medium.svg#Rubik-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Rubik Mono One';
     src: url('<?php echo $theme_uri; ?>subset-RubikMonoOne-Regular.eot');
     src: url('<?php echo $theme_uri; ?>subset-RubikMonoOne-Regular.eot?#iefix') format('embedded-opentype'),
@@ -85,6 +98,10 @@ function wpbc_child_wp_head__fonts() {
 }
 .font-rubik{
     font-family: 'Rubik';
+}
+.font-rubik-medium{
+    font-family: 'Rubik';
+    font-weight: 500;
 }
 .font-rubik-mono{
     font-family: 'Rubik Mono One';

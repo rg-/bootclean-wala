@@ -17,11 +17,34 @@ add_filter('wpbc/filter/woocommerce/config', function ($wpbc_woocommerce_config)
 
 
 add_filter('wpbc/filter/layout/start/defaults', function($args){
-	if(is_product()){
-		$args['main_content']['wrap']['class'] = 'gpt-md-2 mt-2';
+	if( is_product() ){
+		
+		$ordenar_product_id = WPBC_get_theme_settings('general_post_object_ordenar_product');
+		if(is_single($ordenar_product_id)){
+			$args['main_content']['wrap']['class'] = 'gpt-2 mt-2';
+		}else{
+			$args['main_content']['wrap']['class'] = 'gpt-md-2 mt-2';
+		}
+
 	} 
 	return $args;
 }); 
+
+
+add_action('init',function(){
+
+	add_action('wpbc/woo/layout/after/main-container-areas', function(){ 
+		$ordenar_product_id = WPBC_get_theme_settings('general_post_object_ordenar_product');
+		if( is_product() && !is_single($ordenar_product_id) ){
+			// 
+			$product_template = get_option('options_wpbc_theme_settings__general_single_product_template');
+			if(!empty($product_template)){
+				echo do_shortcode('[WPBC_get_template id="'.$product_template.'"/]');
+			}
+		}
+	},60);
+
+});
 
 /**
 		 * woocommerce_before_main_content hook.

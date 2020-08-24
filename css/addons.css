@@ -3216,6 +3216,13 @@ select.selectpicker {
 	* @last feb/2020
 	* 
   */
+.affix-absolute-top {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 1030; }
+
 [data-toggle="nav-affix"] {
   transition: all 0.2s ease; }
   @media (prefers-reduced-motion: reduce) {
@@ -3316,6 +3323,300 @@ body.scrolling-down.scrolling [data-toggle="nav-affix"][data-affix-position="top
   .affixElement.hide {
     height: 0 !important; }
 
+/*
+
+	usage
+
+	<div id="affix-area" class="position-relative">
+	
+		<div>SOMETING</div>
+
+		<div id="affix-column" class="affix-container-absolute z-index-40" data-toggle="nav-affix" data-affix-position="top" data-affix-breakpoint="lg" data-affix-target="#affix-area" data-affix-simulate="false" data-affix-scrollify="true" data-affix-detect="bottom" data-affix-inner-element=".affix-column">
+		<div class="container affix-container">
+			<div class="col-lg-4 order-md-2 ml-auto affix-column">
+				<div class="">
+					SOMETHING HERE 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+
+*/
+.affix-container-absolute[data-affix-breakpoint="xs"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease-in-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .affix-container-absolute[data-affix-breakpoint="xs"] {
+      transition: none; } }
+  .affix-container-absolute[data-affix-breakpoint="xs"] .affix-column {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix {
+    position: fixed; }
+    .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix .affix-column.row {
+      margin-right: 0;
+      margin-left: 0; }
+    .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix .hide-on-affix {
+      display: none !important; }
+    .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix.elem-affix-bottom {
+      position: absolute;
+      bottom: 0;
+      top: inherit; }
+      .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix.elem-affix-bottom .affix-column {
+        bottom: 0;
+        top: inherit; }
+        .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix.elem-affix-bottom .affix-column.row {
+          margin-right: -15px;
+          margin-left: -15px; }
+  .affix-container-absolute[data-affix-breakpoint="xs"] .affix-container {
+    position: relative; }
+    .affix-container-absolute[data-affix-breakpoint="xs"] .affix-container.container {
+      padding-right: 15px;
+      padding-left: 15px; }
+      @media (min-width: 576px) {
+        .affix-container-absolute[data-affix-breakpoint="xs"] .affix-container.container {
+          max-width: 540px; } }
+      @media (min-width: 768px) {
+        .affix-container-absolute[data-affix-breakpoint="xs"] .affix-container.container {
+          max-width: 720px; } }
+      @media (min-width: 992px) {
+        .affix-container-absolute[data-affix-breakpoint="xs"] .affix-container.container {
+          max-width: 960px; } }
+      @media (min-width: 1310px) {
+        .affix-container-absolute[data-affix-breakpoint="xs"] .affix-container.container {
+          max-width: 1230px; } }
+
+.container .affix-container-absolute[data-affix-breakpoint="xs"] {
+  left: -15px;
+  right: -15px; }
+
+@media (min-width: 576px) {
+  .affix-container-absolute[data-affix-breakpoint="sm"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.2s ease-in-out; } }
+  @media (min-width: 576px) and (prefers-reduced-motion: reduce) {
+    .affix-container-absolute[data-affix-breakpoint="sm"] {
+      transition: none; } }
+@media (min-width: 576px) {
+    .affix-container-absolute[data-affix-breakpoint="sm"] .affix-column {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0; }
+    .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix {
+      position: fixed; }
+      .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix .affix-column.row {
+        margin-right: 0;
+        margin-left: 0; }
+      .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix .hide-on-affix {
+        display: none !important; }
+      .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix.elem-affix-bottom {
+        position: absolute;
+        bottom: 0;
+        top: inherit; }
+        .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix.elem-affix-bottom .affix-column {
+          bottom: 0;
+          top: inherit; }
+          .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix.elem-affix-bottom .affix-column.row {
+            margin-right: -15px;
+            margin-left: -15px; }
+    .affix-container-absolute[data-affix-breakpoint="sm"] .affix-container {
+      position: relative; }
+      .affix-container-absolute[data-affix-breakpoint="sm"] .affix-container.container {
+        padding-right: 15px;
+        padding-left: 15px; } }
+      @media (min-width: 576px) and (min-width: 576px) {
+        .affix-container-absolute[data-affix-breakpoint="sm"] .affix-container.container {
+          max-width: 540px; } }
+      @media (min-width: 576px) and (min-width: 768px) {
+        .affix-container-absolute[data-affix-breakpoint="sm"] .affix-container.container {
+          max-width: 720px; } }
+      @media (min-width: 576px) and (min-width: 992px) {
+        .affix-container-absolute[data-affix-breakpoint="sm"] .affix-container.container {
+          max-width: 960px; } }
+      @media (min-width: 576px) and (min-width: 1310px) {
+        .affix-container-absolute[data-affix-breakpoint="sm"] .affix-container.container {
+          max-width: 1230px; } }
+
+@media (min-width: 576px) {
+  .container .affix-container-absolute[data-affix-breakpoint="sm"] {
+    left: -15px;
+    right: -15px; } }
+@media (min-width: 768px) {
+  .affix-container-absolute[data-affix-breakpoint="md"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.2s ease-in-out; } }
+  @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+    .affix-container-absolute[data-affix-breakpoint="md"] {
+      transition: none; } }
+@media (min-width: 768px) {
+    .affix-container-absolute[data-affix-breakpoint="md"] .affix-column {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0; }
+    .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix {
+      position: fixed; }
+      .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix .affix-column.row {
+        margin-right: 0;
+        margin-left: 0; }
+      .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix .hide-on-affix {
+        display: none !important; }
+      .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix.elem-affix-bottom {
+        position: absolute;
+        bottom: 0;
+        top: inherit; }
+        .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix.elem-affix-bottom .affix-column {
+          bottom: 0;
+          top: inherit; }
+          .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix.elem-affix-bottom .affix-column.row {
+            margin-right: -15px;
+            margin-left: -15px; }
+    .affix-container-absolute[data-affix-breakpoint="md"] .affix-container {
+      position: relative; }
+      .affix-container-absolute[data-affix-breakpoint="md"] .affix-container.container {
+        padding-right: 15px;
+        padding-left: 15px; } }
+      @media (min-width: 768px) and (min-width: 576px) {
+        .affix-container-absolute[data-affix-breakpoint="md"] .affix-container.container {
+          max-width: 540px; } }
+      @media (min-width: 768px) and (min-width: 768px) {
+        .affix-container-absolute[data-affix-breakpoint="md"] .affix-container.container {
+          max-width: 720px; } }
+      @media (min-width: 768px) and (min-width: 992px) {
+        .affix-container-absolute[data-affix-breakpoint="md"] .affix-container.container {
+          max-width: 960px; } }
+      @media (min-width: 768px) and (min-width: 1310px) {
+        .affix-container-absolute[data-affix-breakpoint="md"] .affix-container.container {
+          max-width: 1230px; } }
+
+@media (min-width: 768px) {
+  .container .affix-container-absolute[data-affix-breakpoint="md"] {
+    left: -15px;
+    right: -15px; } }
+@media (min-width: 992px) {
+  .affix-container-absolute[data-affix-breakpoint="lg"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.2s ease-in-out; } }
+  @media (min-width: 992px) and (prefers-reduced-motion: reduce) {
+    .affix-container-absolute[data-affix-breakpoint="lg"] {
+      transition: none; } }
+@media (min-width: 992px) {
+    .affix-container-absolute[data-affix-breakpoint="lg"] .affix-column {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0; }
+    .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix {
+      position: fixed; }
+      .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix .affix-column.row {
+        margin-right: 0;
+        margin-left: 0; }
+      .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix .hide-on-affix {
+        display: none !important; }
+      .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix.elem-affix-bottom {
+        position: absolute;
+        bottom: 0;
+        top: inherit; }
+        .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix.elem-affix-bottom .affix-column {
+          bottom: 0;
+          top: inherit; }
+          .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix.elem-affix-bottom .affix-column.row {
+            margin-right: -15px;
+            margin-left: -15px; }
+    .affix-container-absolute[data-affix-breakpoint="lg"] .affix-container {
+      position: relative; }
+      .affix-container-absolute[data-affix-breakpoint="lg"] .affix-container.container {
+        padding-right: 15px;
+        padding-left: 15px; } }
+      @media (min-width: 992px) and (min-width: 576px) {
+        .affix-container-absolute[data-affix-breakpoint="lg"] .affix-container.container {
+          max-width: 540px; } }
+      @media (min-width: 992px) and (min-width: 768px) {
+        .affix-container-absolute[data-affix-breakpoint="lg"] .affix-container.container {
+          max-width: 720px; } }
+      @media (min-width: 992px) and (min-width: 992px) {
+        .affix-container-absolute[data-affix-breakpoint="lg"] .affix-container.container {
+          max-width: 960px; } }
+      @media (min-width: 992px) and (min-width: 1310px) {
+        .affix-container-absolute[data-affix-breakpoint="lg"] .affix-container.container {
+          max-width: 1230px; } }
+
+@media (min-width: 992px) {
+  .container .affix-container-absolute[data-affix-breakpoint="lg"] {
+    left: -15px;
+    right: -15px; } }
+@media (min-width: 1310px) {
+  .affix-container-absolute[data-affix-breakpoint="xl"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.2s ease-in-out; } }
+  @media (min-width: 1310px) and (prefers-reduced-motion: reduce) {
+    .affix-container-absolute[data-affix-breakpoint="xl"] {
+      transition: none; } }
+@media (min-width: 1310px) {
+    .affix-container-absolute[data-affix-breakpoint="xl"] .affix-column {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0; }
+    .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix {
+      position: fixed; }
+      .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix .affix-column.row {
+        margin-right: 0;
+        margin-left: 0; }
+      .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix .hide-on-affix {
+        display: none !important; }
+      .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix.elem-affix-bottom {
+        position: absolute;
+        bottom: 0;
+        top: inherit; }
+        .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix.elem-affix-bottom .affix-column {
+          bottom: 0;
+          top: inherit; }
+          .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix.elem-affix-bottom .affix-column.row {
+            margin-right: -15px;
+            margin-left: -15px; }
+    .affix-container-absolute[data-affix-breakpoint="xl"] .affix-container {
+      position: relative; }
+      .affix-container-absolute[data-affix-breakpoint="xl"] .affix-container.container {
+        padding-right: 15px;
+        padding-left: 15px; } }
+      @media (min-width: 1310px) and (min-width: 576px) {
+        .affix-container-absolute[data-affix-breakpoint="xl"] .affix-container.container {
+          max-width: 540px; } }
+      @media (min-width: 1310px) and (min-width: 768px) {
+        .affix-container-absolute[data-affix-breakpoint="xl"] .affix-container.container {
+          max-width: 720px; } }
+      @media (min-width: 1310px) and (min-width: 992px) {
+        .affix-container-absolute[data-affix-breakpoint="xl"] .affix-container.container {
+          max-width: 960px; } }
+      @media (min-width: 1310px) and (min-width: 1310px) {
+        .affix-container-absolute[data-affix-breakpoint="xl"] .affix-container.container {
+          max-width: 1230px; } }
+
+@media (min-width: 1310px) {
+  .container .affix-container-absolute[data-affix-breakpoint="xl"] {
+    left: -15px;
+    right: -15px; } }
 /*
 	Using expand-content will also "move" the content page
 */

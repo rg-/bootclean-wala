@@ -11,9 +11,8 @@
 		me.find('[data-is-inview]').is_inview();  
 	}); 
 
-
-  var fx_btns = $('[data-btn="fx"], .as-btn-primary>a');
-
+  /*
+  var fx_btns = $('[data-btn="fx"], .as-btn-primary>a'); 
 	fx_btns.each(function(){ 
 		var me = $(this);
 		if(!$('html').hasClass('touchevents')){
@@ -34,6 +33,7 @@
 		} 
 		
 	}); 
+	*/
 
 	$(window).on('bc_inited, scroll, resize',function(){
 

@@ -40,9 +40,9 @@
 				$group = $value[$_prefix.'__boxes_'.'group']; 
 					$text = $group[$_prefix.'__boxes_'.'text']; 
 				
-				$delay = .3 * ($count+1) . 's';  
+				$delay = .3 * ( ($count+1)/2 ) . 's';  
 				?>
-<div class="col-md-4 text-center" data-is-inview="detect">
+<div class="col-10 mx-auto col-md-4 text-center gmb-2 gmb-md-0" data-is-inview="detect">
 	<div data-is-inview-fx="fadeInUp" data-transition-delay="<?php echo $delay; ?>">
 		<div class="ui-box-thumb">
 			<div class="position-relative ui-box-image gmb-1">

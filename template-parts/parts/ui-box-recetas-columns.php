@@ -48,7 +48,7 @@ $_total = $loop->max_num_pages;
 
 <div id="recetas-container" class="container gpb-6">
 
-	<div id="recetas-nav" class="row gpy-2">
+	<div id="recetas-nav" class="row gpt-2 gpb-1">
 	
 		<div class="col-12">
 				<?php 
@@ -70,7 +70,10 @@ $_total = $loop->max_num_pages;
 				if ( ! empty( $term_query->terms ) ) {
 					$recetas_id = WPBC_get_theme_settings('general_post_object_recetas'); 
 
-					?><div class="d-flex justify-content-center">
+					?>
+
+					<div class="d-flex justify-content-center flex-wrap">
+
 						<?php if($recetas_id){
 							$recetas_link = get_permalink($recetas_id);
 
@@ -82,9 +85,9 @@ $_total = $loop->max_num_pages;
 							?>
 
 							<?php if($use_recetas_ajax){ ?>
-								<button data-btn="fx" data-href-id="all" data-href="<?php echo $recetas_link; ?>" data-ajax-scroll="#recetas-nav" data-ajax-load="<?php echo admin_url( 'admin-ajax.php' ); ?>?action=get_template&name=ajax/get_recetas" data-ajax-target="#ajax-recetas-loader" class="btn mx-2 <?php echo $btn_class; ?>">Todas</button>
+								<button data-btn="fx" data-href-id="all" data-href="<?php echo $recetas_link; ?>" data-ajax-scroll="#recetas-nav" data-ajax-load="<?php echo admin_url( 'admin-ajax.php' ); ?>?action=get_template&name=ajax/get_recetas" data-ajax-target="#ajax-recetas-loader" class="btn mx-2 gmb-1 btn-sm <?php echo $btn_class; ?>">Todas</button>
 							<?php } else { ?>
-								<a data-btn="fx" href="<?php echo $recetas_link; ?>" class="btn mx-2 btn-sm <?php echo $btn_class; ?>">Todas</a>
+								<a data-btn="fx" href="<?php echo $recetas_link; ?>" class="btn mx-2 gmb-1 btn-sm <?php echo $btn_class; ?>">Todas</a>
 							<?php } ?>
 						
 						<?php } ?>
@@ -105,11 +108,11 @@ $_total = $loop->max_num_pages;
 
 						if($use_recetas_ajax){
 							?>
-							<button data-btn="fx" data-href-id="<?php echo $term_slug; ?>" data-href="<?php echo $receta_url; ?>" data-ajax-scroll="#recetas-nav" data-ajax-load="<?php echo admin_url( 'admin-ajax.php' ); ?>?action=get_template&name=ajax/get_recetas&product_cat_id=<?php echo $term_id; ?>" data-ajax-target="#ajax-recetas-loader" class="btn mx-2 btn-sm <?php echo $btn_class; ?>"><?php echo $category->name; ?></button>
+							<button data-btn="fx" data-href-id="<?php echo $term_slug; ?>" data-href="<?php echo $receta_url; ?>" data-ajax-scroll="#recetas-nav" data-ajax-load="<?php echo admin_url( 'admin-ajax.php' ); ?>?action=get_template&name=ajax/get_recetas&product_cat_id=<?php echo $term_id; ?>" data-ajax-target="#ajax-recetas-loader" class="btn mx-2 gmb-1 btn-sm <?php echo $btn_class; ?>"><?php echo $category->name; ?></button>
 							<?php
 						}else{
 							?>
-							<a data-btn="fx" href="<?php echo $receta_url; ?>" class="btn mx-2 btn-sm <?php echo $btn_class; ?>"><?php echo $category->name; ?></a>
+							<a data-btn="fx" href="<?php echo $receta_url; ?>" class="btn mx-2 gmb-1 btn-sm <?php echo $btn_class; ?>"><?php echo $category->name; ?></a>
 							<?php
 						}
 

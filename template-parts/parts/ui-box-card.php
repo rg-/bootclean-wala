@@ -19,6 +19,8 @@
 	*/
 
 	$attrs = '';
+
+	$show_porciones = false;
 	
 	$attachment_id = $args['image_id'];
 	$img_hi = "[WPBC_get_attachment_image_src id='".$attachment_id."']";
@@ -89,12 +91,12 @@
 			)); ?>
 		<?php } ?>
 		
-		<p class="m-0 text-violeta d-flex align-items-center">
+		<p class="m-0 text-violeta d-flex align-items-center font-roboto ui-box-meta">
 			<?php if(!empty($args['time'])){ ?>
-			<span class="mr-3">[icon_time class="fill-violeta"]&nbsp;<?php echo $args['time']; ?></span>
+			<span class="mr-3 meta">[icon_time class="fill-violeta"]&nbsp;<?php echo $args['time']; ?></span>
 			<?php } ?>
-			<?php if(!empty($args['porciones'])){ ?>
-			<span class="mr-3">[icon_porciones class="fill-violeta"]&nbsp;<?php echo $args['porciones']; ?>Porciones</span>
+			<?php if(!empty($args['porciones']) && $show_porciones){ ?>
+			<span class="mr-3 meta">[icon_porciones class="fill-violeta"]&nbsp;<?php echo $args['porciones']; ?>Porciones</span>
 			<?php } ?>
 		</p> 
 

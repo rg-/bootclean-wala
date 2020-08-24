@@ -59,6 +59,13 @@
   	padding-top: 11px;
     padding-bottom: 11px;
 	}
+	#menu-menu-principal{
+		.nav-link{ 
+			&:hover{
+				color:$primary;
+			}
+		}
+	}
 	
 	.as-btn-primary{
 		.nav-link{
@@ -91,6 +98,14 @@
 				margin-right: 22px;
 				margin-left: 22px;
 				color:$dark;
+				&:hover{
+
+				}
+			}
+		}
+		#menu-menu-secundario{
+			li:last-child{
+				margin-left: $grid-gutter*2;
 			}
 		}
 		#navbar-right_menu{
