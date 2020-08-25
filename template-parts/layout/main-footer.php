@@ -68,7 +68,7 @@ if($use_footer=='none') return;
 						);
 						wp_nav_menu($m_ar);
 						?>
-						<p class="ui-footer-social"><?php
+						<p class="ui-footer-social mx-n2"><?php
 
 							$social = WPBC_get_theme_settings("general_social"); 
 							if(!empty($social)){

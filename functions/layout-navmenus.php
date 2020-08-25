@@ -177,7 +177,7 @@ function add_admin_link($items, $args){
 		if( function_exists('_wpbc_woo_if_use_pasos_nav') && !_wpbc_woo_if_use_pasos_nav() ){ 
 
 			$start_menu_item .= '<li class="nav-item menu-item">'; 
-			$start_menu_item .= '<a title="'.$ordenar_page_title.'" href="'.$ordenar_page_url.'" class="btn btn-primary" data-btn="fx">'.$ordenar_page_label.'</a>';
+			$start_menu_item .= '<a title="'.$ordenar_page_title.'" href="'.$ordenar_page_url.'" class="btn btn-primary btn-order-now" data-btn="fx">'.$ordenar_page_label.'</a>';
 			$start_menu_item .= '</li>';
 
 		}
@@ -187,7 +187,7 @@ function add_admin_link($items, $args){
   }
   if( $args->theme_location == 'call_to_action_footer' ){
   	$start_menu_item .= '<li class="nav-item menu-item">'; 
-		$start_menu_item .= '<a title="'.$ordenar_page_title.'" href="'.$ordenar_page_url.'" class="btn btn-primary" data-btn="fx">'.$ordenar_page_label.'</a>';
+		$start_menu_item .= '<a title="'.$ordenar_page_title.'" href="'.$ordenar_page_url.'" class="btn btn-primary btn-order-now" data-btn="fx">'.$ordenar_page_label.'</a>';
 		$start_menu_item .= '</li>';
 		$items = $start_menu_item . $items; 
   }

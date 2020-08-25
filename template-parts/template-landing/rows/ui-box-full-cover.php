@@ -77,7 +77,7 @@
 		    	<div class="<?php echo $content_class; ?>" data-is-inview="detect">
 
 		    		<?php if(!empty( $section['section_title'] )){ ?>
-			    		<div data-is-inview-fx="fadeInUp" data-transition-delay=".4s">
+			    		<div data-is-inview-fx="fadeInUp" data-transition-delay=".34s">
 								<h2 class="section-title gmb-2"><?php echo $section['section_title']; ?></h2>
 							</div>
 						<?php } ?>

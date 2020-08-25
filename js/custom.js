@@ -45,6 +45,15 @@
 		var $dif = $('body').attr('data-maxwidth-half-diference');
 		$('.slick-adjust-width .slick-list').css('padding-right', $dif+'px'); 
 		$('.slick-adjust-width .slick-list').css('padding-left', $dif+'px'); 
+
+		if( get_window_sizes('w') > bc_config.breakpoints.lg ){
+			$('.slick-adjust-width-arrows .slick-next').css('right', ($dif-48)+'px'); 
+			$('.slick-adjust-width-arrows .slick-prev').css('left', ($dif-48)+'px');
+		}else{
+			$('.slick-adjust-width-arrows .slick-next').css('right', ''); 
+			$('.slick-adjust-width-arrows .slick-prev').css('left', '');
+		}
+
 	});
 
 	$('[data-slick]').on('mousedown', function(e){ 

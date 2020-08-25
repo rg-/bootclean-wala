@@ -519,12 +519,30 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 
 }
 
+.grouped_recetas_list_out,
 .grouped_recetas_list{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	&.empty-result{
+		display: none;
+	}
+
 	> div{
 		font-size: 13px;
 		padding-bottom:6px;
 		margin-bottom:6px;
-		border-bottom:1px solid #999;
+		position: relative;
+		padding-left: 20px;
+		letter-spacing: 0.23px;
+		line-height: 1.23;
+		font-family: 'Roboto Mono';
+		.nn{
+			position: absolute;
+			top: 0px;
+			left: 0;
+		}
+		.price{
+			display: none;
+		}
 	}
 }
 

@@ -82,6 +82,7 @@
 	  var rest_count = parseInt( $('#grouped_recetas_rest_count').html() );
 	  var max = parseInt( $('#grouped_recetas_max').html() );
 	  var list = $('#grouped_recetas_list');
+	  var list_out = $('#grouped_recetas_list_out');
 	  var list_totals = $('#grouped_recetas_list_totals');
 
 	  var list_count = list.find('div').length; 
@@ -102,7 +103,7 @@
 		  var newVal = parseFloat(oldValue) + 1; 
 		  var rest = parseInt( $('#grouped_recetas_rest').html() ) + 1;   
 
-		  list.append('<div data-price="'+data_elem.attr('data-price')+'" id="cart_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
+		  list.append('<div data-id="'+data_elem.attr('data-id')+'" data-price="'+data_elem.attr('data-price')+'" id="cart_'+data_elem.attr('data-id')+'_'+newVal+'"><span class="nn">1</span>'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
 
 		  list_totals.append('<div id="cart_total_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-price')+'</div>');
 
@@ -128,6 +129,29 @@
 		list_totals.find('div').each(function(){
 			total_calculated = total_calculated + parseFloat($(this).html());
 		});
+ 		
+
+
+		list_out.html(list.html());
+
+		list_out.find('div').each(function(){
+
+			var this_id = $(this).attr('data-id');
+			if( list.find( '[data-id="'+this_id+'"]' ).length > 1 ){
+				$(this).addClass('d-none').addClass('is_cloned');
+				$(this).find('.nn').html( list.find( '[data-id="'+this_id+'"]' ).length );
+			}
+
+		});
+
+		list_out.find('.is_cloned').eq(0).removeClass('d-none').removeClass('is_cloned');
+
+
+		if( list_count>0 ){ 
+			list_out.removeClass('empty-result');
+		}else{
+			list_out.addClass('empty-result');
+		}
 		
 		$('#grouped_recetas_items').addClass('loading');
 		$('#grouped_recetas_mini_cart').addClass('loading');
@@ -170,6 +194,12 @@
 							$('#grouped_recetas_add_to_cart').attr('disabled',false); 
 						}else{
 							$('#grouped_recetas_add_to_cart').attr('disabled',true); 
+						}
+
+						if(rest_count==1){
+							$('#grouped_recetas_rest_amout').addClass('text-rojo');
+						}else{
+							$('#grouped_recetas_rest_amout').removeClass('text-rojo');
 						}
 
 		        $('#total_calculated').html(text);

@@ -106,13 +106,17 @@ a.ui-box-card{
 .ui-box-thumb-rows{  
 	
 	.ui-box-image{ 
-		@include border-radius(19px); 
+		@include border-radius(30px); 
 		border: solid 1px #d8d8d8;
 		overflow: hidden;
-		max-width: 404px;
+		max-width: 382px;
+		.embed-responsive-16by9::before {
+		    padding-top: 63.16%;
+		}
 	}
 	.ui-box-content{
-		
+		position:relative;
+		z-index: 20;
 		p{
 			font-size: 16px;
 			line-height: 1.88;
@@ -120,14 +124,40 @@ a.ui-box-card{
 		}
 	}
 	.section-subtitle{
-		font-size: 30px;
+		font-size: 22px;
 		line-height: 1.33;
   	letter-spacing: 0.54px;
-	}
+  	@include breakpoint(sm){ 
+  		font-size: 30px;
+  	}
+	} 
+
 }
 
+.ui-box-thumb-rows{
+	.ui-box-image-overlay{
+		.ui-box-image{
 
-
+		}
+		.vector-absolute{
+			position: absolute;
+			top: -30px;
+			left: -10px;
+			right: -10px;
+			bottom: -30px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    @include breakpoint(md){
+	    	left: -30px;
+				right: -30px;
+	    }
+			img{
+				width:430px!important;
+			}
+		}
+	}
+} 
 
 
 

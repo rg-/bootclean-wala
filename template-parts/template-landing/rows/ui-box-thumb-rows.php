@@ -56,12 +56,16 @@
 						$content_2 = 'gpy-1 gpy-md-3 gpl-lg-4 gpr-lg-3';
 					}
 
+					$shortcode = $value[$prefix.$acf_fc_layout.'__boxes_'.'shortcode']; 
+
 					?>
 <div class="col-11 mx-auto gpt-1" data-is-inview="detect">
 
 	<?php
 
 	$part_args = array(
+
+		'shortcode' => $shortcode,
 		
 		'image_id' => $image,
 		'title' => $title,

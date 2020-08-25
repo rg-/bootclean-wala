@@ -9,7 +9,17 @@
 				@include opacity(1);
 			}
 		}
+
+		&:not(.slick-active){
+			.ui-hover-shadow{
+				pointer-events: none;
+			}
+		}
+
 	}
+
+
+
 }
 
 .slick-focus-active-items.slick-is-draggin{

@@ -23,7 +23,7 @@
 
 			<div class="col-md-11 mx-auto" data-is-inview="detect">
  
-				<div data-is-inview-fx="fadeInUp" data-transition-delay=".4s">
+				<div data-is-inview-fx="fadeInUp" data-transition-delay=".3s">
 					<h2 class="section-title text-center"><?php echo $section_title; ?></h2>
 				</div>
 

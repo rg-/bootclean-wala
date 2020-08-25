@@ -41,7 +41,7 @@ $slick = json_encode($slick);
 <div class="container-fluid gpt-2 px-0">
 	<div data-is-inview="detect">
 		<div data-is-inview-fx="translateTop">
-			<div class="theme-slick-slider slick-dots-relative slick-dots-primary slick-focus-active-items slick-adjust-width row row-no-gutters" data-slick='<?php echo $slick; ?>'>
+			<div class="theme-slick-slider slick-dots-relative slick-dots-primary slick-focus-active-items slick-adjust-width slick-adjust-width-arrows row row-no-gutters" data-slick='<?php echo $slick; ?>'>
 
 				<?php 
 					$args = array(

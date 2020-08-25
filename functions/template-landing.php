@@ -194,7 +194,8 @@ add_action('after_setup_theme', function(){
 add_action('admin_head',function(){
 ?>
 <style>
-	#acf-group_landing_flexible_content{ 
+	#acf-group_template_landing > .postbox-header{
+		display: none!important; 
 	}
 	#acf-group_landing_flexible_content > .ui-sortable-handle{
 		cursor: default!important;

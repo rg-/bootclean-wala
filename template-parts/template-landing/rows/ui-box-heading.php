@@ -14,7 +14,7 @@
 		<?php if(!empty( $section['section_title'] )){ ?>
 			<div class="row">
 				<div class="col-md-11 mx-auto" data-is-inview="detect">
-					<div data-is-inview-fx="fadeInUp" data-transition-delay=".4s">
+					<div data-is-inview-fx="fadeInUp" data-transition-delay=".3s">
 						<h2 class="section-title text-center m-0"><?php echo $section['section_title']; ?></h2>
 					</div>
 				</div>

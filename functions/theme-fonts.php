@@ -124,6 +124,7 @@ body.using-theme-fonts .entry-title{
 
 body.using-theme-fonts .section-subtitle{
     font-family: 'Rubik';
+    font-weight: bold;
 }
 
 </style>

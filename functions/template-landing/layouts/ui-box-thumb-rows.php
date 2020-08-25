@@ -43,6 +43,13 @@ function build_ui_box_thumb_rows($layouts){
 				)
 			);
 
+			$sub_fields_boxes[] = WPBC_acf_make_text_field(
+				array(
+					'name' => 'ui-box-thumb-rows__boxes_shortcode',
+					'label'=> 'Elemento sobre la imagen (shortcode)',   
+				)
+			);
+
 			$content_sub_fields[] = WPBC_acf_make_repeater_field(
 				array(
 					'name' => 'ui-box-thumb-rows__boxes',

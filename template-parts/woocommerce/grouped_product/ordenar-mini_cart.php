@@ -74,12 +74,13 @@
 
 	<hr class="hide-on-affix hide_on_mobile">
 
-	<h3 class="hide-on-affix hide_on_mobile ui-box-cart-title">SELECCIÓN</h3>
-	<div id="grouped_recetas_list" class="hide-on-affix hide_on_mobile gmb-1 grouped_recetas_list">
+	<h3 class="d-none ui-box-cart-title">SELECCIÓN</h3>
+	<div id="grouped_recetas_list" class="d-none grouped_recetas_list">
 
 	</div>
+	<div id="grouped_recetas_list_out" class="hide-on-affix hide_on_mobile mt-2 gmb-1 grouped_recetas_list_out empty-result">
 
-	<hr class="hide-on-affix hide_on_mobile">
+	</div>
 
 	<div id="grouped_recetas_list_totals" class="d-none">
 

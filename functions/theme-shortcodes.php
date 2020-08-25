@@ -196,3 +196,17 @@ function _get_ui_list_tip_FX($args, $content=NULL, $tag){
 }
 
 add_shortcode('ui_list_tip','_get_ui_list_tip_FX'); 
+
+function _ahorra_tiempo_FX(){
+  $src = get_stylesheet_directory_uri().'/images/theme/porque-wala-vectores@2x.png';
+  $out = '<img class="ahorra-tiempo" src="'.$src.'"/>';
+  return $out;
+}
+add_shortcode('ahorra_tiempo','_ahorra_tiempo_FX'); 
+
+function _recetas_sanas_FX(){
+  $src = get_stylesheet_directory_uri().'/images/theme/porque-wala-vectores-2@2x.png';
+  $out = '<img class="ahorra-tiempo" src="'.$src.'"/>';
+  return $out;
+}
+add_shortcode('recetas_sanas','_recetas_sanas_FX'); 

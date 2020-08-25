@@ -1,3 +1,6 @@
+
+
+
 .btn{
 	@include box-shadow(none);
 	&:not(.btn-light):not([class*="btn-outline-"]){
@@ -70,8 +73,12 @@ button{
 		padding-right: 22px;
 		padding-left: 22px;
 	}
-}
+} 
 
+.btn-call-to-action,
+.btn-order-now{
+	font-size: 1rem!important;
+}
 
 
 .accordion-item{

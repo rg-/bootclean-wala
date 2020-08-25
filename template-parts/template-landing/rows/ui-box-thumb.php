@@ -14,7 +14,7 @@
 		<?php if(!empty( $section['section_title'] )){ ?>
 			<div class="row">
 				<div class="col-md-11 mx-auto" data-is-inview="detect">
-					<div data-is-inview-fx="fadeInUp" data-transition-delay=".4s">
+					<div data-is-inview-fx="fadeInUp" data-transition-delay=".3s">
 						<h2 class="section-title text-center"><?php echo $section['section_title']; ?></h2>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 					$title = $group[$prefix.$acf_fc_layout.'__boxes_'.'title'];
 					$text = $group[$prefix.$acf_fc_layout.'__boxes_'.'text']; 
 				
-				$delay = .3 * ($count+1) . 's';  
+				$delay = .3 * (($count+1)/2) . 's';  
 				?>
 <div class="col-lg-4 text-center gmb-1 gmb-lg-0" data-is-inview="detect">
 	<div data-is-inview-fx="fadeInUp" data-transition-delay="<?php echo $delay; ?>">
