@@ -9195,6 +9195,9 @@ span.lazybackground-loader{
 @media (max-width: 1309.98px) {
   #main-navbar .show_collapsed {
     display: block; }
+  #main-navbar .collapse-custom {
+    background-color: #6639b7;
+    color: #fff; }
   #main-navbar .navbar-nav .nav-item[class*="as-btn-"] {
     margin: 7.5px 0; }
   #main-navbar .navbar-nav .btn-primary {
