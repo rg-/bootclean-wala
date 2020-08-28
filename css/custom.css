@@ -6604,7 +6604,7 @@ span.wpcf7-not-valid-tip {
   z-index: 1040;
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 244px;
   min-width: auto;
   background-color: #fff;
   -webkit-box-shadow: none;
@@ -6619,7 +6619,7 @@ span.wpcf7-not-valid-tip {
   -ms-transform: translate(100%, 0);
   transform: translate(100%, 0); }
   .collapse-custom .collapse-custom-wrapper {
-    padding: 30px; }
+    padding: 30px 10px 30px 30px; }
   .collapse-custom .collapse-custom-animate {
     position: relative;
     transition: 0.3s all ease 0.13s; }
@@ -8895,7 +8895,7 @@ html, body {
   color: #fff; }
 
 .section-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   letter-spacing: 0.54px; }
   .section-title.lg {
     font-size: 2.5rem;
@@ -8918,6 +8918,31 @@ html, body {
 .font-size-15 {
   font-size: 15px;
   letter-spacing: 0.27px; }
+
+.title_claim {
+  font-size: 2rem;
+  letter-spacing: -12px;
+  color: #fff;
+  margin: 0; }
+  .title_claim > span {
+    display: inline-block;
+    position: relative;
+    letter-spacing: 0.71px; }
+    .title_claim > span:after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      bottom: 3px;
+      right: -10px;
+      left: -12px;
+      background-color: #eaab00;
+      z-index: -1; }
+  @media (min-width: 576px) {
+    .title_claim {
+      font-size: 2.5rem; }
+      .title_claim > span:after {
+        top: 0px;
+        bottom: 4px; } }
 
 .btn {
   box-shadow: none; }
@@ -9120,6 +9145,9 @@ button:active {
   width: 48px;
   height: 48px;
   background: transparent !important; }
+  @media (max-width: 767.98px) {
+    .slick-arrow {
+      display: none !important; } }
   .slick-arrow:before {
     content: "";
     width: 48px;
@@ -9162,9 +9190,32 @@ span.lazybackground-loader{
 	} 
 }
 */
+#main-navbar .show_collapsed {
+  display: none; }
 @media (max-width: 1309.98px) {
+  #main-navbar .show_collapsed {
+    display: block; }
   #main-navbar .navbar-nav .nav-item[class*="as-btn-"] {
-    margin: 7.5px 0; } }
+    margin: 7.5px 0; }
+  #main-navbar .navbar-nav .btn-primary {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #6639b7 !important;
+    padding: 0.688rem 1.2rem;
+    margin-top: 15px; }
+    #main-navbar .navbar-nav .btn-primary:hover {
+      background-color: #eaab00 !important;
+      border-color: #eaab00 !important;
+      color: #fff !important; }
+  #main-navbar .navbar-nav .nav-item:not([class*="as-btn-"]) .nav-link {
+    color: #fff;
+    padding-top: 8px;
+    padding-bottom: 8px; }
+    #main-navbar .navbar-nav .nav-item:not([class*="as-btn-"]) .nav-link:hover {
+      color: #fff !important;
+      -webkit-opacity: 0.6;
+      -moz-opacity: 0.6;
+      opacity: 0.6; } }
 #main-navbar .navbar-brand {
   padding: 0; }
   #main-navbar .navbar-brand svg,
@@ -9541,35 +9592,12 @@ span.lazybackground-loader{
       height: 100%;
       position: absolute; } }
   #main-page-header .page-header-overlay.sub_type-no-images {
-    position: relative;
-    padding: 40px 0 0 0; }
+    position: relative; }
+    @media (min-width: 576px) {
+      #main-page-header .page-header-overlay.sub_type-no-images {
+        padding: 40px 0 0 0; } }
 #main-page-header .isv-lazysrc-loader {
   background-image: none !important; }
-
-.title_claim {
-  font-size: 1.5rem;
-  letter-spacing: -12px;
-  color: #fff;
-  margin: 0; }
-  .title_claim > span {
-    display: inline-block;
-    position: relative;
-    letter-spacing: 0.71px; }
-    .title_claim > span:after {
-      content: "";
-      position: absolute;
-      top: 1px;
-      bottom: 3px;
-      right: -10px;
-      left: -12px;
-      background-color: #eaab00;
-      z-index: -1; }
-  @media (min-width: 576px) {
-    .title_claim {
-      font-size: 2.5rem; }
-      .title_claim > span:after {
-        top: 0px;
-        bottom: 4px; } }
 
 .ui-footer-copy {
   font-size: 12px;
@@ -9594,8 +9622,7 @@ span.lazybackground-loader{
   bottom: 0; }
 @media (max-width: 1309.98px) {
   #main-footer .footer-brand {
-    max-width: none;
-    width: 85px; } }
+    max-width: none; } }
 
 [data-btn="fx"].js-enabled {
   position: relative;
@@ -9693,6 +9720,10 @@ span.lazybackground-loader{
     -webkit-transform: translate(0, 100%);
     -ms-transform: translate(0, 100%);
     transform: translate(0, 100%); }
+
+@media (max-width: 767.98px) {
+  .wpbc-full-aside-cols .embed-responsive-21by9::before {
+    padding-top: 68.75%; } }
 
 .ui-box-thumb .section-subtitle {
   margin: 10px 0 19px 0; }
@@ -9920,6 +9951,9 @@ a.ui-box-card {
     color: #222; }
 
 /* checkout */
+.wpbc-woo .woocommerce-privacy-policy-text p {
+  margin-bottom: 0; }
+
 .wpbc-woo .woo-custom-checkout-login-form .woocommerce-info {
   border: 0;
   background-color: transparent;
@@ -10023,6 +10057,8 @@ a.ui-box-card {
       .wpbc-woo .woo-custom-checkout-review-order table.shop_table tr.cart_item .product-subtotal {
         display: none; }
 
+.woo-is_checkout .woocommerce-shipping-fields {
+  margin-top: 15px; }
 .woo-is_checkout .woocommerce-notices-wrapper .wc-forward {
   display: none; }
 .woo-is_checkout #customer_details {
@@ -10498,8 +10534,10 @@ body.woocommerce-edit-address .woocommerce-address-fields,
       font-size: 15px;
       font-weight: 500;
       text-transform: uppercase; }
+    #grouped_recetas_form #grouped_recetas_rest_amout.text-rojo {
+      color: #fff !important; }
   #grouped_recetas_form #grouped_recetas_add_to_cart {
-    padding: 7px 20px !important;
+    padding: 9px 25px !important;
     display: block !important;
     margin: 0 auto !important;
     width: auto !important; }

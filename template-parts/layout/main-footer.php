@@ -26,14 +26,14 @@ if($use_footer=='none') return;
 
 		<div class="row">
 
-			<div class="col-md-3 text-center text-md-left">
+			<div class="col-md-3 text-center text-md-left order-3 order-md-1">
 				<?php
 				$logo = '[WPBC_get_stylesheet_directory_uri]/images/theme/wala-violet.svg'; 
 				?>
 				<img class="footer-brand" width="120" src="<?php echo $logo; ?>" alt="<?php echo get_bloginfo('title'); ?>" />
 			</div>
 
-			<div class="col-md-4 col-lg-6 col-xl-5 text-center text-md-left gpy-1 gpy-md-0	">
+			<div class="col-md-4 col-lg-6 col-xl-5 text-center text-md-left gpy-1 gpy-md-0 order-2">
 				<div class="row">
 					<div class="col-lg-6">
 						<?php
@@ -88,7 +88,7 @@ if($use_footer=='none') return;
 				</div>
 			</div>
 
-			<div class="col-md-5 col-lg-3 col-xl-4 text-center text-md-right">
+			<div class="col-md-5 col-lg-3 col-xl-4 text-center text-md-right order-1 order-md-3">
 				<?php
 				$m_ar = array(
 					'theme_location'  => 'call_to_action_footer',

@@ -20,7 +20,7 @@ if($page_header_type=='none') return;
 
 //_print_code($acf_field); 
 ?>
-<div id="inicio" class="page-header">
+<div id="inicio" class="page-header gpb-2 gpb-md-0">
 	<?php do_action('wpbc/template-landing/page-header/before', $page_header_type, $page_header_args); ?>
 	<?php
 		WPBC_get_template_part('template-landing/page-header/'.$page_header_type, $page_header_args);

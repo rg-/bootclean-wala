@@ -35,14 +35,28 @@
 
 	$('[data-ordenar-field="#grouped_personas"]').find('[type="radio"]').on('change', function(e) { 
 			var target = $('[data-ordenar-field="#grouped_personas"]').attr('data-ordenar-field'); 
+
 			if( $(this).is(":checked") ){  
 	      $(target).attr('value', $(this).val()); 
 	      $(target+'_count').html($(this).val());
 	      $(target+'_count_modal').html($(this).val()); 
 	      $(target+'_max').html($(this).val()); 
 	      $('#ordenar-paso-1').addClass('passed');
-	      $('#ordenar-paso-2').removeClass('disabled');
-
+	      $('#ordenar-paso-2').removeClass('disabled'); 
+	     
+	      /*
+					Reseteo si clickeo de nuevo  y ademas filtro, si es 2 personas, no muestro el item 1 de recetas,
+					O sea, para 2 personas muestro 2, 4 y 4 recetas
+					y para  4 personas muestro 1, 2, 3 y 4 recetas
+	      */
+	      if( $(this).attr('value') > 2 ){
+	      	$('[data-ordenar-field="#grouped_recetas"] [data-value="1"]').removeClass('d-none');
+	      }else{
+	      	$('[data-ordenar-field="#grouped_recetas"] [data-value="1"]').addClass('d-none'); 
+	      }
+	      $('[data-ordenar-field="#grouped_recetas"]').find('[type="radio"]').prop( "checked", false ); 
+	      $('#ordenar-paso-2').removeClass('passed');
+	      $('#grouped_recetas_siguiente').attr('disabled',true);
 	    }
 		});
 
@@ -134,17 +148,50 @@
 
 		list_out.html(list.html());
 
+		var list_temp = [];
+
 		list_out.find('div').each(function(){
 
 			var this_id = $(this).attr('data-id');
-			if( list.find( '[data-id="'+this_id+'"]' ).length > 1 ){
-				$(this).addClass('d-none').addClass('is_cloned');
+
+
+			if(list_temp.indexOf(this_id)>=0) {
+
+			}else{
+				list_temp.push(this_id);
+			}
+			
+
+			var length = list.find( '[data-id="'+this_id+'"]' ).length;
+			if( length > 1 ){ 
+				$(this).attr('data-length',length);
+				$(this).addClass('is_not_visible').addClass('is_cloned');
 				$(this).find('.nn').html( list.find( '[data-id="'+this_id+'"]' ).length );
 			}
 
 		});
 
-		list_out.find('.is_cloned').eq(0).removeClass('d-none').removeClass('is_cloned');
+		// list_out.find('.is_cloned:not(.unique)').eq(0).addClass('unique').addClass('bg-verde');
+		list_out.find( '[data-id]' ).removeClass('is_visible');
+		$.each(list_temp, function( index, value ) {
+		  // console.log( index + ": " + value );
+		  list_out.find( '[data-id="'+value+'"]' ).eq(0).removeClass('is_not_visible').addClass('is_visible');
+		});
+
+
+		list_out.find( '[data-id]' ).each(function(){
+
+			if(!$(this).hasClass('is_visible')){
+				$(this).addClass('d-none');
+			}else{
+				$(this).removeClass('d-none');
+			}
+
+		});
+
+		// console.log(list_temp);
+
+		// list_out.find('.is_cloned').eq(0).removeClass('bg-rojo').removeClass('is_cloned');
 
 
 		if( list_count>0 ){ 

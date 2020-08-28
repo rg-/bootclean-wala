@@ -1,6 +1,6 @@
 <div id="ordenar-paso-1" class="ordenar-paso">
 
-	<div class="row gpb-3">
+	<div class="row gpb-md-3">
 		<?php
 		
 		global $product; 
@@ -14,7 +14,7 @@
 
 			<h2 class="section-title"><?php echo $grouped_personas_title; ?></h2>
 
-			<div data-ordenar-field="#grouped_personas" class="d-flex flex-wrap justify-content-center gpy-2">
+			<div data-ordenar-field="#grouped_personas" class="d-flex flex-wrap justify-content-center gpy-md-2">
 
 				<?php
 				

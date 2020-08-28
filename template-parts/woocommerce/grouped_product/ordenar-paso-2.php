@@ -1,7 +1,7 @@
 <?php // $args passed ?>
 <div id="ordenar-paso-2" class="ordenar-paso <?php if(!$args['show_paso_2']){echo "disabled";} ?>">
 
-		<div class="row gpb-4">
+		<div class="row gpb-md-4">
 			<?php
 			
 			global $product; 
@@ -15,7 +15,7 @@
 
 				<h2 class="section-title"><?php echo $grouped_recetas_title; ?></h2>
 
-				<div data-ordenar-field="#grouped_recetas" class="d-flex flex-wrap justify-content-center gpy-2">
+				<div data-ordenar-field="#grouped_recetas" class="d-flex flex-wrap justify-content-center gpy-md-2">
 
 					<?php
 					
@@ -27,7 +27,7 @@
 								$checked = 'checked';
 							}
 							?>
-							<div class="big-radio gm-1">
+							<div class="big-radio gm-1" data-value="<?php echo $value; ?>">
 								<input <?php echo $checked; ?> value="<?php echo $value; ?>" type="radio" name="grouped_recetas_option" id="grouped_recetas_option_<?php echo $value; ?>" autocomplete="off">
 						    <label for="grouped_recetas_option_<?php echo $value; ?>" class="btn btn-big-radio">
 						        <?php echo $value; ?>

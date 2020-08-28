@@ -56,10 +56,10 @@ add_filter('wpbc/filter/layout/main-navbar/custom_collapse', function($args){
 
 		$args['collapse']['id'] = 'collapse-custom';
 		$args['collapse']['class'] = 'collapse-custom-right'; 
-		$args['collapse']['toggler_class'] = 'toggler-primary';
+		$args['collapse']['toggler_class'] = 'toggler-white';
 		$args['collapse']['toggler_attrs'] = ' data-btn="fx" '; 
 	 
-		$args['collapse']['class'] .= ' w-xl-100 order-2';
+		$args['collapse']['class'] .= ' w-xl-100 order-2 bg-primary text-white ';
 		$args['collapse']['content_class'] = 'd-xl-flex justify-content-end';
 		$args['collapse']['wp_nav_menu']['container_class'] = 'gmr-xl-6';  
 

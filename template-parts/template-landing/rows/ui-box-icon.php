@@ -7,7 +7,7 @@
 	if(!empty($section['section_options']['visible'])) return; 
 	//_print_code($args); 
 ?>
-<div id="<?php echo $section['section_id']; ?>" class="gpy-4 bg-<?php echo $section['section_options']['style']; ?> text-<?php echo $section['section_options']['style_color']; ?>">
+<div id="<?php echo $section['section_id']; ?>" class="gpy-2 gpy-md-4 bg-<?php echo $section['section_options']['style']; ?> text-<?php echo $section['section_options']['style_color']; ?>">
 
 	<div class="container">
 

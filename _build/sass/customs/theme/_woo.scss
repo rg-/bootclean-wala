@@ -79,6 +79,12 @@
 
 /* checkout */
 
+.wpbc-woo .woocommerce-privacy-policy-text{
+	p{
+		margin-bottom: 0;
+	}
+}
+
 .wpbc-woo .woo-custom-checkout-login-form{
 	.woocommerce-info{
 		border:0;
@@ -229,6 +235,10 @@
 }
 
 .woo-is_checkout{
+
+	.woocommerce-shipping-fields{
+		margin-top: $grid-gutter;
+	}
 
 	.woocommerce-notices-wrapper{
 		.wc-forward{
@@ -881,10 +891,13 @@ body.woo_using_pasos_nav{
 				font-weight: 500;
 				text-transform: uppercase;
 			}
+			&.text-rojo{
+				color: #fff!important;
+			}
 		}
 
 		#grouped_recetas_add_to_cart{ 
-			padding: 7px 20px!important;
+			padding: 9px 25px !important;
 			display: block!important;
 			margin: 0 auto!important;
 			width: auto!important;

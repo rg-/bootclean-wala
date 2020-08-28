@@ -10,7 +10,7 @@
 
 	$recetas_type = !empty($args[$_prefix.'__type']) ? $args[$_prefix.'__type'] : 'columns'; // slider, columns
 
-	$class = 'gpy-4';
+	$class = 'gpy-2 gpy-md-4';
 	if($recetas_type == 'columns'){
 		$class = 'gpb-4';
 	}   

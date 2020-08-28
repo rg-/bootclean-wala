@@ -112,6 +112,7 @@ if(empty($product)){
 	<?php
 	// El paso 1 y 2 estan en otro formulario que hace post de las variables de las cantidades de personas y recetas, con esa data se procesa el paso 3 que esta en este mismo php mas abajo, junto con el mini cart al costado.
 	?>
+	
 	<form class="" action="<?php echo esc_url( get_permalink($ordenar_page_id) ); ?>" method="post" enctype='multipart/form-data'>
 
 		<div class="container">

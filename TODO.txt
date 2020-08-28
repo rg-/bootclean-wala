@@ -1,10 +1,14 @@
 
 
-- - Area ¿PORQUÉ Walá?, poner las 2 fotos y gráficos tal cual diseño, eso ya queda medio fijo
+-- Mensajes woocommerce, ver de localizar y customizar https://zpl.io/bLMOmmm o https://zpl.io/aMO4WmK
+		
+		https://gist.github.com/bogdanpopa90/4865648336b5b180e134cda825e6a247
+		https://gist.github.com/webaware/c6a6286026eb6a89e5a3
+		https://gist.github.com/jessepearson/cf31742ec2c862835cab 
 
-	r: no esta para sacar en png svg eso
+-- Terminar la pagina de ingreso/crear cuenta con el social login  
 
 
-- - falta la opción de registrarse rápido con FB o Google, no?
+-- - ingredientes, podrán entrar de a 3 circles por row? creo que entran. Centrar abajo la lista textual de ingredientes
 
-- - pelar el aviso del carrito "“Receta OCHO” y “Receta SIETE” han sido añadidos a tu carrito." 
+	R: no quedará mejor poner un thumb chiquitito en la tabla de ingredientes en mobile en vez de estar por separado una cosa arriba de la otra?

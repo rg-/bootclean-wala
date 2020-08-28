@@ -19,10 +19,10 @@
 
 		$content_side = $content_options_side;
 		if($content_side == 'right'){
-			$content_class = 'gpx-2 gpr-lg-4 gpl-lg-5 gpt-4 gpb-4 text-center text-md-left';
+			$content_class = 'gpx-2 gpr-lg-4 gpl-lg-5 gpt-2 gpt-md-4 gpb-4 text-center text-md-left';
 		}
 		if($content_side == 'left'){
-			$content_class = 'gpx-2 gpr-lg-5 gpl-lg-4 gpt-4 gpb-4 text-center text-md-right';
+			$content_class = 'gpx-2 gpr-lg-5 gpl-lg-4 gpt-2 gpt-md-4 gpb-4 text-center text-md-right';
 		}
 	?>
 

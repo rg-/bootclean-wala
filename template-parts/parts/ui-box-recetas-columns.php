@@ -46,9 +46,9 @@ $loop = new WP_Query( $_WP_Query_args );
 $_total = $loop->max_num_pages; 
 ?>
 
-<div id="recetas-container" class="container gpb-6">
+<div id="recetas-container" class="container gpb-md-6">
 
-	<div id="recetas-nav" class="row gpt-2 gpb-1">
+	<div id="recetas-nav" class="row gpt-sm-2 gpb-1">
 	
 		<div class="col-12">
 				<?php 

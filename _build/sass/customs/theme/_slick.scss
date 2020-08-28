@@ -56,6 +56,12 @@
 	width: 48px;
 	height: 48px;
 	background:transparent!important;
+
+
+	@include breakpoint-max(sm){
+		display: none!important;
+	}
+
 	&:before {
 		content: "";
 		width: 48px;

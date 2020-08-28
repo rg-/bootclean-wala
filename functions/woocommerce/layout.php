@@ -87,7 +87,7 @@ add_filter('wpbc/filter/layout/start/defaults', function($args){
 
 add_action('wpbc/layout/start', function(){
 	
-	if( is_account_page() || is_cart() || is_checkout() ){
+	if( (is_account_page() || is_cart() || is_checkout()) && !is_wc_endpoint_url( 'order-received' ) ){
 
 		$ordenar_page_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar');
 		$rows = WPBC_get_field('landing_flexible_rows', $ordenar_page_id);

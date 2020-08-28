@@ -21,7 +21,10 @@
 
 		&.sub_type-no-images{
 			position:relative;
-			padding:40px 0 0 0;
+			
+			@include breakpoint(sm){
+				padding:40px 0 0 0;
+			}
 		}
 	}
 
@@ -32,33 +35,3 @@
 }
 
 
-.title_claim{
-	font-size: 1.5rem;
-	letter-spacing: -12px; 
-	color:#fff;
-	margin:0;
-	>span{
-		display: inline-block;
-		position: relative;
-		letter-spacing: 0.71px;
-		&:after{
-			content: "";
-			position:absolute;
-			top: 1px;
-			bottom: 3px;
-			right: -10px;
-			left: -12px;
-			background-color:$secondary;
-			z-index: -1;
-		}
-	}
-	@include breakpoint(sm){
-		font-size: 2.5rem;
-		>span{
-			&:after{
-				    top: 0px;
-				bottom: 4px;
-			}
-		}
-	}
-}
