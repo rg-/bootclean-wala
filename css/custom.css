@@ -8090,21 +8090,21 @@ body.preloading #body-loader {
   .image-cover.attachment-fixed {
     background-attachment: fixed; }
   .image-cover.pos-cr {
-    background-position: center right; }
+    background-position: center right !important; }
   .image-cover.pos-cl {
-    background-position: center left; }
+    background-position: center left !important; }
   .image-cover.pos-tr {
-    background-position: top right; }
+    background-position: top right !important; }
   .image-cover.pos-tr {
-    background-position: top left; }
+    background-position: top left !important; }
   .image-cover.pos-tc {
-    background-position: top center; }
+    background-position: top center !important; }
   .image-cover.pos-br {
-    background-position: bottom right; }
+    background-position: bottom right !important; }
   .image-cover.pos-bl {
-    background-position: bottom left; }
+    background-position: bottom left !important; }
   .image-cover.pos-bc {
-    background-position: bottom center; }
+    background-position: bottom center !important; }
 
 html.no-touchevents .post-share.animate-buttons .share_buttons {
   transition: all 0.2s ease-in-out;
