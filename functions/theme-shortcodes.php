@@ -107,6 +107,27 @@ function _get_icon_FX($args, $content=NULL, $tag){
     $icon = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path '.$class.' fill="'.$fill.'" d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>';
   }
 
+  if($tag=='icon_big_alert'){
+    $icon = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="84" viewBox="0 0 84 84">
+    <defs>
+        <path id="bfq99j925a" d="M0 0.439L83.561 0.439 83.561 84 0 84z"/>
+        <path id="o3aakj5mjc" d="M0 84.611L83.561 84.611 83.561 1.05 0 1.05z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(0 -1)">
+        <g transform="translate(0 .611)">
+            <mask id="tfpvcvim1b" fill="#fff">
+                <use xlink:href="#bfq99j925a"/>
+            </mask>
+            <path fill="#E7B432" d="M75.206.439H8.356C3.76.439.041 4.199.041 8.795L.001 84l16.711-16.712h58.494c4.595 0 8.355-3.76 8.355-8.357V8.795c0-4.596-3.76-8.356-8.355-8.356" mask="url(#tfpvcvim1b)"/>
+        </g>
+        <mask id="a4hrn053fd" fill="#fff">
+            <use xlink:href="#o3aakj5mjc"/>
+        </mask>
+        <path fill="#FFF" d="M37.603 38.652L45.959 38.652 45.959 13.584 37.603 13.584zM37.603 55.365L45.959 55.365 45.959 47.009 37.603 47.009z" mask="url(#a4hrn053fd)"/>
+    </g>
+</svg>';
+  }
+
   return $icon;
 
 }
@@ -120,6 +141,7 @@ add_shortcode('icon_list_tip','_get_icon_FX');
 add_shortcode('icon_porciones','_get_icon_FX');
 add_shortcode('social_facebook','_get_icon_FX');
 add_shortcode('social_instagram','_get_icon_FX');
+add_shortcode('icon_big_alert','_get_icon_FX');
 
 function _get_title_FX($args, $content=NULL, $tag){
 
@@ -130,7 +152,7 @@ function _get_title_FX($args, $content=NULL, $tag){
   $args = array_merge($defs, $args);
 
   if($tag=='title_claim'){
-  	$class = 'title_claim gmb-2';  
+  	$class = 'title_claim';  
   	$content_x = preg_replace('/(<[\s\S]*?>)|([^\s-\<]+)/',"$1<span>$2</span>", $content); 
   }
 

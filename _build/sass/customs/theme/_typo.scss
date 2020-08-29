@@ -29,7 +29,7 @@
 }
 
 .title_claim{
-	font-size: 2rem;
+	font-size: 2.5rem;
 	letter-spacing: -12px; 
 	color:#fff;
 	margin:0;
@@ -48,11 +48,16 @@
 			z-index: -1;
 		}
 	}
+	
+}
+
+body.home .title_claim{
+	font-size: 2rem;
 	@include breakpoint(sm){
 		font-size: 2.5rem;
 		>span{
 			&:after{
-				    top: 0px;
+				top: 0px;
 				bottom: 4px;
 			}
 		}

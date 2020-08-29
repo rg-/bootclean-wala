@@ -4,8 +4,13 @@
 
 add_filter('wpbc/filter/woocommerce/config', function ($wpbc_woocommerce_config){
 	
+	$class = '';
+	if( is_account_page() && is_user_logged_in() ){
+		$class = 'col-navigation-12 col-navigation-order-1 col-content-md-10 col-content-order-2';
+	}
+
 	$wpbc_woocommerce_config['layout']['myaccount'] = array(
-		'class' => 'col-navigation-12 col-navigation-order-1 col-content-md-10 col-content-order-2',
+		'class' => $class,
 	); 
 	
 	return $wpbc_woocommerce_config;

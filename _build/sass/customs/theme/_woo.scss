@@ -47,7 +47,13 @@
 	.woocommerce form.register{
 		margin:0;
 		border:0;
-		padding:20px 72px;
+		padding:20px 0;
+		@include breakpoint(md){
+			padding:20px 32px;
+		}
+		@include breakpoint(lg){
+			padding:20px 72px;
+		}
 		p{
 			margin-bottom: 15px;
 		}
@@ -68,17 +74,32 @@
 	    min-width: 180px;
 	    float: none;
 	    display: block;
+	    @include breakpoint-max(md){
+				width:100%;
+			}
 		}
 
 		.woocommerce-LostPassword{
 			font-size: 13px;
 			color:#222;
+			@include breakpoint-max(md){
+				width:100%;
+				text-align: center;
+			}
 		}
 
 	}
 
 /* checkout */
+.woo-is_checkout{
 
+	.woocommerce-NoticeGroup-checkout{
+		@include breakpoint(md){
+			padding-right: 47px!important;
+		}
+	}
+
+}
 .wpbc-woo .woocommerce-privacy-policy-text{
 	p{
 		margin-bottom: 0;
@@ -445,7 +466,10 @@ body.woocommerce-edit-account {
 	}
 
 	.u-column1{
-		border-right: solid 1px #d8d8d8;
+		
+		@include breakpoint(md){
+			border-right: solid 1px #d8d8d8;
+		}
 	}  
 
 } 

@@ -27,13 +27,13 @@ if(!empty($get_category_ids)){
 
 	<h2 class="section-title gmb-1"><?php echo $product->get_name(); ?></h2>
 
-	<div class="text-violeta d-flex align-items-center pt-2 gmb-1 font-roboto ui-box-meta">
+	<div class="text-violeta d-flex align-items-center pt-2 gmb-1 font-roboto ui-box-meta flex-wrap">
 
 		<?php
 		$receta_tiempo = WPBC_get_field('receta_tiempo', $product_id);
 		if(!empty($receta_tiempo)){
 			?>
-			<span class="meta"><?php echo do_shortcode('[icon_time class="fill-violeta"]'); ?> <?php echo $receta_tiempo; ?></span> <span class="gmx-1">|</span>
+			<span class="meta gmb-1 gmb-md-0"><?php echo do_shortcode('[icon_time class="fill-violeta"]'); ?> <?php echo $receta_tiempo; ?></span> <span class="gmx-1 gmb-1 gmb-md-0">|</span>
 			<?php
 		}
 		?>
@@ -41,12 +41,12 @@ if(!empty($get_category_ids)){
 		$receta_porciones = WPBC_get_field('receta_porciones', $product_id);
 		if(!empty($receta_porciones)){
 			?>
-			<span class="meta"><?php echo do_shortcode('[icon_porciones class="fill-violeta"]'); ?> <?php echo $receta_porciones; ?> Porciones</span> <span class="gmx-1">|</span>
+			<span class="meta gmb-1 gmb-md-0"><?php echo do_shortcode('[icon_porciones class="fill-violeta"]'); ?> <?php echo $receta_porciones; ?> Porciones</span> <span class="gmx-1 gmb-1 gmb-md-0">|</span>
 			<?php
 		}
 		?>
 
-		<span><?php echo $cats; ?></span>
+		<span class="gmb-1 gmb-md-0"><?php echo $cats; ?></span>
 	
 	</div>
 
@@ -56,12 +56,12 @@ if(!empty($get_category_ids)){
 		?>
 	</div>
 
-	<div class="pt-2">
+	<div class="pt-2 text-center text-md-left">
 		<?php
 		$ordenar_id = WPBC_get_theme_settings('general_post_object_ordenar');
 		$ordenar_permalink = get_permalink($ordenar_id);
 		if($ordenar_permalink){
-			echo '<a href="'.$ordenar_permalink.'" class="btn btn-primary" data-btn="fx">Ordená Ahora</a>';
+			echo '<a href="'.$ordenar_permalink.'" class="btn btn-primary btn-order-now" data-btn="fx">Ordená Ahora</a>';
 		}
 		?>
 	</div>

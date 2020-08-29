@@ -1,4 +1,4 @@
-<div class="container gpt-2 gpb-6">
+<div class="container gpt-md-2 gpb-6">
 
 	<div class="row gpb-4">
 

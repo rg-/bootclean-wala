@@ -4,7 +4,7 @@
 
 		<div class="col-md-9 mx-auto">
 
-			<div class="position-relative gmt-1 gmb-2" data-is-inview="detect">
+			<div class="position-relative gmt-md-1 gmb-2" data-is-inview="detect">
 				<?php
 					$attachment_id = 99;
 					$img_hi = "[WPBC_get_attachment_image_src id='".$attachment_id."']";

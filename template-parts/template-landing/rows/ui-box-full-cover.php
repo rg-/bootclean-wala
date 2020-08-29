@@ -8,7 +8,7 @@
 	//_print_code($args); 
 ?>
 
-<div id="<?php echo $section['section_id']; ?>" class="bg-<?php echo $section['section_options']['style']; ?> text-<?php echo $section['section_options']['style_color']; ?>">
+<div id="<?php echo $section['section_id']; ?>" class="<?php echo $acf_fc_layout; ?> bg-<?php echo $section['section_options']['style']; ?> text-<?php echo $section['section_options']['style_color']; ?>">
 
 	<?php
 		
@@ -77,7 +77,7 @@
 		    	<div class="<?php echo $content_class; ?>" data-is-inview="detect">
 
 		    		<?php if(!empty( $section['section_title'] )){ ?>
-			    		<div data-is-inview-fx="fadeInUp" data-transition-delay=".34s">
+			    		<div data-is-inview-once data-is-inview-fx="fadeInUp" data-transition-delay=".34s">
 								<h2 class="section-title gmb-2"><?php echo $section['section_title']; ?></h2>
 							</div>
 						<?php } ?>

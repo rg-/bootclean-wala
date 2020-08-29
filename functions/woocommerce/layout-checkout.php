@@ -62,40 +62,51 @@ add_filter( 'woocommerce_order_button_html', function($html){
 	woo actions/filters
 
 */
-	add_filter( 'woocommerce_checkout_login_message', function($msg){
+add_filter( 'woocommerce_checkout_login_message', function($msg){
 
-		$msg = '¿Ya tienes una cuenta de Walá?';
-		return $msg;
+	$msg = '¿Ya tienes una cuenta de Walá?';
+	return $msg;
 
-	},10,2 );
+},10,2 );
+
+add_action( 'woocommerce_after_checkout_validation', 'wpbc_checkout_validation_one_err', 9999, 2);
+function wpbc_checkout_validation_one_err( $fields, $errors ){ 
+	// if any validation errors
+	if( !empty( $errors->get_error_codes() ) ) { 
+		// remove all of them
+		foreach( $errors->get_error_codes() as $code ) {
+			$errors->remove( $code );
+		} 
+		// add our custom one
+		$errors->add( 'validation', 'Revisa los campos marcados en rojo para continuar.' ); 
+	} 
+}
 
 // templates/checkout/form-checkout.php
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
 // remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 ); 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 
 add_action('woocommerce_before_checkout_form',function($checkout){
+	
 	?>
 	<div id="affix-checkout-area" class="position-relative">
-	<div class="col2-set">
-		<div class="col-1">
-			<div class="woo-custom-checkout-login-form">
-	<?php
-
-
-
-		woocommerce_checkout_login_form();
-	?>
+		<div class="col2-set">
+			<div class="col-1">
+				<div class="woo-custom-checkout-login-form">
+					<?php //woocommerce_output_all_notices(); ?>
+					<?php woocommerce_checkout_login_form(); ?>
+				</div>
 			</div>
 		</div>
-	</div>
 	<?php 
 },10,1);
 add_action('woocommerce_after_checkout_form',function($checkout){
 	?>
-	</div>
+	</div><!-- affix-checkout-area END -->
 	<?php 
 },10,1);
 

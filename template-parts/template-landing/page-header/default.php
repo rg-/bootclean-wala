@@ -53,10 +53,10 @@ $slick_heights = json_encode($slick_heights);
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 mx-auto gpt-2 gpt-sm-0">
-				<div data-is-inview-fx="fadeInUp" data-transition-delay=".3s">
+				<div data-is-inview-once data-is-inview-fx="fadeInUp" data-transition-delay=".3s">
 					[title_claim]<?php echo $content; ?>[/title_claim] 
 				</div>
-				<div data-is-inview-fx="fadeInUp" data-transition-delay=".9s">
+				<div class="gmt-1" data-is-inview-once data-is-inview-fx="fadeInUp" data-transition-delay=".9s">
 					<?php
 
 					if( !empty($call_to_action) && $call_to_action['call_to_action_type']=='html' ){
