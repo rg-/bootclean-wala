@@ -47,7 +47,7 @@
 	.woocommerce form.register{
 		margin:0;
 		border:0;
-		padding:20px 0;
+		padding:20px 0 0 0;
 		@include breakpoint(md){
 			padding:20px 32px;
 		}
@@ -63,9 +63,11 @@
 			}	
 		}
 
-		.woocommerce-form-login__rememberme{
-			margin-left: auto;
+		.woocommerce-form-login__rememberme{ 
 			min-width: 180px; 
+			@include breakpoint(md){
+				margin-left: auto;
+			}
 		}
 		.woocommerce-form-login__submit,
 		.woocommerce-form-register__submit{
@@ -466,8 +468,9 @@ body.woocommerce-edit-account {
 	}
 
 	.u-column1{
-		
+		border-bottom: solid 1px #d8d8d8;
 		@include breakpoint(md){
+			border-bottom:0;
 			border-right: solid 1px #d8d8d8;
 		}
 	}  
@@ -485,13 +488,24 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 
 
 /* ordenar ahora pages */
+#ordenar-paso-2{
+		@include breakpoint-max(sm){
+			margin-top:30px;
+		}
+	}
+.ordenar-paso{
+	
+	.section-title{
+		@include breakpoint-max(sm){
+			font-size: 1.3rem!important;
+		}
+	}
 
-.btn-big-radio{
-	width: 80px;
-  height: 70px;
+}
+.btn-big-radio{ 
+
   border-radius: 10px;
-  background-color: #ebebeb;
-  font-size: 30px;
+  background-color: #ebebeb; 
   font-weight: 500;
   color: #999999;
   font-family: Rubik;
@@ -502,6 +516,17 @@ body.woocommerce-edit-address .woocommerce-address-fields,
 	&:hover{
 		cursor: pointer;
 		background-color: #cccccc;
+	}
+
+	width: 60px;
+  height: 58px;
+  font-size: 24px;
+  margin: 7px!important;
+	@include breakpoint(sm){
+		width: 80px;
+  	height: 70px;
+  	font-size: 30px;
+  	margin: 0!important;
 	}
 }
 .big-radio{

@@ -26,7 +26,7 @@
 							$checked = 'checked';
 						}
 						?>
-						<div class="big-radio gm-1">
+						<div class="big-radio gm-sm-1">
 							<input <?php echo $checked; ?> value="<?php echo $value; ?>" type="radio" name="grouped_personas_option" id="grouped_personas_option_<?php echo $value; ?>" autocomplete="off">
 					    <label for="grouped_personas_option_<?php echo $value; ?>" class="btn btn-big-radio">
 					        <?php echo $value; ?>
@@ -42,7 +42,7 @@
 
 			</div>
 
-			<p class="font-size-13 text-center"><?php echo $grouped_personas_desc; ?></p>
+			<p class="font-size-13 gpt-1 gpt-sm-0 text-center"><?php echo $grouped_personas_desc; ?></p>
 
 		</div>
 	</div>

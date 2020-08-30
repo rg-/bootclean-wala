@@ -128,7 +128,7 @@ if($use_footer=='none') return;
 
 	<?php if($alt_footer) { ?>
 
-		<div class="container gpt-2 gpb-2 position-relative">
+		<div class="container gpt-2 gpb-4 gpb-md-2 position-relative">
 
 			<div class="d-flex justify-content-start align-items-center">
 
@@ -139,7 +139,7 @@ if($use_footer=='none') return;
 					<img class="footer-brand" width="120" src="<?php echo $logo; ?>" alt="<?php echo get_bloginfo('title'); ?>" />
 				</div>
 
-				<div class="text-center mx-auto footer-copyright gpb-md-2">
+				<div class="text-center mx-auto footer-copyright gpb-1 gpb-md-2">
 					<p class="ui-footer-copy m-0"><?php echo WPBC_get_theme_settings("footer_copyright"); ?></p>
 				</div>
 

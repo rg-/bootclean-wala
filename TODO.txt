@@ -8,6 +8,10 @@
 
 -- Terminar la pagina de ingreso/crear cuenta con el social login  
 
+-- Checkout/cart
+
+	https://www.businessbloomer.com/woocommerce-change-return-shop-url/
+	https://www.businessbloomer.com/woocommerce-remove-product-successfully-added-cart-message/
 
 -- - ingredientes, podrán entrar de a 3 circles por row? creo que entran. Centrar abajo la lista textual de ingredientes
 

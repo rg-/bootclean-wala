@@ -27,7 +27,7 @@
 								$checked = 'checked';
 							}
 							?>
-							<div class="big-radio gm-1" data-value="<?php echo $value; ?>">
+							<div class="big-radio gm-sm-1" data-value="<?php echo $value; ?>">
 								<input <?php echo $checked; ?> value="<?php echo $value; ?>" type="radio" name="grouped_recetas_option" id="grouped_recetas_option_<?php echo $value; ?>" autocomplete="off">
 						    <label for="grouped_recetas_option_<?php echo $value; ?>" class="btn btn-big-radio">
 						        <?php echo $value; ?>
@@ -46,7 +46,7 @@
 			</div>
 
 			<div class="col-md-8 col-lg-5 mx-auto text-center">
-				<p class="font-size-13 text-center"><?php echo $grouped_recetas_desc; ?></p>
+				<p class="font-size-13 text-center gpt-1 gpt-sm-0"><?php echo $grouped_recetas_desc; ?></p>
 
 				<p class="text-center gmt-2">
 					<?php

@@ -5,7 +5,12 @@ include('woo_grouped_product/acf.php');
 include('woo_grouped_product/layout.php');
 include('woo_grouped_product/filters-actions.php');
 
+/*
 
+	Add children post meta into grouped product by php
+	This will add the children every time a new one is created.
+
+*/
 add_action('admin_init',function(){
 
 	$ordenar_product_id = WPBC_get_theme_settings('general_post_object_ordenar_product');

@@ -160,8 +160,27 @@ add_filter('wpbc/filter/layout/main-page-header/defaults',function($params){
 /*
 
 	Insert the entire template on the main container areas strucure
+	
+	Also, in this case i make not visible the entire main_container_areas
+	Since there´s nothing inside it.
 
 */
+ 
+add_filter('wpbc/filter/woocommerce/config', function($args){
+	global $wp_query;
+	$ordenar_product_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar_product');
+	if(!empty($wp_query->queried_object->ID)){
+
+		$product = wc_get_product( $wp_query->queried_object->ID );
+		//_print_code($wp_query->queried_object->ID);
+
+		if( !empty($product) && $product->get_type() == 'grouped' && $product->get_id() == $ordenar_product_id  ){
+			// _print_code($ordenar_product_id);
+			$args['layout']['shop']['main_container_areas_class'] = 'd-none';
+		}
+	}
+	return $args;
+},20,1);
 
 add_action('wpbc/woo/layout/before/main-container-areas',function($args){ 
 	global $product;
