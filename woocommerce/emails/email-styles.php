@@ -178,7 +178,7 @@ h1 {
 	font-weight: 300;
 	line-height: 150%;
 	margin: 0;
-	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
+	text-align: center;
 	text-shadow: 0 1px 0 <?php echo esc_attr( $base_lighter_20 ); ?>;
 }
 
@@ -202,7 +202,7 @@ h3 {
 	line-height: 130%;
 	margin: 16px 0 8px;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
-}
+} 
 
 a {
 	color: <?php echo esc_attr( $base_text ); ?>;
