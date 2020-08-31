@@ -97,6 +97,9 @@ body {
 #template_footer #credit p {
 	margin: 0 0 16px;
 }
+#template_footer #credit p a{
+	color:#ffffff;
+}
 
 #body_content {
 	background-color: <?php echo esc_attr( $body ); ?>;

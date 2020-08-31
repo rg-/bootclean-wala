@@ -17,6 +17,74 @@
 	}
 } 
 
+/*
+	messages
+	
+	ej:
+
+	<div class="woocommerce-notices-wrapper">
+		<div class="woocommerce-message" role="alert">
+			message.	</div>
+			<div class="woocommerce-error" role="alert">
+			error.	</div>
+			<div class="woocommerce-info" role="alert">
+			info.	</div>
+	</div>
+
+*/
+.wpbc-woo{
+	.woocommerce-error, .woocommerce-info, .woocommerce-message{
+		font-size: 15px; 
+		border-top:0!important;
+		@include border-radius(2px);
+		padding: 3px 10px 3px 40px;
+		font-family: 'Roboto';
+		color: #fff;
+		&:before{
+			top: 6px;
+			left: 13px;
+			color: #fff;
+			font-size: 12px;
+			color: #fff;
+			content: "";
+			background-size:16px auto;
+			background-repeat:no-repeat;
+			background-position:center center;
+			width: 16px;
+    	height: 16px; 
+		} 
+	}
+	.woocommerce-message{ 
+		background-color: $verde!important;
+		&:before{
+			 background-image: url('../images/theme/icon-check.svg');
+		}
+	}
+	.woocommerce-error{
+		background-color: $rojo!important;
+		&:before{
+			 background-image: url('../images/theme/icon-error.svg');
+		}
+	}
+	.woocommerce-info{
+		background-color: $naranja!important;
+		&:before{
+			 background-image: url('../images/theme/icon-info.svg');
+		}
+	}
+}
+
+
+/* btns */
+
+.woocommerce form ,
+.woocommerce-MyAccount-content {
+	.button,
+	.woocommerce-Button,
+	.woocommerce-button{
+		@include border-radius(4px!important);
+	}
+}
 
 /* forms */
 .woocommerce form .form-row{
@@ -38,6 +106,8 @@
 		border: solid 1px #979797!important;
 		@include border-radius(2px!important);
 	} 
+	.button,
+	.woocommerce-Button,
 	.woocommerce-button{
 		@include border-radius(4px!important);
 	}
@@ -387,7 +457,7 @@ body.woocommerce-edit-address form > h3,
 
 .woocommerce-MyAccount-content{ 
 	margin-right: auto;
-	margin-left: auto;
+	margin-left: auto; 
 }
 body.woocommerce-edit-address,
 body.woocommerce-edit-account {
@@ -456,9 +526,13 @@ body.woocommerce-edit-account {
 		margin-bottom: 0;
 	}
 
+	.woocommerce .col2-set,
 	.u-columns{ 
-		max-width: 91.6666666667%;
+		width: 100%;
 		margin:0 auto!important; 
+		@include breakpoint(lg){
+			max-width: 91.6666666667%;
+		}
 		> .u-column1,
 		> .u-column2{
 			> h2{
@@ -475,17 +549,52 @@ body.woocommerce-edit-account {
 		}
 	}  
 
+	.woocommerce-Address{
+		position: relative;
+		padding-bottom: 50px;
+		margin-bottom: 30px;
+		.woocommerce-Address-title{
+			position: initial!important;
+			padding-right: 30px!important;
+			margin-bottom: 0!important;
+		}
+		.edit{
+			position: absolute;
+			bottom: 20px;
+			left: 6px;
+		}
+	}
+
 } 
 
+body.woocommerce-view-order {
+	.woo-is_account .woocommerce .col2-set, .woo-is_account .u-columns{
+		width: inherit!important;
+		margin-right: -15px!important;
+    margin-left: -15px!important;
+    max-width: inherit!important;
+	}
+}
+
 body.woocommerce-edit-account .woocommerce-EditAccountForm,
-body.woocommerce-edit-address .woocommerce-address-fields,
+body.woocommerce-edit-address .woocommerce-address-fields{
+	padding: 22px 24px;
+	//background-color:#fff;
+}
 .woocommerce .woocommerce-customer-details address,
 .woocommerce .woocommerce-shipping-details address{
 	padding: 22px 24px;
 	background-color:#fff;
 }
 
-
+.woocommerce-MyAccount-dropdown-navigation{
+	.dropdown-menu{
+		@include border-radius(0!important);
+		width: 100%;
+		box-shadow: none!important;
+		margin: 0;
+	}
+}
 
 /* ordenar ahora pages */
 #ordenar-paso-2{

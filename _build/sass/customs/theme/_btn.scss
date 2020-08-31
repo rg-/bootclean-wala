@@ -78,6 +78,7 @@ button{
 .btn-call-to-action,
 .btn-order-now{
 	font-size: 1rem!important;
+	@include border-radius(26px);
 }
 
 

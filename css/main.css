@@ -1939,7 +1939,7 @@ textarea.form-control {
   padding: 0.688rem 2rem;
   font-size: 0.938rem;
   line-height: 1.5;
-  border-radius: 24px;
+  border-radius: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media (prefers-reduced-motion: reduce) {
     .btn {
@@ -2636,13 +2636,13 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 26px; }
+  border-radius: 4px; }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
-  border-radius: 18px; }
+  border-radius: 4px; }
 
 .btn-block {
   display: block;
@@ -3543,7 +3543,7 @@ input[type="button"].btn-block {
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 24px; }
+  border-radius: 4px; }
   .navbar-toggler:hover, .navbar-toggler:focus {
     text-decoration: none; }
 
