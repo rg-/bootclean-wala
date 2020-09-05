@@ -231,8 +231,11 @@ function _wpbc_woo_if_use_pasos_nav(){
 		if( $wp_query->queried_object_id == $ordenar_product_id ||
 					$wp_query->queried_object_id == $cart_page_id || 
 					$wp_query->queried_object_id == $checkout_page_id ){
-
-			return true;
+			
+					if(!is_wc_endpoint_url('order-received')){
+						return true;
+					}
+			
 
 		}
 

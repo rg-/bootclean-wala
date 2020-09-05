@@ -164,7 +164,7 @@ function add_admin_link($items, $args){
 
 	if(is_user_logged_in()){
 		$wp_get_current_user = wp_get_current_user();  
-		$myaccount_menu_label = '<i><b>'.$wp_get_current_user->user_login.'</b></i>'; 
+		$myaccount_menu_label = '<b>'.$wp_get_current_user->user_login.'</b>'; 
 	}
  
 

@@ -77,7 +77,7 @@ add_filter('wpbc/filter/layout/location', function($layout, $template, $using_th
 
 add_filter('wpbc/filter/layout/start/defaults', function($args){  
 	if( is_account_page() || is_cart() || is_checkout() ){
-		$args['main_content']['wrap']['class'] = 'gpy-2';
+		$args['main_content']['wrap']['class'] = 'gpt-2';
 	}
 	return $args;
 });  
@@ -87,7 +87,7 @@ add_filter('wpbc/filter/layout/start/defaults', function($args){
 
 add_action('wpbc/layout/start', function(){
 	
-	if( (is_account_page() || is_cart() || is_checkout()) && !is_wc_endpoint_url( 'order-received' ) ){
+	if( ( is_cart() || is_checkout()) && !is_wc_endpoint_url( 'order-received' ) ){
 
 		$ordenar_page_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar');
 		$rows = WPBC_get_field('landing_flexible_rows', $ordenar_page_id);
