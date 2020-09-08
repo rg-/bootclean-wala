@@ -49,6 +49,24 @@
 		}
 	}
 	
+	&.big{
+		font-family: 'Rubik'!important;
+    font-weight: bold;
+		>span{
+			&:after{
+				background-color:$rojo;
+			}
+		}
+		@include breakpoint(lg){
+			font-size: 140px; 
+			letter-spacing: 2.5px;
+			>span{
+				&:after{
+				bottom: -11px;
+				}
+			}
+		}
+	}
 }
 
 body.home .title_claim{

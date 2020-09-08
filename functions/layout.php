@@ -19,7 +19,7 @@ add_filter('wpbc/filter/layout/go-up', function($goup){
 	Use it if no Theme Settings used, and to set defaults
 */
 add_filter('wpbc/filter/layout/locations', function($locations){ 
-	// $locations['page']['id'] = 'a1';
+	$locations['404']['id'] = 'a1';
 	return $locations;  
 }, 20, 1 );
 

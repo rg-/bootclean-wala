@@ -8937,6 +8937,17 @@ html, body {
       left: -12px;
       background-color: #eaab00;
       z-index: -1; }
+  .title_claim.big {
+    font-family: "Rubik" !important;
+    font-weight: bold; }
+    .title_claim.big > span:after {
+      background-color: #c14e33; }
+    @media (min-width: 992px) {
+      .title_claim.big {
+        font-size: 140px;
+        letter-spacing: 2.5px; }
+        .title_claim.big > span:after {
+          bottom: -11px; } }
 
 body.home .title_claim {
   font-size: 2rem; }
@@ -9824,8 +9835,10 @@ a.ui-box-card {
       font-size: 18px; }
     .ui-box-card .ui-box-content p {
       font-size: 13px; }
-    .ui-box-card .ui-box-content .ui-box-meta svg {
-      vertical-align: -7px; }
+    .ui-box-card .ui-box-content .ui-box-meta {
+      font-size: 14px; }
+      .ui-box-card .ui-box-content .ui-box-meta svg {
+        vertical-align: -7px; }
 
 .ui-box-thumb-rows .ui-box-image {
   border-radius: 30px;

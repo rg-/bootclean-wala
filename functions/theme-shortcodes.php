@@ -153,6 +153,9 @@ function _get_title_FX($args, $content=NULL, $tag){
 
   if($tag=='title_claim'){
   	$class = 'title_claim';  
+    if(!empty($args['type']) && $args['type']=='big'){
+      $class .= ' big';
+    }
   	$content_x = preg_replace('/(<[\s\S]*?>)|([^\s-\<]+)/',"$1<span>$2</span>", $content); 
   }
 

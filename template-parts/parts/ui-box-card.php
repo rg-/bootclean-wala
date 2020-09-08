@@ -46,7 +46,7 @@
 			$term_slug = $term->slug;
 			$term_link = get_term_link( $value, 'product_cat');
 			$color = get_field('woo_extra_taxonomy__style', $term);
-			$cats .= '<small class="ui-badge badge bg-'.$color.'">'.$term_name.'</small>'; 
+			$cats .= '<span class="text-'.$color.'">'.$term_name.'</span>'; 
 			$cats_classes .= ' cat-'.$term->slug.'';
 		} 
 	} 
@@ -61,10 +61,6 @@
 			<small class="ui-badge badge badge-violeta">
 				<?php echo $args['price']; ?>
 			</small>
-		</div>
-
-		<div class="ui-overlay-br">
-			<?php echo $cats; ?> 
 		</div>
 		
 		<div class="ui-box-image-embed">
@@ -93,7 +89,7 @@
 		
 		<p class="m-0 text-violeta d-flex align-items-center font-roboto ui-box-meta">
 			<?php if(!empty($args['time'])){ ?>
-			<span class="mr-3 meta">[icon_time class="fill-violeta"]&nbsp;<?php echo $args['time']; ?></span>
+			<span class="mr-3 meta">[icon_time class="fill-violeta"]&nbsp;<?php echo $args['time']; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $cats; ?></span>
 			<?php } ?>
 			<?php if(!empty($args['porciones']) && $show_porciones){ ?>
 			<span class="mr-3 meta">[icon_porciones class="fill-violeta"]&nbsp;<?php echo $args['porciones']; ?>Porciones</span>
