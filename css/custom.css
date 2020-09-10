@@ -9801,7 +9801,6 @@ span.lazybackground-loader{
       color: #6639b7; }
 
 a.ui-box-card {
-  display: block;
   color: inherit;
   text-decoration: none;
   min-height: 100%; }
@@ -9810,6 +9809,8 @@ a.ui-box-card {
   max-width: 380px;
   margin-right: auto;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
   border-radius: 19px;
   border: solid 1px #d8d8d8;
   overflow: hidden; }
@@ -9833,13 +9834,17 @@ a.ui-box-card {
     overflow: hidden;
     position: relative; }
   .ui-box-card .ui-box-content {
-    padding: 20px 25px; }
+    padding: 20px 25px;
+    flex: auto;
+    display: flex;
+    flex-direction: column; }
     .ui-box-card .ui-box-content .section-subtitle {
       font-size: 18px; }
     .ui-box-card .ui-box-content p {
       font-size: 13px; }
     .ui-box-card .ui-box-content .ui-box-meta {
-      font-size: 14px; }
+      font-size: 14px;
+      margin-top: auto !important; }
       .ui-box-card .ui-box-content .ui-box-meta svg {
         vertical-align: -7px; }
 
