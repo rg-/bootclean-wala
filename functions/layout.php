@@ -60,3 +60,36 @@ add_filter('WPBC_post_header_title_class', function($title_class){
 	$title_class .= '';
 	return $title_class;  
 }, 20, 1 );  
+
+
+
+
+/*
+
+	For Flexible Layouts
+
+*/
+
+add_filter('wpbc/filter/make_flexible_content_layout/pre/args', function($args,$layout_name){
+
+	$args['hide_attributes_classes'] = true;
+
+	return $args;
+},10,2);
+
+add_filter('wpbc/filter/flexible-layout-row/args', function($return, $args){
+	// _print_code($return);
+	if($args['acf_fc_layout'] == 'accordion_row'){
+		$return['section_options']['container_class'] = 'gpt-md-2 gpb-2 gpb-md-6';
+		$return['section_options']['row_class'] = 'gpb-4';
+		$return['section_options']['column_class'] = 'col-lg-10 mx-auto';
+	}
+
+	if($args['acf_fc_layout'] == 'wysiwyg_row'){
+		$return['section_options']['container_class'] = 'gpt-md-2 gpb-2 gpb-md-6';
+		$return['section_options']['row_class'] = '';
+		$return['section_options']['column_class'] = 'col-md-9 mx-auto';
+	}
+
+	return $return;
+},10,2);

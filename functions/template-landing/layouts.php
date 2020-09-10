@@ -3,10 +3,10 @@
 include('layouts/ui-box-thumb.php'); 
 include('layouts/ui-box-icon.php'); 
 include('layouts/ui-box-thumb-rows.php');
+include('layouts/ui-box-thumb-single-rows.php');
 include('layouts/ui-box-recetas.php');
 include('layouts/ui-box-full-cover.php');
 include('layouts/ui-box-heading.php');
-
 include('layouts/ui-box-template.php');
 include('layouts/ui-box-template-part.php');
 
@@ -16,6 +16,7 @@ add_filter('acf/fields/flexible_content/layout_title', function($title, $field, 
 		'ui-box-thumb',
 		'ui-box-icon',
 		'ui-box-thumb-rows',
+		'ui-box-thumb-single-rows',
 		'ui-box-recetas',
 		'ui-box-full-cover',
 		'ui-box-heading',
@@ -56,7 +57,7 @@ add_filter('acf/fields/flexible_content/layout_title', function($title, $field, 
     	//_print_code($value);
     	
     	if(!empty($layout_style)){
-				$title = '<small title="Esquema de color" style="background-color:var(--'.$layout_style.');" class="wpbc-badge wpbc-badge-style bg-'.$layout_style.'">'.$layout_styl.'</small> ' . $title;
+				// $title = '<small title="Esquema de color" style="background-color:var(--'.$layout_style.');" class="wpbc-badge wpbc-badge-style bg-'.$layout_style.'">'.$layout_styl.'</small> ' . $title;
     	}
     	
 
@@ -73,6 +74,7 @@ add_action('admin_head',function(){
 		'ui-box-thumb',
 		'ui-box-icon',
 		'ui-box-thumb-rows',
+		'ui-box-thumb-single-rows',
 		'ui-box-recetas',
 		'ui-box-full-cover',
 		'ui-box-heading',
@@ -89,22 +91,11 @@ add_action('admin_head',function(){
 		margin-right: 4px;
 		border: 1px solid #fff;
 		vertical-align: -1px;
-	}
-	.wpbc-badge-style{
-		position: relative;
-		border: 1px solid rgba(1,1,1,.2);
-		display: inline-block;
-		height: 10px;
-		padding: 0;
-		width: 10px;
-		top: 2px;
-		cursor: default;
-	}
-
-	[data-layout="template_row"].-collapsed .acf-fc-layout-handle svg path{
+	}  
+<?php } ?>
+[data-layout="template_row"].-collapsed .acf-fc-layout-handle svg path{
 		fill:#333333 !important;
 	}
-<?php } ?>
 </style>
 	<?php
 }); 

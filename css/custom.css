@@ -9600,6 +9600,9 @@ span.lazybackground-loader{
   z-index: 1029; }
 #main-page-header .slick-arrow {
   z-index: 1029; }
+@media (min-width: 576px) {
+  #main-page-header .page-header-title {
+    padding: 40px 0 0 0; } }
 #main-page-header .page-header-overlay {
   overflow: hidden;
   display: flex;
@@ -10725,6 +10728,9 @@ body.woocommerce-cart .button[name="update_cart"] {
 .hentry .entry-header {
   margin-bottom: 15px; }
 .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry p {
+  margin-bottom: 30px; }
+
+.wysiwyg_row .wysiwyg_row-content img {
   margin-bottom: 30px; }
 
 .has-primary-background-color {

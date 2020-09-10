@@ -15,7 +15,7 @@ $slick = array(
 	'arrows' => true, 
 	'infinite' => true,
 	'speed' => 600,
-	'autoplay' => true,
+	'autoplay' => false,
 	'autoplaySpeed' => 6200, 
 );
 $slick = json_encode($slick); 

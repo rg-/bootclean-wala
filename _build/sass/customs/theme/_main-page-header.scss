@@ -6,6 +6,13 @@
 	.slick-arrow{
 		z-index: 1029;
 	}
+
+	.page-header-title{
+		@include breakpoint(sm){
+			padding:40px 0 0 0;
+		}
+	}
+
 	.page-header-overlay{
 		overflow: hidden; 
 		display: flex;
