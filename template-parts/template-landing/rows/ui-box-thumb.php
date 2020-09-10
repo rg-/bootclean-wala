@@ -47,7 +47,7 @@
 	<div data-is-inview-once data-is-inview-fx="fadeInUp" data-transition-delay="<?php echo $delay; ?>">
 		<div class="ui-box-thumb">
 			<div class="position-relative ui-box-image">
-				<img data-test="3" alt=" " width="293" data-is-inview-lazysrc='<?php echo $image_large[0]; ?>' src='<?php echo $image_medium[0]; ?>'/>
+				<img alt=" " width="293" data-is-inview-lazysrc='<?php echo $image_large[0]; ?>' src='<?php echo $image_medium[0]; ?>'/>
 			</div>
 			<div class="ui-box-content gpx-2">
 				<h3 class="section-subtitle"><?php echo $title; ?></h3>

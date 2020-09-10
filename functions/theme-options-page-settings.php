@@ -35,6 +35,10 @@ function WPBC_group_builder__layout_custom($fields){
 					'field_layout_header_template_type',
 					'field_layout_header_template',
 					'field_layout_header_template_class',
+					'field_layout_header_template_page_title_custom',
+					'field_layout_header_template_page_title_type',
+					'field_layout_header_template_page_title_custom_title',
+					'field_layout_header_template_page_title_subtitle',
 					'field_layout_header_template_html',
     	);
     	$remove = array_merge($remove_landing_builder, $remove);
