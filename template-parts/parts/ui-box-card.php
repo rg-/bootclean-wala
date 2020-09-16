@@ -46,7 +46,7 @@
 			$term_slug = $term->slug;
 			$term_link = get_term_link( $value, 'product_cat');
 			$color = get_field('woo_extra_taxonomy__style', $term);
-			$cats .= '<span class="text-'.$color.'">'.$term_name.'</span>'; 
+			$cats .= '<span class="gmr-1 text-'.$color.'">'.$term_name.'</span>'; 
 			$cats_classes .= ' cat-'.$term->slug.'';
 		} 
 	} 

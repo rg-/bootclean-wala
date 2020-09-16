@@ -10726,7 +10726,8 @@ body.woocommerce-cart .button[name="update_cart"] {
 .single-product .ui-box-meta .meta {
   font-size: 16px; }
 .single-product .ui-box-meta .btn.btn-sm {
-  padding: 3.5px 10px; }
+  font-size: 14px;
+  padding: 3px 10px; }
 .single-product .table-ingredientes .cantidad {
   font-size: 15px; }
 

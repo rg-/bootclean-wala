@@ -18,7 +18,7 @@ if(!empty($get_category_ids)){
 		$term_link = get_term_link( $value, 'product_cat');
 		$color = get_field('woo_extra_taxonomy__style', $term);
 		$receta_url = get_permalink($recetas_id).$term_slug;
-		$cats .= '<a data-btn="fx" href="'.$receta_url.'" class="btn btn-sm btn-'.$color.'">'.$term_name.'</a>'; 
+		$cats .= '<a data-btn="fx" href="'.$receta_url.'" class="gmr-1 btn btn-sm btn-'.$color.'">'.$term_name.'</a>'; 
 		$cats_classes .= ' cat-'.$term->slug.'';
 	} 
 }
