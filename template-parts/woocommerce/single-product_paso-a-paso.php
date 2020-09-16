@@ -51,6 +51,16 @@
 
 	</div>
 
+	<div class="pt-2 text-center">
+		<?php
+		$ordenar_id = WPBC_get_theme_settings('general_post_object_ordenar');
+		$ordenar_permalink = get_permalink($ordenar_id);
+		if($ordenar_permalink){
+			echo '<a href="'.$ordenar_permalink.'" class="btn btn-primary btn-order-now" data-btn="fx">Ordená Ahora</a>';
+		}
+		?>
+	</div>
+
 </div>
 
 <?php } ?>
