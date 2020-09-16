@@ -53,27 +53,7 @@
 			echo $price;
 			?>
 		</small>
-	</div>
-
-	<div class="ui-overlay-br">
-		<?php
-		$category_ids = $grouped_product_child->get_category_ids();
-		if(!empty($category_ids)){
-			$cats = '';
-			$cats_classes = '';
-			foreach ($category_ids as $key => $value) {
-				$term = get_term( $value, 'product_cat' );
-				$term_name = $term->name;
-				$term_slug = $term->slug;
-				$term_link = get_term_link( $value, 'product_cat');
-				$color = get_field('woo_extra_taxonomy__style', $term);
-				$cats .= '<small class="ui-badge badge bg-'.$color.'">'.$term_name.'</small>'; 
-				$cats_classes .= ' cat-'.$term->slug.'';
-			} 
-			echo $cats;
-		} 
-		?> 
-	</div>
+	</div> 
 	
 	<div class="ui-box-image-embed">
 		<?php
@@ -94,8 +74,24 @@
 
 </div>
 
-<div class="ui-box-content">
-
+<div class="ui-box-content pb-0">
+	<div class=""><?php
+		$category_ids = $grouped_product_child->get_category_ids();
+		if(!empty($category_ids)){
+			$cats = '';
+			$cats_classes = '';
+			foreach ($category_ids as $key => $value) {
+				$term = get_term( $value, 'product_cat' );
+				$term_name = $term->name;
+				$term_slug = $term->slug;
+				$term_link = get_term_link( $value, 'product_cat');
+				$color = get_field('woo_extra_taxonomy__style', $term);
+				$cats .= '<small class="mr-2 text-'.$color.'">'.$term_name.'</small>'; 
+				$cats_classes .= ' cat-'.$term->slug.'';
+			} 
+			echo $cats;
+		} 
+		?></div>
 	<h3 class="section-subtitle"><?php echo $grouped_product_child->get_name(); ?></h3>
 
 	<div class="ui-box-quantity">
