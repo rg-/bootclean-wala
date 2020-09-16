@@ -74,7 +74,7 @@
 
 </div>
 
-<div class="ui-box-content pb-0">
+<div class="ui-box-content pt-1 pb-0">
 	<div class=""><?php
 		$category_ids = $grouped_product_child->get_category_ids();
 		if(!empty($category_ids)){
