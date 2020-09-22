@@ -9295,11 +9295,12 @@ span.lazybackground-loader{
 #main-navbar #collapse-custom .navbar-toggler {
   margin-top: -11px; }
 @media (min-width: 1310px) {
-  #main-navbar.navbar-expand-xl .navbar-brand {
+  #main-navbar .navbar-brand {
     padding: 23.5px 0; }
-    #main-navbar.navbar-expand-xl .navbar-brand svg,
-    #main-navbar.navbar-expand-xl .navbar-brand img {
-      width: 120px; }
+    #main-navbar .navbar-brand svg,
+    #main-navbar .navbar-brand img {
+      width: 120px; } }
+@media (min-width: 1310px) {
   #main-navbar.navbar-expand-xl #collapse-custom {
     margin-top: 31px; }
   #main-navbar.navbar-expand-xl #menu-menu-principal .nav-link {

@@ -175,7 +175,7 @@ function add_admin_link($items, $args){
 		$start_menu_item .= '</li>';
 		if(is_user_logged_in()){
 			$myaccount_logout = wc_logout_url();
-			$start_menu_item .= '<li class="nav-item menu-item">'; 
+			$start_menu_item .= '<li class="nav-item menu-item show_collapsed">'; 
 		$start_menu_item .= '<a title="Salir" href="'.$myaccount_logout.'" class="nav-link">Salir</a>';
 		$start_menu_item .= '</li>';
 		}

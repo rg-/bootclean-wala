@@ -115,16 +115,18 @@
 				margin-top: -11px;
 			}
 	}
-
+	@include breakpoint($main-navbar-expand){ 
+		.navbar-brand{
+			padding:23.5px 0;
+			svg,
+			img{
+				width: 120px;
+			}
+		}
+	}
 	@include breakpoint($main-navbar-expand){ 
 		&.navbar-expand-xl{
-			.navbar-brand{
-				padding:23.5px 0;
-				svg,
-				img{
-					width: 120px;
-				}
-			}
+			
 			#collapse-custom{ 
 				margin-top:31px; 
 			} 
