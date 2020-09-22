@@ -165,6 +165,14 @@
 /* checkout */
 .woo-is_checkout{
 
+	#ship-to-different-address{
+		font-size: 16px;
+	}
+
+	#billing_country_field{
+		display: none;
+	}
+
 	.woocommerce-NoticeGroup-checkout{
 		@include breakpoint(md){
 			padding-right: 47px!important;

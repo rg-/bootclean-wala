@@ -173,6 +173,12 @@ function add_admin_link($items, $args){
   	$start_menu_item = '<li class="nav-item menu-item">'; 
 		$start_menu_item .= '<a title="'.$myaccount_page_title.'" href="'.$myaccount_page_url.'" class="nav-link">'.$myaccount_menu_label.'</a>';
 		$start_menu_item .= '</li>';
+		if(is_user_logged_in()){
+			$myaccount_logout = wc_logout_url();
+			$start_menu_item .= '<li class="nav-item menu-item">'; 
+		$start_menu_item .= '<a title="Salir" href="'.$myaccount_logout.'" class="nav-link">Salir</a>';
+		$start_menu_item .= '</li>';
+		}
 
 		if( function_exists('_wpbc_woo_if_use_pasos_nav') && !_wpbc_woo_if_use_pasos_nav() ){ 
 
