@@ -32,6 +32,7 @@
 	</div>
 
 */
+.wpbc-woo .woocommerce-NoticeGroup,
 .wpbc-woo .woocommerce-notices-wrapper{
 	.woocommerce-error, .woocommerce-info, .woocommerce-message{
 		font-size: 15px; 
@@ -201,6 +202,16 @@
 		}
 		&:before{
 			display: none;
+		}
+	}
+	form.login{
+		padding: 20px;
+		background-color: $light;
+		> p:first-child{
+			  font-weight: 600;
+		}
+		.woocommerce-form-login__rememberme{
+			margin-left: 7px;
 		}
 	}
 }

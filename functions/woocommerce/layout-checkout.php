@@ -85,7 +85,7 @@ function wpbc_checkout_validation_one_err( $fields, $errors ){
 // templates/checkout/form-checkout.php
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
-// remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 ); 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
@@ -98,6 +98,7 @@ add_action('woocommerce_before_checkout_form',function($checkout){
 			<div class="col-1">
 				<div class="woo-custom-checkout-login-form">
 					<?php //woocommerce_output_all_notices(); ?>
+					<?php woocommerce_checkout_coupon_form(); ?>
 					<?php woocommerce_checkout_login_form(); ?>
 				</div>
 			</div>

@@ -23,7 +23,7 @@ $slick = json_encode($slick);
 $slick_heights = array(
 	'xs' => array(
 		'default' => '100wh',
-		'max' => '220px'
+		'max' => '300px'
 	),
 	'sm' => array(
 		'default' => '100wh',
