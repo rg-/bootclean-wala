@@ -7,6 +7,7 @@
 */ 
 $default_sub_type = $args['default_sub_type'];
 $gallery_images = $args['gallery_images'];
+$gallery_images_mobile = $args['gallery_images_mobile'];
 $content =  $args['content'];
 $call_to_action =  $args['call_to_action']; 
  
@@ -33,7 +34,7 @@ $slick_heights = array(
 $slick_heights = json_encode($slick_heights); 
 ?>
 <?php if(!empty($gallery_images) && $default_sub_type == 'default' ) {?>
-<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>' data-breakpoint-height='<?php echo $slick_heights; ?>' data-disable-affix-offset="true">
+<div class="theme-slick-slider" data-slick='<?php echo $slick; ?>' data-breakpoint-height='<?php echo $slick_heights; ?>' data-disable-affix-offset="true" >
 	<?php foreach($gallery_images as $k=>$v){  
 		?>
 		<div class="item"> 
@@ -42,7 +43,19 @@ $slick_heights = json_encode($slick_heights);
 				$img_hi = "[WPBC_get_attachment_image_src id='".$attachment_id."']";
 				$img_low = "[WPBC_get_attachment_image_src id='".$attachment_id."' size='medium']";
 				?>
-				<div class="item-container image-cover" data-lazybackground-src="<?php echo $img_hi; ?>" style="background-image: url(<?php echo $img_low; ?>);">
+				<div class="item-container image-cover d-none d-md-block" data-lazybackground-src="<?php echo $img_hi; ?>" style="background-image: url(<?php echo $img_low; ?>);">
+				</div>
+				<?php
+					if(!empty($gallery_images_mobile[$k]['id'])){
+						$attachment_id_mobile = $gallery_images_mobile[$k]['id'];
+						$img_hi_mobile = "[WPBC_get_attachment_image_src id='".$attachment_id_mobile."']";
+						$img_low_mobile = "[WPBC_get_attachment_image_src id='".$attachment_id_mobile."' size='medium']";
+					}else{
+						$img_hi_mobile = $img_hi;
+						$img_low_mobile = $img_low;
+					}
+				?>
+				<div class="item-container image-cover d-md-none" data-lazybackground-src="<?php echo $img_hi_mobile; ?>" style="background-image: url(<?php echo $img_low_mobile; ?>);">
 				</div>
 		</div>
 		<?php } ?>

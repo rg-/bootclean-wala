@@ -46,8 +46,18 @@ add_filter('wpbc/filter/template-landing/sub_fields/?group=page_header', functio
 		$page_header_type_default_fields[] = WPBC_acf_make_gallery_advanced_field(
 			array(
 				'name' => 'gallery_images',
-				'label'=>'',
-				'class' => 'acf-small-gallery wpbc-field-no-label', 
+				'label'=>'Desktop',
+				'class' => 'acf-small-gallery ', 
+				'columns' => 6, 
+				'conditional_logic' => $conditional_sub_type,
+			)
+		);  
+
+		$page_header_type_default_fields[] = WPBC_acf_make_gallery_advanced_field(
+			array(
+				'name' => 'gallery_images_mobile',
+				'label'=>'Mobile',
+				'class' => 'acf-small-gallery ', 
 				'columns' => 6, 
 				'conditional_logic' => $conditional_sub_type,
 			)
