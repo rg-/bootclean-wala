@@ -207,6 +207,9 @@
 	form.login{
 		padding: 20px;
 		background-color: $light;
+		@include breakpoint(lg){
+			margin-right: 100px;
+		}
 		> p:first-child{
 			  font-weight: 600;
 		}

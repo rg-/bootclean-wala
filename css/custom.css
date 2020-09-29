@@ -10128,6 +10128,9 @@ a.ui-box-card {
 .wpbc-woo .woo-custom-checkout-login-form form.login {
   padding: 20px;
   background-color: #f5f5f5; }
+  @media (min-width: 992px) {
+    .wpbc-woo .woo-custom-checkout-login-form form.login {
+      margin-right: 100px; } }
   .wpbc-woo .woo-custom-checkout-login-form form.login > p:first-child {
     font-weight: 600; }
   .wpbc-woo .woo-custom-checkout-login-form form.login .woocommerce-form-login__rememberme {
