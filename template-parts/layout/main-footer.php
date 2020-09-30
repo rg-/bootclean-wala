@@ -150,3 +150,32 @@ if($use_footer=='none') return;
 	<?php } ?>
 
 </footer>
+
+<div id="modal_zonas" class="modal fade" tabindex="-1" role="dialog">
+
+  <div class="modal-dialog modal-dialog-centered ui-loader " role="document">
+    <div class="modal-content bg-rosa-claro">
+      <div class="modal-header flex-column justify-content-center flex-wrap align-items-center gpt-3">
+        
+        <h5 class="modal-title section-title ">Zonas de envío</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body gpb-2">
+        
+        <ul class="list-tick">
+        	<li>Pocitos
+					<li>Punta Carretas</li>
+					<li>Malvín</li>
+					<li>Punta Gorda</li>
+					<li>Carrasco</li>
+					<li>Parque Rodó</li>
+					<li>Etc</li>
+        </ul>
+      
+      </div>
+    </div>
+  </div>
+
+</div>
