@@ -10784,6 +10784,11 @@ body.woocommerce-cart .button[name="update_cart"] {
 .single-product .table-ingredientes .cantidad {
   font-size: 15px; }
 
+/* Delivery zones specific */
+#szbd_message > span {
+  font-size: 14px;
+  color: #c14e33; }
+
 .hentry .entry-header {
   margin-bottom: 15px; }
 .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry p {

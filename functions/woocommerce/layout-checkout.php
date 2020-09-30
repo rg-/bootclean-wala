@@ -209,3 +209,47 @@ add_filter( 'woocommerce_thankyou_order_received_text', function($text, $order){
 	}
 	return $text;
 },10,2 ); 
+
+
+
+
+
+
+add_action('wp_footer',function(){
+?>
+<script id="woo-custom-delivery-areas">
+	
+	var szbd = {"checkout_string_1":"<span>No hay opciones de m\u00e9todos de env\u00edo disponibles para tu direcci\u00f3n.</span>","checkout_string_2":"Minimum order value is","checkout_string_3":"You are too far away. We only make deliveries within","store_address":null,"debug":"0","select_top_method":"0","deactivate_postcode":"0","store_address_picked":"1"};
+
+</script>
+<?php
+},99);
+
+
+
+/*
+
+	Remove Fields in WooCommerce Billing and Shipping in Form Checkout
+
+*/
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+add_filter( 'woocommerce_billing_fields' , 'custom_override_billing_fields' );
+
+function custom_override_checkout_fields( $fields ) {
+  //unset($fields['billing']['billing_postcode']);
+  unset($fields['billing']['billing_state']);
+  unset($fields['billing']['billing_city']);
+  //unset($fields['billing']['billing_country']);
+  //unset($fields['billing']['billing_address_1']);	
+  return $fields;
+}
+
+function custom_override_billing_fields( $fields ) {
+  //unset($fields['billing_postcode']);
+  unset($fields['billing_state']);
+  unset($fields['billing_city']);
+  //unset($fields['billing_country']);
+  //unset($fields['billing_address_1']);
+  return $fields;
+}
