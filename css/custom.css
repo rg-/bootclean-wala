@@ -10103,8 +10103,6 @@ a.ui-box-card {
 /* checkout */
 .woo-is_checkout #ship-to-different-address {
   font-size: 16px; }
-.woo-is_checkout #billing_country_field {
-  display: none; }
 @media (min-width: 768px) {
   .woo-is_checkout .woocommerce-NoticeGroup-checkout {
     padding-right: 47px !important; } }
@@ -10785,9 +10783,19 @@ body.woocommerce-cart .button[name="update_cart"] {
   font-size: 15px; }
 
 /* Delivery zones specific */
+.woo-is_checkout #billing_country_field,
+.woo-is_checkout #shipping_country_field {
+  display: none; }
+
 #szbd_message > span {
   font-size: 14px;
-  color: #c14e33; }
+  color: #c14e33;
+  line-height: 18px;
+  display: block;
+  padding: 4px 0px 0 0; }
+
+.wpbc-woo .woo-custom-checkout-review-order table.shop_table tfoot tr.woocommerce-shipping-totals {
+  align-items: start; }
 
 .hentry .entry-header {
   margin-bottom: 15px; }
