@@ -213,7 +213,9 @@ add_filter( 'woocommerce_thankyou_order_received_text', function($text, $order){
 
 
 
+add_action('woocommerce_review_order_after_shipping',function(){ 
 
+});
 
 add_action('wp_footer',function(){
 ?>
@@ -237,7 +239,7 @@ add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 add_filter( 'woocommerce_billing_fields' , 'custom_override_billing_fields' );
 
 function custom_override_checkout_fields( $fields ) {
-  //unset($fields['billing']['billing_postcode']);
+  unset($fields['billing']['billing_postcode']);
   unset($fields['billing']['billing_state']);
   unset($fields['billing']['billing_city']);
   //unset($fields['billing']['billing_country']);
@@ -249,7 +251,7 @@ function custom_override_checkout_fields( $fields ) {
 }
 
 function custom_override_billing_fields( $fields ) {
-  //unset($fields['billing_postcode']);
+  unset($fields['billing_postcode']);
   unset($fields['billing_state']);
   unset($fields['billing_city']);
   //unset($fields['billing_country']);
