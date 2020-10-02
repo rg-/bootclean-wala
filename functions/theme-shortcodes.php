@@ -107,6 +107,23 @@ function _get_icon_FX($args, $content=NULL, $tag){
     $icon = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path '.$class.' fill="'.$fill.'" d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>';
   }
 
+  if($tag=='icon_list_tick'){
+    $icon = '<svg width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <path id="2rfu72230a" d="M5.6 10.6L1.4 6.4 0 7.8 5.6 13.4 17.6 1.4 16.2 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(3 5)">
+        <mask id="80p6iwb8mb" fill="#fff">
+            <use xlink:href="#2rfu72230a"/>
+        </mask>
+        <use fill="#000" xlink:href="#2rfu72230a"/>
+        <g fill="#999" fill-rule="nonzero" mask="url(#80p6iwb8mb)">
+            <path d="M0 0H24V24H0z" transform="translate(-3 -5)"/>
+        </g>
+    </g>
+</svg>';
+  }
+
   if($tag=='icon_big_alert'){
     $icon = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="84" viewBox="0 0 84 84">
     <defs>

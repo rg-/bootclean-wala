@@ -8795,6 +8795,24 @@ html, body {
     border-color: #6639b7;
     color: #fff; }
 
+.list-tick {
+  list-style: none;
+  padding: 0 18px;
+  line-height: 1.8; }
+  .list-tick li {
+    padding-left: 18px;
+    position: relative; }
+    .list-tick li:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: -5px;
+      width: 18px;
+      height: 18px;
+      background-image: url("../images/theme/icon-check-violet.svg");
+      background-repeat: no-repeat;
+      background-size: 18px auto; }
+
 .fill-primary {
   fill: #6639b7; }
 

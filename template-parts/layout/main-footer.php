@@ -165,7 +165,7 @@ if($use_footer=='none') return;
       <div class="modal-body gpb-2">
         
         <ul class="list-tick">
-        	<li>Pocitos
+        	<li>Pocitos</li>
 					<li>Punta Carretas</li>
 					<li>Malvín</li>
 					<li>Punta Gorda</li>
@@ -173,6 +173,28 @@ if($use_footer=='none') return;
 					<li>Parque Rodó</li>
 					<li>Etc</li>
         </ul>
+
+        <?php
+
+        $delivery_zones = WC_Shipping_Zones::get_zones();
+
+        $active_methods   = array();
+		    foreach ($delivery_zones as $delivery_zone) {
+		    	$shipping_methods = $delivery_zone['shipping_methods']; 
+			    foreach ( $shipping_methods as $id => $shipping_method ) {
+			      if ( isset( $shipping_method->enabled ) && 'yes' === $shipping_method->enabled ) {
+			        $active_methods[ $id ] = array(
+			          'title'      => $shipping_method->title,
+			          'rate' => $shipping_method->rate,
+			          'tax_status' => $shipping_method->tax_status,
+			        );
+			      }
+			    }
+		    	
+		    }
+		    // Testeando aca para mostrar directo de las zonas, eso, las zonas de delivery
+				// _print_code($active_methods);
+        ?>
       
       </div>
     </div>

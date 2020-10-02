@@ -215,6 +215,29 @@ add_filter( 'woocommerce_thankyou_order_received_text', function($text, $order){
 
 add_action('woocommerce_review_order_after_shipping',function(){ 
 
+	$shipping_methods = WC()->shipping->get_shipping_methods(); 
+	foreach($shipping_methods as $shipping_method){
+	    $shipping_method->init(); 
+	    foreach($shipping_method->rates as $key=>$val){
+	    	$rate_table[$key] = $val->cost;
+	    }
+	}
+	
+	?>
+<tr class="gmt-n-1">
+	<td colspan="2">
+		<?php
+		//_print_code(WC()->session->get( 'chosen_shipping_methods' ));
+		$used_cost = $rate_table[WC()->session->get( 'chosen_shipping_methods' )[0]];
+		if(!empty($used_cost)){
+			if($used_cost<=0){
+				echo "<span class='ui-badge badge-success text-white'>Envío gratuito</span>";
+			}
+		} 
+		?>
+	</td>
+</tr>
+	<?php
 });
 
 add_action('wp_footer',function(){
@@ -244,10 +267,11 @@ function custom_override_checkout_fields( $fields ) {
   unset($fields['billing']['billing_city']);
   //unset($fields['billing']['billing_country']);
   //unset($fields['billing']['billing_address_1']);	
-  
+
   unset($fields['shipping']['shipping_postcode']);
   unset($fields['shipping']['shipping_state']);
-  unset($fields['shipping']['shipping_city']);
+  unset($fields['shipping']['shipping_city']); 
+
   return $fields;
 }
 
@@ -258,4 +282,14 @@ function custom_override_billing_fields( $fields ) {
   //unset($fields['billing_country']);
   //unset($fields['billing_address_1']);
   return $fields;
+}
+
+
+add_filter( 'woocommerce_default_address_fields', 'custom_override_address_fields' );
+ 
+function custom_override_address_fields( $address_fields ) {
+	// as you can see, no needs to specify a field group anymore
+	$address_fields['address_1']['priority'] = 4; 
+	$address_fields['address_2']['priority'] = 5; 
+	return $address_fields;
 }

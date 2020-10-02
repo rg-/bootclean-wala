@@ -207,6 +207,27 @@ html,body {
 	}
 }
 
+.list-tick{
+	list-style: none;
+	padding: 0 18px;
+	line-height: 1.8;
+	li{
+		padding-left:18px;
+		position:relative;
+		&:before{
+			content: "";
+			position:absolute;
+			top:5px;
+			left:-5px;
+			width: 18px;
+			height: 18px;
+			background-image:url('../images/theme/icon-check-violet.svg');
+			background-repeat:no-repeat;
+			background-size: 18px auto;
+		}
+	}
+}
+
 @import "theme/color-elements";
 @import "theme/typo"; 
 @import "theme/btn";
