@@ -81,6 +81,34 @@ include('functions/layout-page-header.php');
 if( class_exists( 'WooCommerce' ) ){
 	include('functions/plugins-woocommerce.php');
 }
+if( class_exists('SZBD') ){
+
+	function enable_shop_manager_delivery_zones() {
+    
+    $admin = get_role('shop_manager');
+    
+    if($admin->has_cap('publish_szbdzones')) return;
+
+    flush_rewrite_rules();
+    $admin_capabilities = array(
+      'delete_szbdzones',
+      'delete_others_szbdzones',
+      'delete_private_szbdzones',
+      'delete_published_szbdzones',
+      'edit_szbdzones',
+      'edit_others_szbdzones',
+      'edit_private_szbdzones',
+      'edit_published_szbdzones',
+      'publish_szbdzones',
+      'read_private_szbdzones'
+    );
+    foreach ($admin_capabilities as $capability) {
+      $admin->add_cap($capability);
+    }
+  }
+  enable_shop_manager_delivery_zones();
+
+}
 
 /* ################################################################################## */
 
