@@ -32,7 +32,11 @@
 	.btn{
 		@include border-radius(4px); 
 	}
-
+	.wpcf7-response-output{
+		border:0;
+		max-width: 382px;
+		margin:0 auto;
+	}
 	.wpcf7-form-control-wrap{
 		display: block;
 	}
@@ -74,12 +78,14 @@
 
 }
 
-
-.wpcf7-form{
-
+#contacto{
 	.wpcf7-response-output{
 		display: none!important;
 	}
+}
+.wpcf7-form{
+
+	
 	span.wpcf7-not-valid-tip{
 		position: absolute;
 		top: 100%;

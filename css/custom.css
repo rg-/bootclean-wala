@@ -9138,6 +9138,10 @@ button:active {
     width: 100%; }
   .form-contact .btn {
     border-radius: 4px; }
+  .form-contact .wpcf7-response-output {
+    border: 0;
+    max-width: 382px;
+    margin: 0 auto; }
   .form-contact .wpcf7-form-control-wrap {
     display: block; }
   .form-contact span.wpcf7-not-valid-tip {
@@ -9167,8 +9171,9 @@ button:active {
     .form-contact .bootstrap-select .dropdown-menu {
       border-radius: 4px; }
 
-.wpcf7-form .wpcf7-response-output {
+#contacto .wpcf7-response-output {
   display: none !important; }
+
 .wpcf7-form span.wpcf7-not-valid-tip {
   position: absolute;
   top: 100%;
