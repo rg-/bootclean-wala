@@ -36,6 +36,8 @@
 		$attrs .= ' style="background-image: url('.$img_blured.');"';
 		$box_attrs = '  ';
 	}
+	
+	$general_post_object_recetas_cat = WPBC_get_theme_settings('general_post_object_recetas_cat');
 
 	if(!empty($args['category'])){
 		$cats = '';
@@ -44,10 +46,13 @@
 			$term = get_term( $value, 'product_cat' );
 			$term_name = $term->name;
 			$term_slug = $term->slug;
-			$term_link = get_term_link( $value, 'product_cat');
-			$color = get_field('woo_extra_taxonomy__style', $term);
-			$cats .= '<span class="gmr-1 text-'.$color.'">'.$term_name.'</span>'; 
-			$cats_classes .= ' cat-'.$term->slug.'';
+			if($term->term_id != $general_post_object_recetas_cat){
+				$term_link = get_term_link( $value, 'product_cat');
+				$color = get_field('woo_extra_taxonomy__style', $term);
+				$cats .= '<span class="gmr-1 text-'.$color.'">'.$term_name.'</span>'; 
+				$cats_classes .= ' cat-'.$term->slug.'';
+			}
+			
 		} 
 	} 
 
@@ -83,13 +88,17 @@
 				'length' => 15,
 				'readmore' => false,
 				'excerpt_before'	=> '<p class="entry-excerpt">',
-				'excerpt_after'	=> '</p>',
+				'excerpt_after'	=> '...</p>',
 			)); ?>
 		<?php } ?>
 		
 		<p class="m-0 text-violeta d-flex align-items-center font-roboto ui-box-meta">
+			<?php if(!empty($cats)){
+				$cats = '&nbsp;&nbsp;|&nbsp;&nbsp;'.$cats;
+			}?>
 			<?php if(!empty($args['time'])){ ?>
-			<span class="mr-3 meta">[icon_time class="fill-violeta"]&nbsp;<?php echo $args['time']; ?>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo $cats; ?></span>
+			<span class="mr-3 meta">[icon_time class="fill-violeta"]&nbsp;<?php echo $args['time']; ?>
+			<?php echo $cats; ?></span>
 			<?php } ?>
 			<?php if(!empty($args['porciones']) && $show_porciones){ ?>
 			<span class="mr-3 meta">[icon_porciones class="fill-violeta"]&nbsp;<?php echo $args['porciones']; ?>Porciones</span>

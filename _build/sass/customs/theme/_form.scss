@@ -8,6 +8,72 @@
 	}
 }
 
+.form-contact{
+	max-width: 382px;
+	margin:24px auto;
+	padding-top:24px;
+	label{
+		font-size: 14px;
+		letter-spacing: 0.25px;
+  	color: #222222;
+	}
+	.form-group{
+		margin-bottom:30px; 
+	}
+	.form-control{
+		border: solid 1px #979797;
+		@include border-radius(2px); 
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.wpcf7-submit{
+		width: 100%;
+	}
+	.btn{
+		@include border-radius(4px); 
+	}
+
+	.wpcf7-form-control-wrap{
+		display: block;
+	}
+	span.wpcf7-not-valid-tip{
+		margin-top: 0!important;
+		left: 0!important;
+		background: transparent!important;
+		color: red!important;
+		padding: 5px 0!important;
+	}
+
+	.form-control[aria-invalid="false"]{
+		box-shadow: none!important;
+		border-color: #979797!important;
+	}
+
+	.bootstrap-select{
+		padding-right: 0;
+		padding-left: 0;
+		.dropdown-toggle{
+			background:transparent;
+			border:0;
+			box-shadow: none;
+			outline:none!important;
+			padding-right: 15px;
+			padding-left: 15px;
+			&:after{
+				color:#999999;
+			}
+			&[title="Seleccionar"]{
+				color:#999999;
+				font-style: italic;
+			}
+		}
+		.dropdown-menu{
+			@include border-radius(4px); 
+		}
+	}
+
+}
+
 
 .wpcf7-form{
 

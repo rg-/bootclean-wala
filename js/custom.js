@@ -1,5 +1,12 @@
 +function(t){ 
 
+	$('.bootstrap-select').selectpicker(
+			{
+				liveSearch : false,
+				showTick : false,
+			}
+		);
+
  	$('[data-is-inview]').is_inview();
  	
  	$(window).on('bc_inited', function(e){ 

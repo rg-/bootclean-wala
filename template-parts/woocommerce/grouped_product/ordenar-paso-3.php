@@ -76,6 +76,7 @@
 
 <div class="ui-box-content pt-1 pb-0">
 	<div class="pb-1"><?php
+		$general_post_object_recetas_cat = WPBC_get_theme_settings('general_post_object_recetas_cat');
 		$category_ids = $grouped_product_child->get_category_ids();
 		if(!empty($category_ids)){
 			$cats = '';
@@ -86,6 +87,11 @@
 				$term_slug = $term->slug;
 				$term_link = get_term_link( $value, 'product_cat');
 				$color = get_field('woo_extra_taxonomy__style', $term);
+
+				if($general_post_object_recetas_cat == $term->term_id){
+					$term_name = '&nbsp;';
+				}
+
 				$cats .= '<small class="mr-2 text-'.$color.'">'.$term_name.'</small>'; 
 				$cats_classes .= ' cat-'.$term->slug.'';
 			} 
