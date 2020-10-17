@@ -7,7 +7,13 @@
 		border: 0;
 	}
 }
-
+.wysiwyg_row-content{
+	.wpcf7-response-output{
+		border:0;
+		max-width: 382px;
+		margin:0 auto;
+	}
+}
 .form-contact{
 	max-width: 382px;
 	margin:24px auto;
@@ -32,11 +38,7 @@
 	.btn{
 		@include border-radius(4px); 
 	}
-	.wpcf7-response-output{
-		border:0;
-		max-width: 382px;
-		margin:0 auto;
-	}
+	
 	.wpcf7-form-control-wrap{
 		display: block;
 	}
