@@ -9119,6 +9119,11 @@ button:active {
   border-radius: 4px;
   border: 0; }
 
+.wysiwyg_row-content .wpcf7-response-output {
+  border: 0;
+  max-width: 382px;
+  margin: 0 auto; }
+
 .form-contact {
   max-width: 382px;
   margin: 24px auto;
@@ -9138,10 +9143,6 @@ button:active {
     width: 100%; }
   .form-contact .btn {
     border-radius: 4px; }
-  .form-contact .wpcf7-response-output {
-    border: 0;
-    max-width: 382px;
-    margin: 0 auto; }
   .form-contact .wpcf7-form-control-wrap {
     display: block; }
   .form-contact span.wpcf7-not-valid-tip {
