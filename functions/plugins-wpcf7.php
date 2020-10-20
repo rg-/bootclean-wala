@@ -14,7 +14,7 @@
 
 add_action( 'wp_footer', 'wpbc_wpcf7mailsent' );
 
-function mycustom_wp_footer() {
+function wpbc_wpcf7mailsent() {
 ?>
 <script type="text/javascript">
 document.addEventListener( 'wpcf7mailsent', function( e ) {
