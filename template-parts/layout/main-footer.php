@@ -200,4 +200,7 @@ if($use_footer=='none') return;
     </div>
   </div>
 
+  
 </div>
+
+<?php WPBC_get_template_part('theme/modal_subscribe_form'); ?>

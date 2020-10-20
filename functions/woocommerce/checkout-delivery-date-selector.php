@@ -105,7 +105,8 @@ function WPBC_datepicker_field( $checkout ) {
 
     echo '<div id="woo-delivery-date" class="woo-delivery-date">
     <h3 class="gpt-1">'.__('Fecha de Envío').'*</h3>'; 
-
+    echo '<div class="row">';
+    echo '<div class="col-sm-6">';
     woocommerce_form_field( 'delivery_date', array(
         'type'          => 'text',
         'class'         => array('woo-datepicker form-row-wide'),
@@ -121,6 +122,8 @@ function WPBC_datepicker_field( $checkout ) {
     	'9-13' => '9 a 13hs',
     	'15-20' => '15 a 20 hs',
     );
+    echo '</div>';
+    echo '<div class="col-sm-6">';
     woocommerce_form_field( 'delivery_time', array(
         'type'          => 'radio',
         'class'         => array('woo-timepicker form-row-wide'),
@@ -130,7 +133,8 @@ function WPBC_datepicker_field( $checkout ) {
         'options'     =>   $mydateoptions
         ),
     $checkout->get_value( 'delivery_time' ));
-
+    echo '</div>';
+    echo '</div>';
     echo '<p><i>* Los envíos pueden hacerse como mínimo 48 hs luego de pedido.</i></p>';
 
     echo '</div>';
@@ -168,9 +172,9 @@ function WPBC_datepicker_checkout_process() {
 /**
  * Display field value on the order edit page
  */
-add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta', 10, 1 );
+add_action( 'woocommerce_admin_order_data_after_shipping_address', 'WPBC_datepicker_checkout_admin_order_meta', 10, 1 );
 
-function my_custom_checkout_field_display_admin_order_meta($order){
+function WPBC_datepicker_checkout_admin_order_meta($order){
     echo '<p><strong>Fecha de Envío:</strong> <br/>' . get_post_meta( $order->get_id(), 'Fecha de Envío', true ) . '</p>';
     echo '<p><strong>Horario de Envío:</strong> <br/>' . get_post_meta( $order->get_id(), 'Horario de Envío', true ) . ' hrs</p>'; 
 

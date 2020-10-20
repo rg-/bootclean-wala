@@ -1,5 +1,21 @@
 +function(t){ 
 
+
+	// data-modal-email
+
+	$('.modal').on('shown.bs.modal', function (e) {
+	  var relatedTarget = $(e.relatedTarget);
+		var target = $(e.target);
+
+		if(relatedTarget.attr('data-modal-email')){
+			var modal_email = relatedTarget.attr('data-modal-email');
+			var new_email_val = $(modal_email).val();
+			target.find('[type="email"]').val(new_email_val);
+		}
+		
+	})
+
+
 	$('.bootstrap-select').selectpicker(
 			{
 				liveSearch : false,

@@ -9114,6 +9114,9 @@ button:active {
   background-color: #ffe6a3;
   padding: 16px 33px 33px 33px; }
 
+.grecaptcha-badge {
+  visibility: hidden; }
+
 .form-controls-alt .form-control,
 .form-controls-alt .btn {
   border-radius: 4px;
@@ -9172,6 +9175,7 @@ button:active {
     .form-contact .bootstrap-select .dropdown-menu {
       border-radius: 4px; }
 
+.footer_form .wpcf7-response-output,
 #contacto .wpcf7-response-output {
   display: none !important; }
 
