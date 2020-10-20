@@ -247,3 +247,44 @@ html,body {
 
 @import "theme/woo";
 @import "theme/wp-posts"; 
+
+
+.woo-delivery-date{
+
+	.gj-datepicker{
+		.input-text{
+			width: auto!important;
+		}
+		.input-group-append{
+			.btn{
+				padding: 0;
+				background: transparent;
+				border-color: #979797;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.gj-icon{
+					top: 12px;
+					color: #6639b7; 
+				}
+			}
+		}
+	}
+
+	.woo-timepicker{
+		.woocommerce-input-wrapper{
+				display: flex;
+				align-items: center;
+				justify-content: start;
+
+				.input-radio{
+					margin-right: 10px;
+				}
+				label{
+					margin-bottom:0;
+					margin-right: 10px;
+				}
+		}
+	}
+
+}

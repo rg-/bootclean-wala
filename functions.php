@@ -76,6 +76,11 @@ include('functions/layout-page-header.php');
 /* ################################################################################## */
 
 /**
+ * @subpackage wpcf7
+ */
+include('functions/plugins-wpcf7.php');
+
+/**
  * @subpackage WooCommerce
  */
 if( class_exists( 'WooCommerce' ) ){

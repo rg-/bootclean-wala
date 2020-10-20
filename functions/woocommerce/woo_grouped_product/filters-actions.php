@@ -348,6 +348,9 @@ add_action( 'woocommerce_admin_order_data_after_billing_address', function(){
 
 
 add_action( 'woocommerce_admin_order_items_after_line_items', function($order_id){
+
+
+
 	/*
 
 	Aca es donde levanto de nuevo la data custom pasada primero al item cart, y luego al item orden
@@ -357,7 +360,7 @@ add_action( 'woocommerce_admin_order_items_after_line_items', function($order_id
 	$items = $order->get_items();
 	if(empty($items)) return;
 
-	$temp = array();
+	$temp = array(); 
 
 	foreach ( $items as $cart_item_key => $cart_item ) {
 		// _print_code($cart_item);

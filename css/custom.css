@@ -10877,6 +10877,28 @@ body.woocommerce-cart .button[name="update_cart"] {
 .wysiwyg_row .wysiwyg_row-content img {
   margin-bottom: 30px; }
 
+.woo-delivery-date .gj-datepicker .input-text {
+  width: auto !important; }
+.woo-delivery-date .gj-datepicker .input-group-append .btn {
+  padding: 0;
+  background: transparent;
+  border-color: #979797;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .woo-delivery-date .gj-datepicker .input-group-append .btn .gj-icon {
+    top: 12px;
+    color: #6639b7; }
+.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start; }
+  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .input-radio {
+    margin-right: 10px; }
+  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper label {
+    margin-bottom: 0;
+    margin-right: 10px; }
+
 .has-primary-background-color {
   background-color: #6639b7; }
 

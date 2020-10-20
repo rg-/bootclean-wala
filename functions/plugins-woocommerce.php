@@ -64,3 +64,6 @@ include('woocommerce/acf-woo_extra_taxonomy.php');
 
 include('woocommerce/post_type-ingredientes.php');
 // include('woocommerce/collapse-woo-mini-cart.php');  
+
+
+include('woocommerce/checkout-delivery-date-selector.php');
