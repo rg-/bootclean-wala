@@ -137,7 +137,10 @@ if(empty($product)){
 	<div class="container">
 		<div class="row gpb-2">
 			<div class="col-12 text-center">
-				<h2 class="section-title">ELEGIR RECETAS</h2>
+				<h2 class="section-title"><span class="visible_recetas">ELEGIR RECETAS</span><span class="visible_vinos d-none">
+					<span class="d-inline-block"><a href="#" id="grouped_recetas_hide_vinos" class="paso-volver btn btn-sm btn-transparent"><i class="fa fa-angle-left"></i> <span>Volver</span></a>AGREGAR VINO</span>
+
+				</span></h2>
 			</div>
 		</div>
 	</div>
@@ -149,7 +152,7 @@ if(empty($product)){
 
 	?>
 
-	<div id="grouped_recetas_form" class="position-relative">
+	<div id="grouped_recetas_form" class="position-relative min-h-100vh">
 
 		<form class="cart grouped_form" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
 
@@ -165,6 +168,7 @@ if(empty($product)){
 							'show_paso_2' => $show_paso_2,
 							'show_paso_3' => $show_paso_3,
 							'item_class' => 'col-md-4 col-lg-6 col-xl-4 gmb-2',
+							'full_item_class' => 'col-12 gmb-2',
 						)); ?>
 					</div>
 					<!-- col order END --> 

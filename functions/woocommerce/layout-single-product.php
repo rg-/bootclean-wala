@@ -132,7 +132,7 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', function($html, $
 	$image_large = wp_get_attachment_image_src($post_thumbnail_id, 'large');
 	$image_medium = wp_get_attachment_image_src($post_thumbnail_id, 'medium'); 
 	$image_blured = wp_get_attachment_image_src($post_thumbnail_id, 'wpbc_blured_image'); 
-	$html = '<div data-is-inview="detect" class="position-relative"><img alt=" " data-is-inview-lazysrc='.$image_large[0].' src='.$image_blured[0].'/></div>';
+	$html = '<div data-is-inview="detect" class="position-relative"><img alt=" " data-is-inview-lazysrc="'.$image_large[0].'" src="'.$image_blured[0].'"/></div>';
 	return $html;
 
 }, 10,2 );

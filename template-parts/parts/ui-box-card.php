@@ -20,23 +20,8 @@
 
 	$attrs = '';
 
-	$show_porciones = false;
-	
-	$attachment_id = $args['image_id'];
-	$img_hi = "[WPBC_get_attachment_image_src id='".$attachment_id."']";
-	$img_low = "[WPBC_get_attachment_image_src id='".$attachment_id."' size='medium']";
-	$img_mini = "[WPBC_get_attachment_image_src id='".$attachment_id."' size='thumbnail']";
-	$img_blured = "[WPBC_get_attachment_image_src id='".$attachment_id."' size='wpbc_blured_image']";
-	if(!empty($args['is_slick'])){
-		$attrs .= ' data-lazybackground-src="'.$img_hi.'" ';
-		$attrs .= ' style="background-image: url('.$img_blured.');"';
-		$box_attrs = '';
-	}else{
-		$attrs .= ' data-is-inview-lazybackground="'.$img_hi.'" ';
-		$attrs .= ' style="background-image: url('.$img_blured.');"';
-		$box_attrs = '  ';
-	}
-	
+	$show_porciones = false; 
+
 	$general_post_object_recetas_cat = WPBC_get_theme_settings('general_post_object_recetas_cat');
 
 	if(!empty($args['category'])){
@@ -69,10 +54,16 @@
 		</div>
 		
 		<div class="ui-box-image-embed">
-			<div class="embed-responsive embed-responsive-16by9">
-				<div class="embed-responsive-item image-cover" <?php echo $attrs; ?>>
-				</div>
-			</div>
+			<?php 
+
+			if(!empty($args['is_slick'])){
+				$type= 'slick'; 
+			}else{
+				$type= 'inview'; 
+			}
+			$attachment_id = $args['image_id']; 
+			WPBC_build_lazyloader_image($attachment_id, $type);
+			?>
 		</div>
 
 	</div>

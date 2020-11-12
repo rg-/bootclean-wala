@@ -136,6 +136,19 @@ function WPBC_child_custom_theme_settings__general($fields){
 		'ui' => 1,
 	));
 
+	$fields[] = WPBC_acf_make_select_field(array(
+		'name' => 'general_post_object_vinos_cat',
+		'label' => 'Categoría usada para los Vinos',
+		'instructions' => 'Categoría donde se administran las subcategorías de los Vinos.',
+		//'post_type' => array( 'product' ),
+		'choices' => $choices_cats,
+		'multiple' => 0, 
+		'allow_null' => 1,
+		'required' => 0,
+		'default_value' => array (0),
+		'ui' => 1,
+	));
+
 	$fields[] = WPBC_acf_make_post_object_field(array(
 		'name' => 'general_post_object_ordenar',
 		'label' => 'Página Ordenar (pasos)',

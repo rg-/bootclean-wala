@@ -185,11 +185,13 @@ add_filter('wpbc/filter/woocommerce/config', function($args){
 add_action('wpbc/woo/layout/before/main-container-areas',function($args){ 
 	global $product;
 	global $wp_query;
-	if(empty($product)){
+	
+	$ordenar_product_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar_product');
+	if(!empty($wp_query->queried_object->ID)){
+
 		$product = wc_get_product( $wp_query->queried_object->ID );
 
-		$ordenar_page_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar');
-		$ordenar_product_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar_product');
+		$ordenar_page_id = get_option('options_wpbc_theme_settings__general_post_object_ordenar'); 
 
 		if( $product->get_type() == 'grouped' && $product->get_id() == $ordenar_product_id ){
 			WPBC_get_template_part('woocommerce/grouped-product', array()); 

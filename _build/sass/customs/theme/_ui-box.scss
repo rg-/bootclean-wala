@@ -36,7 +36,10 @@
 	.section-subtitle{
 		@include transition(.36s $easeOutCubic all);
 	}
-	.image-cover{
+	.ui-box-image-embed{
+		overflow: hidden;
+	}
+	.embed-responsive{
 		@include scale(1);
 		@include transition(8.66s $easeOutCubic all);
 	} 
@@ -46,7 +49,7 @@
 		//border-color:transparent;
 		&:before{ 
 		}
-		.image-cover{
+		.embed-responsive{
 			@include scale(1.2);
 		} 
 		.section-subtitle{
@@ -119,6 +122,7 @@ a.ui-box-card{
 		}
 	}
 }
+
 
 .ui-box-thumb-rows{  
 	
@@ -195,3 +199,117 @@ a.ui-box-card{
 	}
 
 } 
+
+
+.leaving{
+	margin-top: -20px;
+}
+.woocommerce-grouped-product-list-item {
+	//@include transition();
+
+	&.not_visible{
+		display: none!important;
+		.ui-box-card{
+	
+		}
+	}
+
+}
+
+#grouped_recetas_add_vinos.btn{
+		font-size: 14px;
+	  line-height: 24px;
+	  @include breakpoint-max(md){
+	  	background-color:#fff; 
+	  	padding: 9px 25px !important; 
+	  	display: inline-block;
+	    margin: 0 auto 10px auto !important;
+	    width: auto !important;
+	    &:hover{
+	    	color:$primary;
+	    }
+	  }
+}
+
+.is_vinos{
+
+	.ui-box-card{
+		max-width: none;
+    border: 0;
+		padding-bottom: 5px;
+		min-height: auto;
+		border-bottom: solid 1px #d8d8d8;
+		border-radius: 0;
+
+    
+
+    @include breakpoint(md){
+    		flex-direction: row;
+    	}
+
+    .ui-box-image{
+
+    	width: 70px;
+
+    	.embed-rounded{ 
+		    border-radius: 100%;
+		    border: solid 1px #e6e6e6; 
+    	}
+
+    }
+    .ui-box-content {
+
+    	padding: 0 20px 0 20px;
+
+    	flex-direction: row;
+
+    	.section-subtitle{
+	    	font-size: 15px;
+	  		font-weight: normal;
+	    }
+
+	    .section-price{
+	    	font-family: 'Rubik';
+	    	font-size: 15px;
+  			font-weight: 500;
+	    }
+
+	    .c{
+
+
+	    }
+
+	    
+
+    }
+
+    .ui-box-quantity{ 
+    	
+    	@include breakpoint(md){
+    		width: 180px;
+    		margin-left: auto;
+    	}
+    	.quantity-buttons {
+    		.btn-primary{
+    			color:#222222;
+					width: 36px;
+					height: 36px;
+					background-color: #d8d8d8;
+					border-color: #d8d8d8;
+					@include breakpoint(md){
+		    		width: 44px;
+						height: 44px;
+		    	}
+					&:hover{
+						color:#fff;
+						background-color: $primary;
+						border-color: $primary;
+					}
+    		}
+    	}
+
+    }
+    
+	}
+
+}

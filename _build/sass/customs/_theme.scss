@@ -9,10 +9,11 @@ html,body {
 	.container{
 		max-width: 100%!important;
 	}
+} 
+
+.min-h-100vh{
+	min-height: 100vh;
 }
-
-
- 
 .affix-target-bottom{
 	
 	&.target-affix-bottom{
@@ -40,17 +41,22 @@ html,body {
 			&.this-affix.affix{
 				position:fixed;  
 				.affix-column	{
+					height: 100vh;
+					> .ui-scroller{
+						height: 100%;
+						overflow-y: auto;
+					}
 					&.row{
 						margin-right: 0;
 						margin-left: 0;
 					}
 				} 
 				.hide-on-affix{
-					display: none!important;
+					//display: none!important;
 				} 
 
 				// Whem reach bottom of target (simulate a stop affixing)
-				&.elem-affix-bottom{
+				&.elem-affix-bottoXX{
 					position:absolute;
 					bottom: 0;
 					top: inherit;
@@ -249,6 +255,47 @@ html,body {
 @import "theme/wp-posts"; 
 
 
+.gj-modal{
+	overflow-y: auto;
+}
+.gj-picker-bootstrap.datepicker {
+
+	[role="header"]{
+		background-color:$primary;
+		color:#fff;
+
+		.selected{
+			color:#fff;
+		}
+
+	}
+
+	[role="body"]{
+
+			[role="navigator"]{
+
+			}
+
+			table{
+				width: 100%;
+
+				td.disabled{
+					opacity: .3;
+				}
+			}
+
+	}
+
+	[role="footer"]{
+
+		.btn{
+			color:$dark;
+			background-color:$light;
+			border-color:$light;
+		}
+	}
+
+}
 .woo-delivery-date{
 
 	.gj-datepicker{
@@ -273,6 +320,8 @@ html,body {
 
 	.woo-timepicker{
 		.woocommerce-input-wrapper{
+
+				padding: 7px 0;
 				display: flex;
 				align-items: center;
 				justify-content: start;
@@ -283,6 +332,7 @@ html,body {
 				label{
 					margin-bottom:0;
 					margin-right: 10px;
+					font-size: 16px;
 				}
 		}
 	}

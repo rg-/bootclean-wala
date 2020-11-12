@@ -317,6 +317,12 @@
 			.product-thumbnail{
 				order: 1;
 				a{
+					display: block;
+					overflow: hidden;
+					width: 44px;
+					height: 44px;
+				}	
+				img{
 					width: 44px;
 					height: 44px;
 					border-radius: 100%;
@@ -854,8 +860,7 @@ body.woocommerce-edit-address .woocommerce-address-fields{
 }
 
 .ordenar-paso{
-	position:relative;
-
+	position:relative; 
 	&.passed{
 		.paso-ok{
 			@include opacity(1);
@@ -882,6 +887,21 @@ body.woocommerce-edit-address .woocommerce-address-fields{
 	}
 }
 
+.paso-volver{
+	padding: 5px 0;
+	color:#666666!important;
+	text-decoration: none!important;
+	.fa{
+		font-size: 22px;
+		vertical-align: -3px;
+	}
+	span{
+		font-size: 14px;
+		font-family: 'Rubik';
+		text-transform: none;
+		font-weight: 400;
+	}
+}
 
 .pasos_main_nav{
 	.pasos{
@@ -1126,6 +1146,46 @@ body.woocommerce-cart .button[name="update_cart"]{
 		.cantidad{
 			font-size: 15px;
 		}
+
+		@include breakpoint-max(sm){
+
+			tbody{
+				display: flex;
+		    flex-direction: row;
+		    flex-wrap: wrap;
+
+		    > tr{
+					width: 50%; 
+					display: flex;
+					flex-wrap: wrap;
+					flex: 50%;
+					position:relative;
+					padding-top:114px;
+					> td{
+						width: 100%;
+						text-align:center!important;
+						padding: 0px 8px;
+					}
+
+
+					.thumb-table{
+						position:absolute;
+						top:10px;
+						left: 0;
+						right: 0;
+						.ui-ingrediente-thumb{
+							width: 90px;
+							height: 90px;
+							margin:auto;
+						}
+
+					}
+		    }
+
+			}
+
+		}
+
 	}
 
 }

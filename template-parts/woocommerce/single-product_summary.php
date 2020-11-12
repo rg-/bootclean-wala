@@ -38,8 +38,9 @@ if(!empty($get_category_ids)){
 		}
 		?>
 		<?php
+		$show_porciones = false;
 		$receta_porciones = WPBC_get_field('receta_porciones', $product_id);
-		if(!empty($receta_porciones)){
+		if(!empty($receta_porciones) && $show_porciones){
 			?>
 			<span class="meta gmb-1 gmb-md-0"><?php echo do_shortcode('[icon_porciones class="fill-violeta"]'); ?> <?php echo $receta_porciones; ?> Porciones</span> <span class="gmx-1 gmb-1 gmb-md-0">|</span>
 			<?php

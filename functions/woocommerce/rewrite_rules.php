@@ -9,7 +9,7 @@ function WPBC_woo__template_redirect(){
 		or 
 		is_shop() || is_product_category() || is_product_tag() 
 	*/ 
-	if( is_shop() || is_product_category() || is_product_tag()){  
+	if(  is_shop() || is_product_category() || is_product_tag() ){  
 		$recetas_id = WPBC_get_theme_settings('general_post_object_recetas');
 		$url = !empty($recetas_id) ? get_the_permalink($recetas_id) : site_url();
 
@@ -17,7 +17,13 @@ function WPBC_woo__template_redirect(){
 		if( $queried_object->taxonomy == 'product_cat' ){
 			$url = $url.$queried_object->slug; 
 		}
-		wp_redirect($url, '302');
+
+		if( WPBC_woo__if_page_product_cat_id() ){
+			wp_redirect($url, '302');
+		} else {
+			wp_redirect(site_url(), '302');
+		}
+		
   }
 
   $ordenar_page_id = WPBC_get_theme_settings('general_post_object_ordenar');
@@ -33,22 +39,64 @@ function WPBC_woo__template_redirect(){
 }
 add_action('template_redirect', 'WPBC_woo__template_redirect');
 
-add_action('wp_head', function(){ 
-	/* 
-		or 
-		is_shop() || is_product_category() || is_product_tag() 
-	 
-	if( is_woocommerce() ){ 
-		$recetas_id = WPBC_get_theme_settings('general_post_object_recetas');
-		$queried_object = get_queried_object(); 
-		if( $queried_object->taxonomy == 'product_cat' ){
-			echo get_the_permalink($recetas_id).$queried_object->slug;
-		}else{
-			echo get_the_permalink($recetas_id);
-		} 
-  }
-*/
-});
+function WPBC_woo_get_included_terms($theme_settings){
+	$include_cats = array();  
+	$recetas_cat = WPBC_get_theme_settings($theme_settings);
+	$include_cats[] = $recetas_cat; 
+	$recetas_childrens = get_term_children( $recetas_cat, 'product_cat' );  
+	foreach ( $recetas_childrens as $child ) {  
+		$include_cats[] = $child;
+	} 
+	return $include_cats; 
+}
+
+function WPBC_woo__if_page_product_cat_id(){
+
+	$return = false;
+
+	$queried_object = get_queried_object();  
+
+	$recetas_id = WPBC_get_theme_settings('general_post_object_recetas');
+
+	$include_cats = array();  
+	$recetas_cat = WPBC_get_theme_settings('general_post_object_recetas_cat');
+	$include_cats[] = $recetas_cat; 
+	$recetas_childrens = get_term_children( $recetas_cat, 'product_cat' );  
+	foreach ( $recetas_childrens as $child ) {  
+		$include_cats[] = $child;
+	} 
+
+	if( is_page($recetas_id) ){  
+
+		$product_cat_id = get_query_var('product_cat_id');
+		$recetas_term = get_term_by( 'slug', $product_cat_id, 'product_cat' ); 
+		$current_term_id = $recetas_term->term_id;   
+
+	} else {
+
+		if(!empty($queried_object->term_id)){
+			$current_term_id = $queried_object->term_id; 
+		}
+
+	}
+
+	if( !empty($current_term_id) && !empty($include_cats) && in_array( $current_term_id, $include_cats ) ){
+		$return = true;
+	} 
+
+	return $return; 
+
+}
+
+add_action('wpbc/layout/body/start', function(){ 
+	
+	if( WPBC_woo__if_page_product_cat_id() ){
+		//echo "YES";
+	}else{
+		//echo "NO";
+	} 
+
+}, 0 );
 
 /*
 
@@ -83,20 +131,24 @@ add_action( 'init', function (){
 	      'index.php?pagename='.$pagename.'&paged=$matches[1]',
 	      'top'
 	  );
+
+	  if( WPBC_woo__if_page_product_cat_id() ){
+		  
+
+	  }
 	  // ex: recetas/carne/page/1
-	  add_rewrite_rule(
-	      'recetas/([^/]+)?/page/([0-9]{1,})?/?',
-	      'index.php?pagename='.$pagename.'&product_cat_id=$matches[1]&paged=$matches[2]',
-	      'top'
-	  );
+		  add_rewrite_rule(
+		      'recetas/([^/]+)?/page/([0-9]{1,})?/?',
+		      'index.php?pagename='.$pagename.'&product_cat_id=$matches[1]&paged=$matches[2]',
+		      'top'
+		  );
 
-	  // ex: recetas/carne
-	  add_rewrite_rule(
-	      'recetas/([^/]+)?/?',
-	      'index.php?pagename='.$pagename.'&product_cat_id=$matches[1]',
-	      'top'
-	  );
-
+		  // ex: recetas/carne
+		  add_rewrite_rule(
+		      'recetas/([^/]+)?/?',
+		      'index.php?pagename='.$pagename.'&product_cat_id=$matches[1]',
+		      'top'
+		  );
 
 	  $ordenar_page_id = WPBC_get_theme_settings('general_post_object_ordenar');
 	  $ordenar_product_id = WPBC_get_theme_settings('general_post_object_ordenar_product');

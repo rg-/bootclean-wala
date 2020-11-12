@@ -13,6 +13,8 @@
 	} 
 
 ?>
+<div class="ui-scroller">
+	
 <div id="grouped_recetas_mini_cart" class="ui-box-ordenar-cart ui-loader">
 
 	<h3 class="ui-box-cart-title hide_on_mobile">SELECCIÓN DE RECETAS</h3>
@@ -38,6 +40,7 @@
 			<span class="singular <?php echo $singular_class; ?>">receta pendiente para elegir</span>
 			<span class="plural <?php echo $plural_class; ?>">recetas pendientes para elegir</span>
 			<span class="msg"><span class="ui-badge badge badge-success">Has completado <?php echo !empty($grouped_recetas) ? $grouped_recetas : '0'; ?> recetas</span></span>
+			<span class="msg_vinos d-none"><span class="ui-badge badge badge-secondary mt-1">Seleccionadas <span class="n">0</span> bebidas</span></span>
 		</span>
 	
 	</p>
@@ -72,13 +75,13 @@
 		<span class="plural <?php echo $plural_class; ?>">Recetas</span>
 	</p>
 
-	<hr class="hide-on-affix hide_on_mobile">
+	<hr class="hide_on_mobile">
 
 	<h3 class="d-none ui-box-cart-title">SELECCIÓN</h3>
 	<div id="grouped_recetas_list" class="d-none grouped_recetas_list">
 
 	</div>
-	<div id="grouped_recetas_list_out" class="hide-on-affix hide_on_mobile mt-2 gmb-1 grouped_recetas_list_out empty-result">
+	<div id="grouped_recetas_list_out" class="hide_on_mobile mt-2 gmb-1 grouped_recetas_list_out empty-result">
 
 	</div>
 
@@ -87,7 +90,7 @@
 	</div>
 
 	<div class="ui-box-cart-footer hide_on_mobile gmb-2">
-		<div class="d-flex delivery mb-2 hide-on-affix">
+		<div class="d-flex delivery mb-2">
 			Envío <span class="ml-auto">Gratis</span>
 		</div>
 		<div class="d-flex total mb-2">
@@ -127,8 +130,11 @@
 			<input readonly type="hidden" id="grouped_recetas" name="grouped_recetas" value="<?php echo $grouped_recetas; ?>">
 		<?php } ?>
 
-		<button id="grouped_recetas_add_to_cart" disabled type="submit" class="single_add_to_cart_button btn btn-primary btn-block btn-action">Finalizar Pedido</button>
-
+		<div class="text-center">
+			<!--<a href="#" id="grouped_recetas_hide_vinos" class="small d-none"><i class="fa fa-angle-left"></i> Volver a seleccionar Recetas</a>-->
+			<a href="#" id="grouped_recetas_add_vinos" class="btn btn-outline-primary btn-block d-none"><span class="n">Agregar</span> Bebidas</a>  
+			<button id="grouped_recetas_add_to_cart" disabled type="submit" class="single_add_to_cart_button btn btn-primary btn-block btn-action">Finalizar Pedido</button>
+		</div>
 		<?php
 		$ordenar_page_id = WPBC_get_theme_settings('general_post_object_ordenar');
 		?>
@@ -138,5 +144,7 @@
 
 	<?php endif; ?>
 
+
+</div>
 
 </div>

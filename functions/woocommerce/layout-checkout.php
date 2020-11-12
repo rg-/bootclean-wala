@@ -293,3 +293,65 @@ function custom_override_address_fields( $address_fields ) {
 	$address_fields['address_2']['priority'] = 5; 
 	return $address_fields;
 }
+
+
+add_action('woocommerce_cart_loaded_from_session', 'wh_cartOrderItemsbyNewest');
+
+function wh_cartOrderItemsbyNewest() {
+
+    //if the cart is empty do nothing
+    if (WC()->cart->get_cart_contents_count() == 0) {
+        return;
+    }
+
+    //array to collect cart items
+    $cart_sort = [];
+    $vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
+    //add cart item inside the array
+    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) { 
+        if(!has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+        	$cart_sort[$cart_item_key] = WC()->cart->cart_contents[$cart_item_key];
+        }
+    }
+
+    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) { 
+        if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+        	$cart_sort[$cart_item_key] = WC()->cart->cart_contents[$cart_item_key];
+        }
+    }
+
+    //replace the cart contents with in the reverse order
+    WC()->cart->cart_contents = $cart_sort;
+}
+
+add_filter( 'woocommerce_cart_item_class', function($class, $cart_item, $cart_item_key){
+	$product = wc_get_product( $cart_item['product_id'] );
+	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
+	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+		 $class .= ' is-vinos';
+	}
+	return $class;
+},10,3 );
+
+add_filter( 'woocommerce_cart_item_name', function($_product, $cart_item, $cart_item_key){
+  
+  $product = wc_get_product( $cart_item['product_id'] );
+	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
+	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+		 $_product = $product->get_name();
+	}
+	
+	return $_product;
+
+},10,3 ); 
+
+
+add_filter( 'woocommerce_cart_item_permalink', function($product_permalink, $cart_item, $cart_item_key){
+	$product = wc_get_product( $cart_item['product_id'] );
+	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
+	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+		 $product_permalink = false;
+	}
+	return $product_permalink;
+ 
+},10,3 );

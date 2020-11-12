@@ -48,7 +48,7 @@ add_action('wp_footer',function(){
 					      footer: true,
 					      modal: true,
 					      format: 'dd-mm-yyyy',
-					      minDate: minDate,
+					      minDate: minDate, 
 					      open: function (e) {
 				            //me.closest('.m-form-group').addClass('focused');
 				        },
@@ -106,7 +106,7 @@ function WPBC_datepicker_field( $checkout ) {
     echo '<div id="woo-delivery-date" class="woo-delivery-date">
     <h3 class="gpt-1">'.__('Fecha de Envío').'*</h3>'; 
     echo '<div class="row">';
-    echo '<div class="col-sm-6">';
+    echo '<div class="col-xl-6">';
     woocommerce_form_field( 'delivery_date', array(
         'type'          => 'text',
         'class'         => array('woo-datepicker form-row-wide'),
@@ -123,7 +123,7 @@ function WPBC_datepicker_field( $checkout ) {
     	'15-20' => '15 a 20 hs',
     );
     echo '</div>';
-    echo '<div class="col-sm-6">';
+    echo '<div class="col-xl-6">';
     woocommerce_form_field( 'delivery_time', array(
         'type'          => 'radio',
         'class'         => array('woo-timepicker form-row-wide'),
@@ -179,3 +179,47 @@ function WPBC_datepicker_checkout_admin_order_meta($order){
     echo '<p><strong>Horario de Envío:</strong> <br/>' . get_post_meta( $order->get_id(), 'Horario de Envío', true ) . ' hrs</p>'; 
 
 }
+
+/*
+
+	Adding data into user orders (font-end)
+
+*/
+add_action( 'woocommerce_order_details_after_order_table', function($order){
+	?>
+	<div class="woocommerce-customer-details gpt-1">
+		<h2 class="woocommerce-column__title">Fecha y Horario de Envío</h2>
+		<address>
+			<div class="row">
+				<p class="col-6 m-0"><strong>Fecha:</strong> <?php echo get_post_meta( $order->get_id(), 'Fecha de Envío', true ) ?></p>
+				<p class="col-6 m-0"><strong>Horario:</strong> <?php echo get_post_meta( $order->get_id(), 'Horario de Envío', true ) ?>hrs</p>
+			</div>
+		</address>
+	</div>
+	<?php 
+
+},10,1 );
+
+
+/*
+
+	Adding data into emails
+
+*/
+add_action( 'woocommerce_email_after_order_table', function($order, $sent_to_admin, $plain_text, $email){
+	?>
+	<table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top; margin-bottom: 40px; padding:0;" border="0">
+		<tr>
+			<td style="text-align:<?php echo esc_attr( $text_align ); ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0; padding:0;" valign="top" width="50%">
+				<h2>Fecha y Horario de Envío</h2>
+
+				<address class="address">
+					<p><strong>Fecha:</strong> <?php echo get_post_meta( $order->get_id(), 'Fecha de Envío', true ) ?></p>
+					<p><strong>Horario:</strong> <?php echo get_post_meta( $order->get_id(), 'Horario de Envío', true ) ?>hrs</p>
+				</address>
+
+			</td>
+		</tr>
+	</table>
+	<?php
+	},10, 4 );

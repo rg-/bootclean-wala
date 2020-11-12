@@ -163,4 +163,4 @@ add_filter('wpbc/filter/acf/root_color_choices', function($style_choices, $field
 	unset($style_choices['light']);
 
 	return $style_choices;
-},10,2);
+},10,2); 

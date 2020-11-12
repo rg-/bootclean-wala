@@ -16,7 +16,7 @@
 
 		<div class="col-md-8">
 
-			<div class="d-flex flex-wrap">
+			<div class="d-none d-md-flex flex-wrap">
 
 				<?php foreach ($receta_ingredientes as $key => $value) {
 					$ingrediente_id = $value['receta_ingredientes_post_object'];
@@ -35,7 +35,10 @@
 					}
 					?>
 					<div data-is-inview="detect" class="ui-ingrediente-thumb gmx-2 gmy-1 d-flex align-items-center justify-content-center">
-						<img src="<?php echo $img_pre; ?>" data-is-inview-lazysrc="<?php echo $img_low; ?>" alt=" "/>
+						<?php
+						WPBC_build_lazyloader_image($attachment_id, $type='inview', '1by1', 'medium');
+						?>
+						<!--<img src="<?php echo $img_pre; ?>" data-is-inview-lazysrc="<?php echo $img_low; ?>" alt=" "/>-->
 					</div>
 				<?php } ?>
 
@@ -51,9 +54,22 @@
 						$ingrediente_cantidad = $value['receta_ingredientes_cantidad'];
 						$ingrediente_id = $value['receta_ingredientes_post_object'];
 						$ingrediente_name = get_the_title($ingrediente_id); 
+						$ingrediente_image = WPBC_get_field('woo_ingrediente_image',$ingrediente_id);
+						$attachment_id = $ingrediente_image['id'];
 						?>
-						<tr>
-				      <td class="text-violeta text-right font-roboto cantidad"><?php echo $ingrediente_cantidad; ?></td>
+
+						<tr data-is-inview="detect">
+				      <td class="text-violeta text-right font-roboto cantidad">
+				      	<div class="d-md-none thumb-table">
+				      		<div class="ui-ingrediente-thumb d-flex align-items-center justify-content-center">
+										<?php
+										WPBC_build_lazyloader_image($attachment_id, $type='inview', '1by1', 'medium');
+										?>
+									</div>
+								</div>
+				      	<?php echo $ingrediente_cantidad; ?>
+				      	
+				      </td>
 				      <td><?php echo $ingrediente_name; ?></td>
 				    </tr>
 					<?php } ?>

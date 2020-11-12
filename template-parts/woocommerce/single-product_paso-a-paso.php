@@ -16,12 +16,7 @@
 
 		<?php $count = 1; foreach ($receta_pasos as $key => $value) {
 				
-			$attachment_id = $value['receta_pasos_image']['id'];
-
-				$img_hi = do_shortcode("[WPBC_get_attachment_image_src id='".$attachment_id."']");
-				$img_low = do_shortcode("[WPBC_get_attachment_image_src id='".$attachment_id."' size='medium']");
-				$img_mini = do_shortcode("[WPBC_get_attachment_image_src id='".$attachment_id."' size='thumbnail']");
-				$img_blured = do_shortcode("[WPBC_get_attachment_image_src id='".$attachment_id."' size='wpbc_blured_image']");
+			$attachment_id = $value['receta_pasos_image']['id']; 
 
 			$title = $value['receta_pasos_content']['title'];
 			$description = $value['receta_pasos_content']['description'];
@@ -30,11 +25,9 @@
 
 	<div class="ui-box-paso">
 
-		<div class="embed-responsive embed-responsive-16by9">
-			<div class="embed-responsive-item image-cover" data-is-inview-lazybackground="<?php echo $img_hi; ?>" style="background-image: url(<?php echo $img_blured; ?>); ">
-
-			</div>
-		</div>
+		<?php
+		WPBC_build_lazyloader_image($attachment_id, $type='inview');
+		?>
 
 		<h4 class="title font-rubik d-flex align-items-center"><span class="ui-step"><?php echo $count; ?></span> <?php echo $title; ?></h4>
 

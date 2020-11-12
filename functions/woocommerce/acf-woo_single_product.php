@@ -1,5 +1,43 @@
 <?php
 
+function WPBC_group_woo_single_product_locations(){
+	
+	$location_temp = array();
+
+	$recetas_cat = WPBC_get_theme_settings('general_post_object_recetas_cat');
+	
+	if(!empty($recetas_cat)){
+ 
+		$recetas_term = get_term_by( 'id', $recetas_cat, 'product_cat' );  
+		$location_temp[] = array(
+			array(
+				'param' => 'post_taxonomy',
+				'operator' => '==',
+				'value' => 'product_cat:'.$recetas_term->slug,
+			)
+		);
+
+		$recetas_childrens = get_term_children( $recetas_cat, 'product_cat' ); 
+		if(!empty($recetas_childrens)){
+			foreach ( $recetas_childrens as $child ) {
+			    $term = get_term_by( 'id', $child, 'product_cat' );  
+			    $location_temp[] = array(
+						array(
+							'param' => 'post_taxonomy',
+							'operator' => '==',
+							'value' => 'product_cat:'.$term->slug,
+						)
+					);
+			}
+		}
+
+	}
+
+	return $location_temp;
+	
+}
+
+
 add_action('init',function(){
 
 	$fields = array(); 
@@ -85,20 +123,7 @@ add_action('init',function(){
 			'key' => 'group_woo_single_product',
 			'title' => 'Opciones Extras Receta',
 			'fields' => $fields,
-			'location' => array(
-				array(
-					array(
-						'param' => 'post_type',
-						'operator' => '==',
-						'value' => 'product',
-					),
-					array(
-						'param' => 'post_taxonomy',
-						'operator' => '==',
-						'value' => 'product_type:simple',
-					),
-				),
-			),
+			'location' => WPBC_group_woo_single_product_locations(),
 			'menu_order' => 0,
 			'position' => 'normal',
 			'style' => 'default',
@@ -128,4 +153,4 @@ add_action('admin_head',function(){
 
 </style>
 <?php
-});
+}); 

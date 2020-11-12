@@ -10,6 +10,7 @@
 		$grouped_personas_opciones = WPBC_get_field('grouped_personas_opciones', $product->get_id());
 		$grouped_personas_desc = WPBC_get_field('grouped_personas_desc', $product->get_id()); 
 		?>
+
 		<div class="col-12 text-center">
 
 			<h2 class="section-title"><?php echo $grouped_personas_title; ?></h2>

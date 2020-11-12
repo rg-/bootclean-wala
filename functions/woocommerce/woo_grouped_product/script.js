@@ -1,5 +1,42 @@
 +function(t){ 
 
+
+
+	$(document.body).on('click', '[data-filterby]', function(e) {
+
+		var $button = $(this);
+		 
+		var $target = $button.attr('data-filter-target');
+		var $nav = $button.attr('data-filter-nav');
+		var $filterby = $button.attr('data-filterby');
+		var $item = $button.attr('data-filter-item');
+
+		var $active_class = $button.attr('data-active-class');
+		var $default_class = $button.attr('data-default-class');
+
+		if(!$button.hasClass('active')){
+			$($nav).find('[data-filterby]').each(function(){
+				var $active = $(this).attr('data-active-class');
+				var $default = $(this).attr('data-default-class');
+				$(this).removeClass($active).addClass($default);
+			});
+
+			$button.addClass($active_class).removeClass($default_class);
+
+			$($target).find($item).fadeOut(0);
+			$($target).find($item+$filterby).each(function(e){
+				$(this).delay((e*100)).fadeIn(1200, function(){
+					$(this).find('[data-is-inview]').is_inview();
+				});
+
+			});
+			
+		}
+
+		console.log($filterby);
+
+		return false;
+	});
  
 	$(document.body).on('click', '[data-remove-product_ids]', function(e) {
 		var $button = $(this);
@@ -99,10 +136,12 @@
 	  var list_out = $('#grouped_recetas_list_out');
 	  var list_totals = $('#grouped_recetas_list_totals');
 
-	  var list_count = list.find('div').length; 
+	  var list_count = list.find('div.is-recetas').length; 
+	  var list_vinos_count = list.find('div.is-vinos').length; 
+	  // If max reached, show modal 
 
-	  // If max reached, show modal
-	  if( list_count == max && $button.hasClass('btn-plus') ){
+	  var enable_modal_max = true;
+	  if( list_count == max && $button.hasClass('btn-plus') && enable_modal_max && $button.hasClass('btn-recetas') ){
 	  	// alert("max");
 	  	$('#modal_cart_max').modal('show')
 	  	return;
@@ -111,15 +150,18 @@
 	  if( list_count === 0 && $button.hasClass('btn-minus') ){
 	  	return;
 	  }
-
-	  if ($button.hasClass('btn-plus') ) { 
+ 
+	  if ( $button.hasClass('btn-plus') ) { 
 
 		  var newVal = parseFloat(oldValue) + 1; 
 		  var rest = parseInt( $('#grouped_recetas_rest').html() ) + 1;   
 
-		  list.append('<div data-id="'+data_elem.attr('data-id')+'" data-price="'+data_elem.attr('data-price')+'" id="cart_'+data_elem.attr('data-id')+'_'+newVal+'"><span class="nn">1</span>'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
+		  var div_class = $button.hasClass('btn-recetas') ? 'is-recetas' : '';
+		  div_class = $button.hasClass('btn-vinos') ? 'is-vinos' : div_class;
 
-		  list_totals.append('<div id="cart_total_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-price')+'</div>');
+		  list.append('<div class="'+div_class+'" data-id="'+data_elem.attr('data-id')+'" data-price="'+data_elem.attr('data-price')+'" id="cart_'+data_elem.attr('data-id')+'_'+newVal+'"><span class="nn">1</span>'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
+
+		  list_totals.append('<div class="'+div_class+'" id="cart_total_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-price')+'</div>');
 
 		} else {
 	   // Don't allow decrementing below zero
@@ -136,7 +178,9 @@
 	    }
 	  }  
 
-	  var list_count = list.find('div').length; 
+	  var list_count = list.find('div.is-recetas').length; 
+
+	  list_vinos_count = list.find('div.is-vinos').length; 
 
 		var total_calculated = 0;
 		
@@ -144,7 +188,11 @@
 			total_calculated = total_calculated + parseFloat($(this).html());
 		});
  		
+		var list_pre_order = list.find('div.is-vinos');
+		list.find('.is-vinos').remove();
 
+		list.append(list_pre_order);
+		list.find('.is-vinos').eq(0).addClass('first_vino');
 
 		list_out.html(list.html());
 
@@ -237,17 +285,25 @@
 		     			$('#grouped_recetas_rest_count').removeClass('d-none');
 		     		}
 
-						if( list_count==max ){
-							$('#grouped_recetas_add_to_cart').attr('disabled',false); 
+		     		if(list_vinos_count>0){
+		     			$('#grouped_recetas_add_vinos .n').html( 'Modificar' ); 
+		     		}else{
+		     			$('#grouped_recetas_add_vinos .n').html( 'Agregar' ); 
+		     		}
+
+		     		$('#grouped_recetas_rest_amout .msg_vinos .n').html(list_vinos_count);
+
+						if( list_count==max ){ 
+							ordear_reach_max(); 
 						}else{
-							$('#grouped_recetas_add_to_cart').attr('disabled',true); 
+							ordear_not_max();  
 						}
 
 						if(rest_count==1){
 							$('#grouped_recetas_rest_amout').addClass('text-rojo');
 						}else{
 							$('#grouped_recetas_rest_amout').removeClass('text-rojo');
-						}
+						} 
 
 		        $('#total_calculated').html(text);
 		        $('#grouped_recetas_items').removeClass('loading');
@@ -262,6 +318,61 @@
 	  
 
   });
+
+	function ordear_reach_max(){  
+
+		$('#grouped_recetas_add_vinos:not(.is_selecting_vinos)').removeClass('d-none'); 
+		$('#grouped_recetas_add_to_cart').attr('disabled',false); 
+	}
+
+	function ordear_not_max(){
+
+		$('#grouped_recetas_rest_amout .msg').removeClass('d-none');
+		$('#grouped_recetas_rest_amout .msg_vinos').addClass('d-none');
+
+		$('#grouped_recetas_add_vinos').addClass('d-none'); 
+		$('#grouped_recetas_add_to_cart').attr('disabled',true); 
+	}
+
+	$(document.body).on('click', '#grouped_recetas_add_vinos', function() { 
+		
+		$('#grouped_recetas_add_vinos').addClass('d-none').addClass('is_selecting_vinos');
+
+		$('#grouped_recetas_hide_vinos').removeClass('d-none');
+
+		$('.visible_recetas').addClass('d-none');
+		$('.visible_vinos').removeClass('d-none');
+		$('.is_vinos.not_visible').removeClass('not_visible');
+		$('.is_recetas').addClass('not_visible');
+
+		$('#grouped_recetas_rest_amout .msg').addClass('d-none');
+		$('#grouped_recetas_rest_amout .msg_vinos').removeClass('d-none');
+
+		bs_scroll_to('#main-content-wrap');
+
+		return false;
+
+	});
+
+	$(document.body).on('click', '#grouped_recetas_hide_vinos', function() {
+
+		$('#grouped_recetas_hide_vinos').addClass('d-none');
+
+		$('#grouped_recetas_add_vinos').removeClass('d-none').removeClass('is_selecting_vinos');
+
+		$('.visible_recetas').removeClass('d-none');
+		$('.visible_vinos').addClass('d-none');
+		$('.is_vinos').addClass('not_visible');
+		$('.is_recetas.not_visible').removeClass('not_visible');
+
+		$('#grouped_recetas_rest_amout .msg').removeClass('d-none');
+		$('#grouped_recetas_rest_amout .msg_vinos').addClass('d-none');
+
+		bs_scroll_to('#main-content-wrap');
+
+		return false;
+
+	});
 
 	$(document.body).on('click input', '[data-ordenar="receta"] input.qty', function() { 
     $(this).parent().parent().find('a[data-quantity]').attr('data-quantity', $(this).val());
