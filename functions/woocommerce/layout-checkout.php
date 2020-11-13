@@ -219,18 +219,24 @@ add_action('woocommerce_review_order_after_shipping',function(){
 	foreach($shipping_methods as $shipping_method){
 	    $shipping_method->init(); 
 	    foreach($shipping_method->rates as $key=>$val){
-	    	$rate_table[$key] = $val->cost;
+	    	//_print_code($val);
+	    	$rate_table[$key] = $val;
 	    }
 	}
 	
 	?>
 <tr class="gmt-n-1">
 	<td colspan="2">
+ 
 		<?php
-		//_print_code(WC()->session->get( 'chosen_shipping_methods' ));
-		$used_cost = $rate_table[WC()->session->get( 'chosen_shipping_methods' )[0]];
-		if(!empty($used_cost)){
-			if($used_cost<=0){
+		
+		$used_method = $rate_table[WC()->session->get( 'chosen_shipping_methods' )[0]]; 
+
+		// _print_code(WC()->session->get( 'chosen_shipping_methods' ));
+		// _print_code($used_method);
+
+		if(!empty($used_method->cost)){
+			if($used_method->cost<=0){
 				echo "<span class='ui-badge badge-success text-white'>Envío gratuito</span>";
 			}
 		} 
@@ -352,6 +358,7 @@ add_filter( 'woocommerce_cart_item_permalink', function($product_permalink, $car
 	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
 		 $product_permalink = false;
 	}
+	$product_permalink = false;
 	return $product_permalink;
  
 },10,3 );

@@ -11113,8 +11113,14 @@ body.woocommerce-cart .button[name="update_cart"] {
   background-color: #f5f5f5;
   border-color: #f5f5f5; }
 
+.woo-delivery-date .delivery_time_radio {
+  display: flex;
+  align-items: center; }
 .woo-delivery-date .gj-datepicker .input-text {
   width: auto !important; }
+.woo-delivery-date .gj-datepicker .form-control {
+  border: solid 1px #979797 !important;
+  border-radius: 2px !important; }
 .woo-delivery-date .gj-datepicker .input-group-append .btn {
   padding: 0;
   background: transparent;
@@ -11126,10 +11132,7 @@ body.woocommerce-cart .button[name="update_cart"] {
     top: 12px;
     color: #6639b7; }
 .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper {
-  padding: 7px 0;
-  display: flex;
-  align-items: center;
-  justify-content: start; }
+  padding: 7px 0; }
   .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .input-radio {
     margin-right: 10px; }
   .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper label {

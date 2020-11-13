@@ -1,7 +1,7 @@
 +function(t){ 
 
 
-	// data-modal-email
+	// data-modal-email 
 
 	$('.modal').on('shown.bs.modal', function (e) {
 	  var relatedTarget = $(e.relatedTarget);

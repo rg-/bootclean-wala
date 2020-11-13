@@ -90,7 +90,7 @@
 	</div>
 
 	<div class="ui-box-cart-footer hide_on_mobile gmb-2">
-		<div class="d-flex delivery mb-2">
+		<div class="d-flexX delivery mb-2 d-none">
 			Envío <span class="ml-auto">Gratis</span>
 		</div>
 		<div class="d-flex total mb-2">
