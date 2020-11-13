@@ -114,7 +114,7 @@ add_filter('wpbc/slick/slick_class', function($slick_class, $params){
 
 	return $slick_class;
 },10,2);
-
+ 
 function WPBC_build_lazyloader_image($attachment_id=null, $type=null, $embed='16by9', $size='full'){
 	if(!empty($attachment_id) && !empty($type)){
 
