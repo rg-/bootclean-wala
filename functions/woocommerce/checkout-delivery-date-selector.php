@@ -404,7 +404,8 @@ function refresh_checkout_on_shipping_method_change() {
 				      footer: true,
 				      modal: true,
 				      format: 'dd-mm-yyyy',
-				      minDate: minDate,   
+				      minDate: minDate, 
+				      disableDaysOfWeek : [0], 
 				      disableDates: function (date) { 
 			      		return delivery_disableDates(date);  
              	}, 
