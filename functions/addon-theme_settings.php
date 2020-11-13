@@ -172,9 +172,23 @@ function WPBC_child_custom_theme_settings__general($fields){
 		'label' => 'Redes Sociales', 
 	));
 
-	return $fields;
-}
 
+	$fields[] = WPBC_acf_make_message_field(array(
+		'key' => 'general_delivery',
+		'label' => 'Opciones Delivery/Checkout', 
+	));
+
+	$fields[] = WPBC_acf_make_text_field(array(
+		'name' => 'shipping_method_id_montevideo',
+		'label' => 'ID Montevideo', 
+	));
+	$fields[] = WPBC_acf_make_text_field(array(
+		'name' => 'shipping_method_id_miramar',
+		'label' => 'ID Miramar', 
+	));
+
+	return $fields;
+} 
 
 add_filter('wpbc/filter/theme_settings/fields/footer', 'WPBC_child_custom_theme_settings__footer', 10, 1);
 

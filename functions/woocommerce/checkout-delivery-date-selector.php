@@ -213,8 +213,7 @@ add_action('woocommerce_review_order_after_shipping',function(){
 
 	$used_method = $rate_table[WC()->session->get( 'chosen_shipping_methods' )[0]];
  
-		if(!empty($used_method)){
-
+		if(!empty($used_method)){ 
 			$method_id = $used_method->method_id;
 			$instance_id = $used_method->instance_id;
 
@@ -303,7 +302,14 @@ function refresh_checkout_on_shipping_method_change() {
 	$( document.body ).trigger( 'applied_coupon', [ coupon_code ] );
 	$( document.body ).trigger( 'removed_coupon', [ coupon ] );
 
-	*/
+	*/	
+
+		//$shipping_method_id_montevideo = 3;
+		//$shipping_method_id_miramar = 4;
+
+		$shipping_method_id_montevideo = WPBC_get_theme_settings('shipping_method_id_montevideo');
+		$shipping_method_id_miramar = WPBC_get_theme_settings('shipping_method_id_miramar');
+
 
     if( is_checkout() && ! is_wc_endpoint_url() ):
     ?>
@@ -359,7 +365,7 @@ function refresh_checkout_on_shipping_method_change() {
     		$('#datepicker').datepicker('destroy');
 
     		// Parque Miramar
-    		if( shipping_method_id == 'szbd-shipping-method:4'){  
+    		if( shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_miramar; ?>'){  
 
     			// $('#datepicker').datepicker({disableDaysOfWeek: '[0,1,3,4,5,6]'}).datepicker('destroy'); 
 
@@ -387,7 +393,7 @@ function refresh_checkout_on_shipping_method_change() {
     		}
 
     		// Montevideo
-    		if( shipping_method_id == 'szbd-shipping-method:3'){  
+    		if( shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_montevideo; ?>'){  
 
     			var date = new Date();
 					var minDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3); 
