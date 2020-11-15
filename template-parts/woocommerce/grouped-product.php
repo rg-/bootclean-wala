@@ -137,10 +137,24 @@ if(empty($product)){
 	<div class="container">
 		<div class="row gpb-2">
 			<div class="col-12 text-center">
-				<h2 class="section-title"><span class="visible_recetas">ELEGIR RECETAS</span><span class="visible_vinos d-none">
-					<span class="d-inline-block"><a href="#" id="grouped_recetas_hide_vinos" class="paso-volver btn btn-sm btn-transparent"><i class="fa fa-angle-left"></i> <span>Volver</span></a>AGREGAR VINO</span>
 
-				</span></h2>
+				<h2 class="section-title position-relative">
+
+					<span class="visible_recetas">ELEGIR RECETAS</span>
+
+					<span class="visible_vinos d-none">
+
+						<span class="d-inline-block">
+							AGREGAR VINO
+							<a href="#" id="grouped_recetas_hide_vinos" class="paso-volver btn btn-sm btn-transparent">
+									<i class="fa fa-angle-left"></i> <span>Volver</span>
+								</a>
+						</span>
+
+					</span>
+
+				</h2>
+
 			</div>
 		</div>
 	</div>

@@ -216,9 +216,8 @@ a.ui-box-card{
 
 }
 
-#grouped_recetas_add_vinos.btn{
-		font-size: 14px;
-	  line-height: 24px;
+#grouped_recetas_add_vinos.btn{ 
+	  padding: 0.85rem .5rem;
 	  @include breakpoint-max(md){
 	  	background-color:#fff; 
 	  	padding: 9px 25px !important; 

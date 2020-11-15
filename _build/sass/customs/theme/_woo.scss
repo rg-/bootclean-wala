@@ -316,14 +316,17 @@
 			padding: 6px 0;
 			.product-thumbnail{
 				order: 1;
+				flex: none;
+				width: 56px;
 				a{
 					display: block;
 					overflow: hidden;
 					width: 44px;
 					height: 44px;
+
 				}	
 				img{
-					width: 44px;
+					width: 44px!important;
 					height: 44px;
 					border-radius: 100%;
 					overflow: hidden;
@@ -1037,6 +1040,17 @@ body.woo_using_pasos_nav{
 	}
 }
 
+#grouped_recetas_hide_vinos{ 
+	@include breakpoint(sm){
+		position:absolute;
+		top:-8px;
+		left: 0; 
+	}
+	@include breakpoint(md){
+		top:0;
+	}
+}
+
 #grouped_recetas_mini_cart{
 	
 	#grouped_recetas_add_to_cart{
@@ -1057,6 +1071,23 @@ body.woo_using_pasos_nav{
 				bottom: 0;
 				padding: 0;
 			}
+			&.this-affix.affix{
+				.affix-column{
+					height: auto!important;
+				}
+				&.elem-affix-bottom{
+					.affix-column{
+						height: auto!important;
+					}
+				}
+
+			}
+			&.affix-inside-bottom{
+			    position: absolute;
+			    .affix-column{
+			    	    transform: translate(0, 100%);
+			    }
+				}
 		}
 
 		#grouped_recetas_mini_cart{

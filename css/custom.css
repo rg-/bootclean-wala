@@ -8462,6 +8462,13 @@ html, body {
 .min-h-100vh {
   min-height: 100vh; }
 
+@media (min-width: 768px) {
+  .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix:not(.affix-inside-bottom) .affix-column > .ui-scroller {
+    height: 100%;
+    overflow-y: auto; }
+
+  .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix.affix-inside-bottom .affix-column {
+    height: auto; } }
 .affix-container-absolute[data-affix-breakpoint="xs"] {
   position: absolute;
   top: 0;
@@ -8480,9 +8487,6 @@ html, body {
     position: fixed; }
     .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix .affix-column {
       height: 100vh; }
-      .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix .affix-column > .ui-scroller {
-        height: 100%;
-        overflow-y: auto; }
       .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix .affix-column.row {
         margin-right: 0;
         margin-left: 0; }
@@ -8538,9 +8542,6 @@ html, body {
       position: fixed; }
       .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix .affix-column {
         height: 100vh; }
-        .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix .affix-column > .ui-scroller {
-          height: 100%;
-          overflow-y: auto; }
         .affix-container-absolute[data-affix-breakpoint="sm"].this-affix.affix .affix-column.row {
           margin-right: 0;
           margin-left: 0; }
@@ -8596,9 +8597,6 @@ html, body {
       position: fixed; }
       .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix .affix-column {
         height: 100vh; }
-        .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix .affix-column > .ui-scroller {
-          height: 100%;
-          overflow-y: auto; }
         .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix .affix-column.row {
           margin-right: 0;
           margin-left: 0; }
@@ -8654,9 +8652,6 @@ html, body {
       position: fixed; }
       .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix .affix-column {
         height: 100vh; }
-        .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix .affix-column > .ui-scroller {
-          height: 100%;
-          overflow-y: auto; }
         .affix-container-absolute[data-affix-breakpoint="lg"].this-affix.affix .affix-column.row {
           margin-right: 0;
           margin-left: 0; }
@@ -8712,9 +8707,6 @@ html, body {
       position: fixed; }
       .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix .affix-column {
         height: 100vh; }
-        .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix .affix-column > .ui-scroller {
-          height: 100%;
-          overflow-y: auto; }
         .affix-container-absolute[data-affix-breakpoint="xl"].this-affix.affix .affix-column.row {
           margin-right: 0;
           margin-left: 0; }
@@ -9836,6 +9828,8 @@ span.lazybackground-loader{
 .ui-footer-copy {
   font-size: 12px;
   color: #666666; }
+  .ui-footer-copy a {
+    color: #666666; }
 
 .navbar-nav-footer .nav-item {
   margin: 3px 0; }
@@ -10119,8 +10113,7 @@ a.ui-box-card {
   display: none !important; }
 
 #grouped_recetas_add_vinos.btn {
-  font-size: 14px;
-  line-height: 24px; }
+  padding: 0.85rem .5rem; }
   @media (max-width: 991.98px) {
     #grouped_recetas_add_vinos.btn {
       background-color: #fff;
@@ -10452,14 +10445,16 @@ a.ui-box-card {
       justify-content: start;
       padding: 6px 0; }
       .wpbc-woo .woo-custom-checkout-review-order table.shop_table tr.cart_item .product-thumbnail {
-        order: 1; }
+        order: 1;
+        flex: none;
+        width: 56px; }
         .wpbc-woo .woo-custom-checkout-review-order table.shop_table tr.cart_item .product-thumbnail a {
           display: block;
           overflow: hidden;
           width: 44px;
           height: 44px; }
         .wpbc-woo .woo-custom-checkout-review-order table.shop_table tr.cart_item .product-thumbnail img {
-          width: 44px;
+          width: 44px !important;
           height: 44px;
           border-radius: 100%;
           overflow: hidden;
@@ -10980,6 +10975,15 @@ body.woocommerce-edit-address .woocommerce-address-fields {
 .is_none .singular {
   display: none; }
 
+@media (min-width: 576px) {
+  #grouped_recetas_hide_vinos {
+    position: absolute;
+    top: -8px;
+    left: 0; } }
+@media (min-width: 768px) {
+  #grouped_recetas_hide_vinos {
+    top: 0; } }
+
 #grouped_recetas_mini_cart #grouped_recetas_add_to_cart {
   padding-left: 10px;
   padding-right: 10px; }
@@ -10993,6 +10997,14 @@ body.woocommerce-edit-address .woocommerce-address-fields {
       top: inherit;
       bottom: 0;
       padding: 0; }
+    #grouped_recetas_form [data-toggle="nav-affix"].this-affix.affix .affix-column {
+      height: auto !important; }
+    #grouped_recetas_form [data-toggle="nav-affix"].this-affix.affix.elem-affix-bottom .affix-column {
+      height: auto !important; }
+    #grouped_recetas_form [data-toggle="nav-affix"].affix-inside-bottom {
+      position: absolute; }
+      #grouped_recetas_form [data-toggle="nav-affix"].affix-inside-bottom .affix-column {
+        transform: translate(0, 100%); }
   #grouped_recetas_form #grouped_recetas_mini_cart {
     border-radius: 0;
     background-color: #eaab00;
@@ -11139,6 +11151,50 @@ body.woocommerce-cart .button[name="update_cart"] {
     margin-bottom: 0;
     margin-right: 10px;
     font-size: 16px; }
+
+[data-toggle="tooltip"] {
+  cursor: pointer; }
+
+.tooltip.show {
+  opacity: 1; }
+
+.tooltip .arrow {
+  display: none; }
+
+.tooltip > .tooltip-inner {
+  max-width: 250px;
+  -webkit-transform: translate(0, 50px);
+  -ms-transform: translate(0, 50px);
+  transform: translate(0, 50px);
+  border-radius: 0;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-width: 100px;
+  min-height: 100px;
+  background-image: url("../images/loaders/tail-spin-000000.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50px 50px; }
+
+#whatsapp-web-link {
+  position: fixed;
+  z-index: 1020;
+  bottom: 37px;
+  right: 28px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
+  @media (prefers-reduced-motion: reduce) {
+    #whatsapp-web-link {
+      transition: none; } }
+  #whatsapp-web-link:hover {
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08); }
+    #whatsapp-web-link:hover .svg-hover-primary {
+      fill: #6639b7 !important; }
 
 .has-primary-background-color {
   background-color: #6639b7; }

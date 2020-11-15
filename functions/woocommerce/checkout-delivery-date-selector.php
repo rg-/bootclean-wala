@@ -351,6 +351,7 @@ function refresh_checkout_on_shipping_method_change() {
     	});
 
     	function update_shipping_and_delivery(){
+
     		var shipping_method_id = $('#shipping_method input:checked').val(); 
 
     		var delivery_fields = $('#woo-delivery-date');
@@ -393,7 +394,7 @@ function refresh_checkout_on_shipping_method_change() {
     		}
 
     		// Montevideo
-    		if( shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_montevideo; ?>'){  
+    		if( !shipping_method_id || shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_montevideo; ?>'){  
 
     			var date = new Date();
 					var minDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3); 

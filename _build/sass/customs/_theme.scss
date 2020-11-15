@@ -20,6 +20,15 @@ html,body {
 		
 	}
 }
+@include breakpoint(md){
+	.affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix:not(.affix-inside-bottom) .affix-column > .ui-scroller {
+	    height: 100%;
+	    overflow-y: auto;
+	}
+	.affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix.affix-inside-bottom .affix-column {
+		height: auto;
+	}
+}
 @each $breakpoint in map-keys($grid-breakpoints) {
 	@include media-breakpoint-up($breakpoint) {
 		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);  
@@ -42,9 +51,7 @@ html,body {
 				position:fixed;  
 				.affix-column	{
 					height: 100vh;
-					> .ui-scroller{
-						height: 100%;
-						overflow-y: auto;
+					> .ui-scroller{ 
 					}
 					&.row{
 						margin-right: 0;
@@ -345,4 +352,51 @@ html,body {
 		}
 	}
 
+}
+
+[data-toggle="tooltip"]{
+	cursor: pointer;
+}
+.tooltip.show{
+	opacity: 1;
+}
+.tooltip .arrow{
+	display: none;
+}
+.tooltip>.tooltip-inner {
+
+  max-width: 250px;
+
+  @include translate(0,50px);
+
+  border-radius: 0;
+  padding: 0;
+  background: #fff;
+  @include box-shadow($box-shadow);
+  min-width: 100px;
+  min-height: 100px; 
+	background-image:url("../images/loaders/tail-spin-000000.svg"); 
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size: 50px 50px; 
+}
+.tooltip-thumbnail{
+
+}
+
+
+
+#whatsapp-web-link{
+	position:fixed;
+	z-index: 1020;
+	bottom:37px;
+	right: 28px;
+	@include transition();
+	@include scale(1);
+	&:hover{
+		@include scale(1.08);
+		.svg-hover-primary{
+			fill:$primary!important;
+		}
+	}
 }

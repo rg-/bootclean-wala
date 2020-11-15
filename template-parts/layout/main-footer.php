@@ -110,11 +110,15 @@ if($use_footer=='none') return;
 
 		<div class="row align-items-center gpt-2 gpt-md	-4">
 
-			<div class="col-md-6 text-center text-md-left order-2 order-md-1">
+			<div class="col-md-3 text-center text-md-left order-2 order-md-1">
 				<p class="ui-footer-copy"><?php echo WPBC_get_theme_settings("footer_copyright"); ?></p>
 			</div>
 
-			<div class="col-md-6 text-center text-md-right order-1 order-md-2 gmb-1 gmb-md-0">
+			<div class="col-md-4 text-center text-md-left order-3 order-md-2">
+				<p class="ui-footer-copy"><a href="http://vrij.com.uy/" target="_blank">Vrij Diseño</a></p>
+			</div>
+
+			<div class="col-md-5 text-center text-md-right order-1 order-md-3 gmb-1 gmb-md-0">
 				<div class="d-flex flex-wrap d-flex flex-wrap flex-row align-items-center justify-content-center justify-content-md-end">
 					<img width="61" class="mx-1" src="[WPBC_get_stylesheet_directory_uri]/images/theme/visa@2x.png" alt="VISA" /> <img width="64" class="mx-1" src="[WPBC_get_stylesheet_directory_uri]/images/theme/mastercard@2x.png" alt="Mastercard" />
 				</div>

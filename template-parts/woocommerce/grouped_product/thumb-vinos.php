@@ -10,13 +10,14 @@ $product_class = $args['product_class'];
 <div class="w d-flex">
 
 	<div class="position-relative ui-box-image"> 
-		
-		<div class="ui-box-image-embed">
-			<?php
+		<?php
 			$image_id = $grouped_product_child->get_image_id();  
+			$img_full = do_shortcode("[WPBC_get_attachment_image_src id='".$image_id."' size='full']");
 			$img_mini = do_shortcode("[WPBC_get_attachment_image_src id='".$image_id."' size='thumbnail']");
 			$img_blured = do_shortcode("[WPBC_get_attachment_image_src id='".$image_id."' size='wpbc_blured_image']"); 
 			?>
+		<div class="ui-box-image-embed" data-toggle="tooltip" data-placement="right" data-html="true" title="<img class='tooltip-thumbnail' width='250' src='<?php echo $img_full; ?>'/>">
+			
 			<img class="embed-rounded" src="<?php echo $img_blured; ?>" width="62" data-is-inview-lazysrc="<?php echo $img_mini; ?>"/> 
 		</div>
 

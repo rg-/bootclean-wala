@@ -21,12 +21,12 @@
 
 	WPBC_get_template_part('woocommerce/menu-product_cat', array(
 		'type' => 'vinos',
-		'class' => 'd-none visible_vinos'
+		'class' => 'd-none visible_vinos gpb-3'
 	));
 
 	WPBC_get_template_part('woocommerce/menu-product_cat', array(
 		'type' => 'recetas',
-		'class' => 'visible_recetas'
+		'class' => 'visible_recetas gpb-2'
 	));
 
 	?>

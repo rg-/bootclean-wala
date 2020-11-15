@@ -330,6 +330,14 @@ function wh_cartOrderItemsbyNewest() {
     WC()->cart->cart_contents = $cart_sort;
 }
 
+
+/*
+
+	Modify cart item and order items on order, emails, etc
+
+*/
+
+
 add_filter( 'woocommerce_cart_item_class', function($class, $cart_item, $cart_item_key){
 	$product = wc_get_product( $cart_item['product_id'] );
 	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
@@ -351,14 +359,45 @@ add_filter( 'woocommerce_cart_item_name', function($_product, $cart_item, $cart_
 
 },10,3 ); 
 
+add_filter( 'woocommerce_order_item_name', function($_product, $cart_item, $order){
+  
+  $product = wc_get_product( $cart_item['product_id'] );
+	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
+	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+		 $_product = $product->get_name();
+	}else{
+		if($order===false){
+			$_product = "<a style='color:#6639b7; font-weight:bold; ' href='". get_the_permalink($cart_item['product_id']) ."' target='_blank'>".$_product.'</a>';
+		}
+	}
+	
+	return $_product;
 
+},10,3 ); 
+
+
+
+add_filter( 'woocommerce_order_item_permalink', function($product_permalink, $cart_item, $order){
+	$product = wc_get_product( $cart_item['product_id'] );
+	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
+	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
+		 $product_permalink = false;
+	}else{
+		$product_permalink = get_the_permalink($cart_item['product_id']);
+	}
+	//$product_permalink = false;
+	return $product_permalink;
+ 
+},10,3 );
 add_filter( 'woocommerce_cart_item_permalink', function($product_permalink, $cart_item, $cart_item_key){
 	$product = wc_get_product( $cart_item['product_id'] );
 	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
 	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
 		 $product_permalink = false;
+	}else{
+		$product_permalink = get_the_permalink($cart_item['product_id']);
 	}
-	$product_permalink = false;
+	//$product_permalink = false;
 	return $product_permalink;
  
 },10,3 );

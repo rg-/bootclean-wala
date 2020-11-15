@@ -20,7 +20,7 @@ if(!empty($child_of)){
 $vinos_cat_term_query = new WP_Term_Query( $vinos_cat_args ); 
 if ( ! empty( $vinos_cat_term_query->terms ) ) {
 		?>
-	<div id="<?php echo $type; ?>-nav" class="filter-nav row gpt-sm-2 gpb-1 <?php echo $class; ?>">
+	<div id="<?php echo $type; ?>-nav" class="filter-nav row <?php echo $class; ?>">
 		<div class="col-12">
 			<div class="d-flex justify-content-center flex-wrap">
 				<button type="button" data-active-class="btn-outline-primary" data-default-class="btn-primary" data-filter-nav="#<?php echo $type; ?>-nav" data-filter-target="#grouped_recetas_items" data-filter-item=".is_<?php echo $type; ?>" data-filterby=".is_<?php echo $type; ?>" class="btn mx-2 gmb-1 btn-sm btn-outline-primary">Todos</button>

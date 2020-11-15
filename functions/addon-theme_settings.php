@@ -193,6 +193,12 @@ function WPBC_child_custom_theme_settings__general($fields){
 add_filter('wpbc/filter/theme_settings/fields/footer', 'WPBC_child_custom_theme_settings__footer', 10, 1);
 
 function WPBC_child_custom_theme_settings__footer($fields){  
+	$fields[] =  WPBC_acf_make_text_field(
+		array( 
+			'name' => 'footer_whatsapp',
+			'label' => 'Whatsapp',  
+		)
+	); 
 	$fields[] =  WPBC_acf_make_post_object_wpcf7_field(
 		array( 
 			'name' => 'footer_form',

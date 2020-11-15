@@ -132,7 +132,7 @@
 
 		<div class="text-center">
 			<!--<a href="#" id="grouped_recetas_hide_vinos" class="small d-none"><i class="fa fa-angle-left"></i> Volver a seleccionar Recetas</a>-->
-			<a href="#" id="grouped_recetas_add_vinos" class="btn btn-outline-primary btn-block d-none"><span class="n">Agregar</span> Bebidas</a>  
+			<a href="#" id="grouped_recetas_add_vinos" class="btn btn-outline-primary btn-block btn-action d-none"><span class="n">Agregar</span> Bebidas</a>  
 			<button id="grouped_recetas_add_to_cart" disabled type="submit" class="single_add_to_cart_button btn btn-primary btn-block btn-action">Finalizar Pedido</button>
 		</div>
 		<?php
