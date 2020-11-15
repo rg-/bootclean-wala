@@ -2,7 +2,7 @@
 $footer_whatsapp = WPBC_get_theme_settings('footer_whatsapp');
 if(!empty($footer_whatsapp)){
 ?>
-<a href="https://wa.me/<?php echo $footer_whatsapp; ?>" target="_blank" id="whatsapp-web-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="84" viewBox="0 0 84 84">
+<a href="https://api.whatsapp.com/send?phone=<?php echo $footer_whatsapp; ?>" target="_blank" id="whatsapp-web-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="84" viewBox="0 0 84 84">
     <defs>
         <filter id="wfedbw47ba" width="146.9%" height="146.9%" x="-23.4%" y="-23.4%" filterUnits="objectBoundingBox">
             <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>

@@ -145,6 +145,7 @@ if($use_footer=='none') return;
 
 				<div class="text-center mx-auto footer-copyright gpb-1 gpb-md-2">
 					<p class="ui-footer-copy m-0"><?php echo WPBC_get_theme_settings("footer_copyright"); ?></p>
+					<p class="ui-footer-copy m-0"><a href="http://vrij.com.uy/" target="_blank">Vrij Diseño</a></p>
 				</div>
 
 			</div>
