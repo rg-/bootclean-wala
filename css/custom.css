@@ -11163,8 +11163,8 @@ body.woocommerce-cart .button[name="update_cart"] {
   overflow-y: auto; }
 
 .gj-picker-bootstrap table tr td.selected.gj-cursor-pointer div {
-  background-color: #eaab00;
-  border-color: #eaab00; }
+  background-color: #eaab00 !important;
+  border-color: #eaab00 !important; }
 
 .gj-picker-bootstrap.datepicker [role="header"] {
   background-color: #6639b7;

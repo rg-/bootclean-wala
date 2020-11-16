@@ -266,8 +266,8 @@ html,body {
 	overflow-y: auto;
 }
 .gj-picker-bootstrap table tr td.selected.gj-cursor-pointer div{
-	background-color:$secondary;
-	border-color:$secondary;
+	background-color:$secondary!important;
+	border-color:$secondary!important;
 }
 .gj-picker-bootstrap.datepicker {
 
