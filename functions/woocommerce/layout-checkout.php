@@ -147,10 +147,12 @@ add_action('woocommerce_checkout_after_customer_details', function(){
 	<div class="container affix-container"> 
 		<!-- woo-custom-checkout-review-order column  -->
 		<div class="col-md-6 col-lg-4 order-md-2 ml-auto affix-column px-0 gpx-md-1">
-			<div class="woo-custom-checkout-review-order">
-				<?php
-			 	woocommerce_order_review();
-				?>
+			<div class="ui-scroller">
+				<div class="woo-custom-checkout-review-order">
+					<?php
+				 	woocommerce_order_review();
+					?>
+				</div>
 			</div>
 		</div>
 	</div>

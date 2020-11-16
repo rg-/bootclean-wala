@@ -13,7 +13,7 @@
 	} 
 
 ?>
-<div class="ui-scroller">
+
 	
 <div id="grouped_recetas_mini_cart" class="ui-box-ordenar-cart ui-loader">
 
@@ -145,6 +145,4 @@
 	<?php endif; ?>
 
 
-</div>
-
-</div>
+</div> 

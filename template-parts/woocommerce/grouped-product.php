@@ -197,12 +197,14 @@ if(empty($product)){
 					
 					<!-- Columna mini fake cart  -->
 					<div class="<?php echo $col_aside_class; ?> affix-column">
-						<?php
-						// Elegir Recetas
-						WPBC_get_template_part('woocommerce/grouped_product/ordenar-mini_cart', array(
-							'show_paso_2' => $show_paso_2,
-							'show_paso_3' => $show_paso_3,
-						)); ?>
+						<div class="ui-scroller">
+							<?php
+							// Elegir Recetas
+							WPBC_get_template_part('woocommerce/grouped_product/ordenar-mini_cart', array(
+								'show_paso_2' => $show_paso_2,
+								'show_paso_3' => $show_paso_3,
+							)); ?>
+						</div>
 					</div>
 					<!-- Columna mini fake cart  END -->
 				

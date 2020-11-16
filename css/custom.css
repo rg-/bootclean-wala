@@ -8463,10 +8463,12 @@ html, body {
   min-height: 100vh; }
 
 @media (min-width: 768px) {
+  .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix:not(.affix-inside-bottom) .affix-column > .ui-scroller,
   .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix:not(.affix-inside-bottom) .affix-column > .ui-scroller {
     height: 100%;
     overflow-y: auto; }
 
+  .affix-container-absolute[data-affix-breakpoint="md"].this-affix.affix.affix-inside-bottom .affix-column,
   .affix-container-absolute[data-affix-breakpoint="xs"].this-affix.affix.affix-inside-bottom .affix-column {
     height: auto; } }
 .affix-container-absolute[data-affix-breakpoint="xs"] {
