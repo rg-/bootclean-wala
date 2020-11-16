@@ -41,8 +41,10 @@ function WPBC_datepicker_field( $checkout ) {
     date_default_timezone_set('America/Los_Angeles');
     $mydateoptions = array('' => __('Select PickupDate', 'woocommerce' ));
 
-    echo '<div id="woo-delivery-date" class="woo-delivery-date">
-    <h3 class="gpt-1">'.__('Fecha de Envío').'*</h3>'; 
+    echo '<div id="woo-delivery-date" class="woo-delivery-date changing">'; 
+    echo '<div id="woo-delivery-on-changing"></div>';
+    echo '<div class="changing-wrapper">';
+    echo '<h3 class="gpt-1">'.__('Fecha de Envío').'*</h3>';
     echo '<div class="row">';
     echo '<div class="col-xl-6">';
     woocommerce_form_field( 'delivery_date', array(
@@ -60,8 +62,7 @@ function WPBC_datepicker_field( $checkout ) {
     	'9-11' => '9 a 11hs',
     	'12-14' => '12 a 14 hs',
     	'15-17' => '15 a 17 hs',
-    	'18-20' => '18 a 20 hs',
-    	'18-21' => '18 a 21 hs',
+    	'18-20' => '18 a 20 hs', 
     );
     echo '</div>';
     echo '<div class="col-xl-6">';
@@ -83,11 +84,13 @@ function WPBC_datepicker_field( $checkout ) {
     echo '</div>';
     echo '</div>';
 
-    echo '<p class="hide_for_18-21 d-none"><i>* Envios mínimo 72 horas de realizado el pedido. Domingos no entregamos. Feriados no laborables tampoco (1 de enero, 1 de mayo, 18 de julio, 25 de agosto y 25 de diciembre).</i></p>';
+    echo '<p class="hide_for_18-21 d-none small"><i>* Envios mínimo 72 horas de realizado el pedido. Domingos no entregamos. Feriados no laborables tampoco (1 de enero, 1 de mayo, 18 de julio, 25 de agosto y 25 de diciembre).</i></p>';
 
-    echo '<p class="show_for_18-21 d-none"><i>* Envios Martes de cada semana. Feriados no laborables no entregamos (1 de enero, 1 de mayo, 18 de julio, 25 de agosto y 25 de diciembre).</i></p>';
+    echo '<p class="show_for_18-21 d-none small"><i>* Envios Martes de cada semana. Feriados no laborables no entregamos (1 de enero, 1 de mayo, 18 de julio, 25 de agosto y 25 de diciembre).</i></p>';
 
     echo '</div>'; 
+
+    echo '</div>';
 
 
     /*
@@ -99,8 +102,9 @@ function WPBC_datepicker_field( $checkout ) {
 
 add_filter( 'woocommerce_form_field', function($field, $key, $args, $value){
 	if($key=='delivery_time'){
-		$field = str_replace('<input type="radio"', '<span class="delivery_time_radio"><input type="radio"', $field);
-		$field = str_replace('label>', 'label></span>', $field);
+		//$field = str_replace('<input type="radio"', '<span class="delivery_time_radio"><input type="radio"', $field);
+		//$field = str_replace('label>', 'label></span>', $field); 
+
 		$field = $field;
 	}
 	return $field;
@@ -313,6 +317,14 @@ function refresh_checkout_on_shipping_method_change() {
 
     jQuery(function($){
  
+ 			// $('select[name="delivery_time"]').parent().append('<i class="icon-select"></i>');
+ 			$('select[name="delivery_time"]').dropdown({
+ 				uiLibrary: 'bootstrap4',
+        change: function (e) {
+              
+        }
+     });
+ 			
 
     	$(document.body).on('updated_cart_totals',function(){ 
     		//console.log('updated_cart_totals changed');  
@@ -325,7 +337,12 @@ function refresh_checkout_on_shipping_method_change() {
     	});
 
     	$(document.body).on('update_checkout',function(){  
-    		update_shipping_and_delivery();  
+    		$('#woo-delivery-date').find('#woo-delivery-on-changing').fadeIn(300,function(){
+  				$('#woo-delivery-date').addClass('changing');
+  			});
+  			$('#datepicker').datepicker('destroy'); 
+    		$('select[name="delivery_time"]').dropdown('destroy'); 
+    		//update_shipping_and_delivery();  
     	});
     	$(document.body).on('updated_checkout',function(){  
     		update_shipping_and_delivery();  
@@ -336,6 +353,7 @@ function refresh_checkout_on_shipping_method_change() {
     		var shipping_method_id = $('#shipping_method input:checked').val(); 
 
     		var delivery_fields = $('#woo-delivery-date');
+ 
     		
     		/*
     		delivery_fields.find('[name="delivery_time"]').prop('checked', false);
@@ -346,9 +364,7 @@ function refresh_checkout_on_shipping_method_change() {
     		});
 				*/
 
-				delivery_fields.val("").change(); 
-
-    		$('#datepicker').datepicker('destroy');
+				// delivery_fields.val("").change();  
 
     		// Parque Miramar
     		if( shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_miramar; ?>'){  
@@ -374,9 +390,21 @@ function refresh_checkout_on_shipping_method_change() {
     			$('.show_for_18-21').removeClass('d-none'); 
     			$('.hide_for_18-21').addClass('d-none'); 
  
-    			delivery_fields.find('option').removeAttr('selected').addClass('d-none'); 
-    			delivery_fields.find('option[value="18-21"]').removeClass('d-none').prop('selected', true); 
-    			delivery_fields.change();
+    			delivery_fields.find('select[name="delivery_time"] option').remove(); 
+	    		
+	    		$out = '<option value="18-21">18 a 21 hs</option>';
+	    		delivery_fields.find('select[name="delivery_time"]').append($out);  
+
+    			$('select[name="delivery_time"]').dropdown({
+			 				uiLibrary: 'bootstrap4',
+			        change: function (e) {
+			              
+			        }
+			     });
+
+    			$('#woo-delivery-date').find('#woo-delivery-on-changing').fadeOut(300,function(){
+    				$('#woo-delivery-date').removeClass('changing');
+    			});
 
     			/*
     			delivery_fields.find('[name="delivery_time"][value="18-21"]').next('label').removeClass('d-none');
@@ -414,14 +442,36 @@ function refresh_checkout_on_shipping_method_change() {
     			$('.hide_for_18-21').removeClass('d-none'); 
 	    		delivery_fields.find('[name="delivery_time"][value="9-11"]').prop('checked', true); 
     			*/	
- 
-	    		delivery_fields.find('option').removeAttr('selected').removeClass('d-none');  
-	    		delivery_fields.find('option[value="18-21"]').addClass('d-none'); 
-    			delivery_fields.find('option[value="9-11"]').removeClass('d-none').prop('selected', true); 
-    			delivery_fields.change();
+   
+	    		delivery_fields.find('select[name="delivery_time"] option').remove();  
+
+	    		$out = '<option value="9-11">9 a 11hs</option>';
+	    		$out += '<option value="12-14">12 a 14hs</option>';
+	    		$out += '<option value="15-17">15 a 17hs</option>';
+	    		$out += '<option value="18-20">18 a 20hs</option>';  
+
+	    		delivery_fields.find('select[name="delivery_time"]').append($out);  
+
+    			$('select[name="delivery_time"]').dropdown({
+			 				uiLibrary: 'bootstrap4',
+			        change: function (e) {
+			              
+			        }
+			     });
+
+    			$('#woo-delivery-date').find('#woo-delivery-on-changing').fadeOut(300,function(){
+    				$('#woo-delivery-date').removeClass('changing');
+    			});
+
+    			$('.show_for_18-21').addClass('d-none'); 
+    			$('.hide_for_18-21').removeClass('d-none'); 
 
     		}
     	}
+
+    	
+
+    	
  
     })
     </script>

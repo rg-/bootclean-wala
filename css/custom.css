@@ -11224,12 +11224,93 @@ body.woocommerce-cart .button[name="update_cart"] {
   .woo-delivery-date .gj-datepicker .input-group-append .btn .gj-icon {
     top: 12px;
     color: #6639b7; }
-.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .input-radio {
-  margin-right: 10px; }
-.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper label {
-  margin-bottom: 0;
-  margin-right: 10px;
-  font-size: 16px; }
+.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper {
+  position: relative; }
+  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .icon-select {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: center;
+    top: 1px;
+    right: 1px;
+    z-index: 10; }
+  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper select {
+    position: relative;
+    z-index: 9; }
+  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .input-radio {
+    margin-right: 10px; }
+  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper label {
+    margin-bottom: 0;
+    margin-right: 10px;
+    font-size: 16px; }
+
+#woo-delivery-date {
+  position: relative; }
+  #woo-delivery-date.changing .changing-wrapper {
+    -webkit-opacity: 0.6;
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    z-index: 0; }
+    #woo-delivery-date.changing .changing-wrapper .form-row {
+      -webkit-opacity: 0;
+      -moz-opacity: 0;
+      opacity: 0; }
+  #woo-delivery-date.changing #woo-delivery-on-changing {
+    z-index: 10; }
+
+#woo-delivery-on-changing {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; }
+
+.gj-dropdown-bootstrap-4 [role=presenter] {
+  border: solid 1px #979797 !important;
+  border-radius: 2px !important;
+  height: calc(1.5em + 1.376rem + 2px);
+  color: #495057;
+  width: 100%;
+  padding: 0.688rem 1.313rem; }
+  .gj-dropdown-bootstrap-4 [role=presenter]:hover, .gj-dropdown-bootstrap-4 [role=presenter]:focus, .gj-dropdown-bootstrap-4 [role=presenter]:active {
+    background-color: #fff; }
+
+.gj-icon.arrow-dropdown {
+  top: 10px !important; }
+
+.gj-icon.arrow-dropdown:before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: 24px;
+  height: 24px; }
+
+.gj-icon.arrow-dropup:before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+ul.gj-list-bootstrap .list-group-item {
+  border-radius: 4px; }
 
 [data-toggle="tooltip"] {
   cursor: pointer; }
