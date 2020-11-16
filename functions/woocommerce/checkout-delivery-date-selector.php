@@ -67,7 +67,7 @@ function WPBC_datepicker_field( $checkout ) {
     echo '<div class="col-xl-6">';
     /**/
     woocommerce_form_field( 'delivery_time', array(
-        'type'          => 'radio',
+        'type'          => 'select',
         'class'         => array('woo-timepicker form-row-wide'),
         'id'            => 'timepicker',
         'required'      => true,
@@ -259,7 +259,7 @@ add_action('wp_footer',function(){
 				  }); 
 			  });
 
-				  $('#timepicker').each(function(){ 
+				  $('#timepickerXX').each(function(){ 
 				  	var me = $(this);
 				  	me.timepicker({
 								locale: 'es-es',
@@ -333,6 +333,8 @@ function refresh_checkout_on_shipping_method_change() {
   	}
 
     jQuery(function($){
+ 
+
     	$(document.body).on('updated_cart_totals',function(){ 
     		//console.log('updated_cart_totals changed');  
     	});
@@ -356,12 +358,16 @@ function refresh_checkout_on_shipping_method_change() {
 
     		var delivery_fields = $('#woo-delivery-date');
     		
+    		/*
     		delivery_fields.find('[name="delivery_time"]').prop('checked', false);
     		delivery_fields.find('[name="delivery_time"]').each(function(){ 
     			var label = $(this).next('label');
     			label.addClass('d-none');
     			$(this).addClass('d-none'); 
     		});
+				*/
+
+				delivery_fields.val("").change(); 
 
     		$('#datepicker').datepicker('destroy');
 
@@ -388,9 +394,16 @@ function refresh_checkout_on_shipping_method_change() {
 
     			$('.show_for_18-21').removeClass('d-none'); 
     			$('.hide_for_18-21').addClass('d-none'); 
+ 
+    			delivery_fields.find('option').removeAttr('selected').addClass('d-none'); 
+    			delivery_fields.find('option[value="18-21"]').removeClass('d-none').prop('selected', true); 
+    			delivery_fields.change();
+
+    			/*
     			delivery_fields.find('[name="delivery_time"][value="18-21"]').next('label').removeClass('d-none');
     			delivery_fields.find('[name="delivery_time"][value="18-21"]').removeClass('d-none');
     			delivery_fields.find('[name="delivery_time"][value="18-21"]').prop('checked', true); 
+    			*/
     		}
 
     		// Montevideo
@@ -412,6 +425,7 @@ function refresh_checkout_on_shipping_method_change() {
              	}, 
 				  });
 
+			  	/*
     			delivery_fields.find('[name="delivery_time"]').each(function(){ 
 	    			var label = $(this).next('label');
 	    			label.removeClass('d-none');
@@ -420,7 +434,13 @@ function refresh_checkout_on_shipping_method_change() {
 	    		$('.show_for_18-21').addClass('d-none'); 
     			$('.hide_for_18-21').removeClass('d-none'); 
 	    		delivery_fields.find('[name="delivery_time"][value="9-11"]').prop('checked', true); 
-    			//delivery_fields.find('[name="delivery_time"][value="9-13"]').prop('checked', true); 
+    			*/	
+ 
+	    		delivery_fields.find('option').removeAttr('selected').removeClass('d-none');  
+	    		delivery_fields.find('option[value="18-21"]').addClass('d-none'); 
+    			delivery_fields.find('option[value="9-11"]').removeClass('d-none').prop('selected', true); 
+    			delivery_fields.change();
+
     		}
     	}
  

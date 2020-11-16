@@ -10215,6 +10215,38 @@ a.ui-box-card {
 	</div>
 
 */
+.wpbc-woo [role="alert"].woocommerce-error, .wpbc-woo [role="alert"].woocommerce-info, .wpbc-woo [role="alert"].woocommerce-message {
+  font-size: 15px;
+  border-top: 0 !important;
+  border-radius: 2px;
+  padding: 3px 10px 3px 40px;
+  font-family: 'Roboto';
+  color: #fff; }
+  .wpbc-woo [role="alert"].woocommerce-error:before, .wpbc-woo [role="alert"].woocommerce-info:before, .wpbc-woo [role="alert"].woocommerce-message:before {
+    top: 6px;
+    left: 13px;
+    color: #fff;
+    font-size: 12px;
+    color: #fff;
+    content: "";
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 16px;
+    height: 16px; }
+.wpbc-woo [role="alert"].woocommerce-message {
+  background-color: #8ed74e !important; }
+  .wpbc-woo [role="alert"].woocommerce-message:before {
+    background-image: url("../images/theme/icon-check.svg"); }
+.wpbc-woo [role="alert"].woocommerce-error {
+  background-color: #c14e33 !important; }
+  .wpbc-woo [role="alert"].woocommerce-error:before {
+    background-image: url("../images/theme/icon-error.svg"); }
+.wpbc-woo [role="alert"].woocommerce-info {
+  background-color: #eaab00 !important; }
+  .wpbc-woo [role="alert"].woocommerce-info:before {
+    background-image: url("../images/theme/icon-info.svg"); }
+
 .wpbc-woo .woocommerce-NoticeGroup .woocommerce-error, .wpbc-woo .woocommerce-NoticeGroup .woocommerce-info, .wpbc-woo .woocommerce-NoticeGroup .woocommerce-message,
 .wpbc-woo .woocommerce-notices-wrapper .woocommerce-error,
 .wpbc-woo .woocommerce-notices-wrapper .woocommerce-info,
@@ -11085,6 +11117,25 @@ body.woocommerce-cart .button[name="update_cart"] {
           height: 90px;
           margin: auto; } }
 
+.woocommerce-remove-coupon {
+  text-indent: -100px;
+  display: inline-block;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  vertical-align: -4px;
+  position: relative; }
+  .woocommerce-remove-coupon:after {
+    content: "\00d7";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath fill='%23f00' d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 20px auto; }
+
 /* Delivery zones specific */
 .woo-is_checkout #billing_country_field,
 .woo-is_checkout #shipping_country_field {
@@ -11143,14 +11194,12 @@ body.woocommerce-cart .button[name="update_cart"] {
   .woo-delivery-date .gj-datepicker .input-group-append .btn .gj-icon {
     top: 12px;
     color: #6639b7; }
-.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper {
-  padding: 7px 0; }
-  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .input-radio {
-    margin-right: 10px; }
-  .woo-delivery-date .woo-timepicker .woocommerce-input-wrapper label {
-    margin-bottom: 0;
-    margin-right: 10px;
-    font-size: 16px; }
+.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper .input-radio {
+  margin-right: 10px; }
+.woo-delivery-date .woo-timepicker .woocommerce-input-wrapper label {
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-size: 16px; }
 
 [data-toggle="tooltip"] {
   cursor: pointer; }
