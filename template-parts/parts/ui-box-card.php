@@ -52,6 +52,14 @@
 				<?php echo $args['price']; ?>
 			</small>
 		</div>
+
+		<?php if($args['out_of_stock']){ ?>
+			<div class="ui-overlay-br">
+				<small class="ui-badge btn btn-sm btn-outline-rojo bg-white" style="pointer-events: none; ">
+					AGOTADO
+				</small>
+			</div>
+		<?php } ?>
 		
 		<div class="ui-box-image-embed">
 			<?php 

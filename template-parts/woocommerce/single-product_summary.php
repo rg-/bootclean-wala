@@ -22,8 +22,25 @@ if(!empty($get_category_ids)){
 		$cats_classes .= ' cat-'.$term->slug.'';
 	} 
 }
+
+$out_of_stock = false;
+if( ! $product->managing_stock() && ! $product->is_in_stock() ) { 
+	$out_of_stock = true; 
+} 
+
+if( $product->managing_stock() && $product->get_stock_quantity()==0 ) { 
+	$out_of_stock = true; 
+} 
 ?>
 <div class="">
+
+	<?php if($out_of_stock){ ?>
+		<p class="">
+			<small class="ui-badge btn btn-sm btn-outline-rojo" style="pointer-events: none; ">
+				PRODUCTO AGOTADO
+			</small>
+		</p>
+	<?php } ?>
 
 	<h2 class="section-title gmb-1"><?php echo $product->get_name(); ?></h2>
 

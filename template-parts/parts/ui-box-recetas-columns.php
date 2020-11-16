@@ -155,6 +155,18 @@ $_total = $loop->max_num_pages;
 
 					$receta_tiempo = WPBC_get_field('receta_tiempo', $product->get_id());
 					$receta_porciones = WPBC_get_field('receta_porciones', $product->get_id());
+
+
+					$out_of_stock = false;
+					if( ! $product->managing_stock() && ! $product->is_in_stock() ) { 
+						$out_of_stock = true; 
+					} 
+
+					if( $product->managing_stock() && $product->get_stock_quantity()==0 ) { 
+						$out_of_stock = true; 
+					} 
+
+
 					$value = array(
 						'post_id' => $product->get_id(),
 						'permalink' => get_permalink( $product->get_id() ),
@@ -165,6 +177,7 @@ $_total = $loop->max_num_pages;
 						'time' => $receta_tiempo, 
 						'porciones' => $receta_porciones,
 						'category' => $product->get_category_ids(),
+						'out_of_stock' => $out_of_stock,
 					); 
 					?>
 					<div class="col-md-6 col-lg-4 gp-1" data-is-inview="detect">

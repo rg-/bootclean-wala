@@ -79,6 +79,16 @@ $slick = json_encode($slick);
 
 								$receta_tiempo = WPBC_get_field('receta_tiempo', $product->get_id());
 								$receta_porciones = WPBC_get_field('receta_porciones', $product->get_id());
+
+								$out_of_stock = false;
+								if( ! $product->managing_stock() && ! $product->is_in_stock() ) { 
+									$out_of_stock = true; 
+								} 
+
+								if( $product->managing_stock() && $product->get_stock_quantity()==0 ) { 
+									$out_of_stock = true; 
+								} 
+
 								$value = array(
 									'post_id' => $product->get_id(),
 									'permalink' => get_permalink( $product->get_id() ),
@@ -89,6 +99,7 @@ $slick = json_encode($slick);
 									'time' => $receta_tiempo, 
 									'porciones' => $receta_porciones,
 									'category' => $product->get_category_ids(),
+									'out_of_stock' => $out_of_stock,
 								); 
 								$value['is_slick'] = 1;
 								?>

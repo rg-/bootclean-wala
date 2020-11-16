@@ -39,6 +39,9 @@
 		$previous_post           = $post; 
 
 		foreach ( $grouped_products as $grouped_product_child ) {
+
+
+
 			$post_object        = get_post( $grouped_product_child->get_id() );
 			$quantites_required = $quantites_required || ( $grouped_product_child->is_purchasable() && ! $grouped_product_child->has_options() );
 			$post               = $post_object; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
@@ -62,10 +65,24 @@
 				 $template_type = 'thumb-vinos';
 			}
 
-			WPBC_get_template_part('woocommerce/grouped_product/'.$template_type, array(
-				'grouped_product_child' => $grouped_product_child,
-				'product_class' => $product_class
-			));
+
+			$include = true;
+			if( ! $grouped_product_child->managing_stock() && ! $grouped_product_child->is_in_stock() ) { 
+				$include = false; 
+			} 
+
+			if( $grouped_product_child->managing_stock() && $grouped_product_child->get_stock_quantity()==0 ) { 
+				$include = false; 
+			} 
+
+			if($include){
+				WPBC_get_template_part('woocommerce/grouped_product/'.$template_type, array(
+					'grouped_product_child' => $grouped_product_child,
+					'product_class' => $product_class
+				));
+			}
+
+			
 
 				?>
 
