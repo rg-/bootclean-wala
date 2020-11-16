@@ -11162,6 +11162,10 @@ body.woocommerce-cart .button[name="update_cart"] {
 .gj-modal {
   overflow-y: auto; }
 
+.gj-picker-bootstrap table tr td.selected.gj-cursor-pointer div {
+  background-color: #eaab00;
+  border-color: #eaab00; }
+
 .gj-picker-bootstrap.datepicker [role="header"] {
   background-color: #6639b7;
   color: #fff; }
@@ -11172,9 +11176,13 @@ body.woocommerce-cart .button[name="update_cart"] {
   .gj-picker-bootstrap.datepicker [role="body"] table td.disabled {
     opacity: .3; }
 .gj-picker-bootstrap.datepicker [role="footer"] .btn {
-  color: #222222;
-  background-color: #f5f5f5;
-  border-color: #f5f5f5; }
+  color: #6639b7;
+  background-color: transparent;
+  border-color: transparent; }
+  .gj-picker-bootstrap.datepicker [role="footer"] .btn:last-child {
+    color: #fff;
+    background-color: #6639b7;
+    border-color: #6639b7; }
 
 .woo-delivery-date .delivery_time_radio {
   display: flex;

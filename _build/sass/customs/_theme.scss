@@ -265,6 +265,10 @@ html,body {
 .gj-modal{
 	overflow-y: auto;
 }
+.gj-picker-bootstrap table tr td.selected.gj-cursor-pointer div{
+	background-color:$secondary;
+	border-color:$secondary;
+}
 .gj-picker-bootstrap.datepicker {
 
 	[role="header"]{
@@ -296,9 +300,14 @@ html,body {
 	[role="footer"]{
 
 		.btn{
-			color:$dark;
-			background-color:$light;
-			border-color:$light;
+			color:$primary;
+			background-color:transparent;
+			border-color:transparent;
+			&:last-child{
+				color:#fff;
+				background-color:$primary;
+				border-color:$primary;
+			}
 		}
 	}
 
