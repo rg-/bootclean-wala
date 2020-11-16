@@ -234,8 +234,7 @@
 		font-weight: normal;
 		color:#222;
 		a{
-			color:#222;
-			text-decoration:underline;
+			 
 		}
 		&:before{
 			display: none;
@@ -244,6 +243,7 @@
 	form.login{
 		padding: 20px;
 		background-color: $light;
+		margin-bottom: $grid-gutter*2;
 		@include breakpoint(lg){
 			margin-right: 100px;
 		}
@@ -254,6 +254,41 @@
 			margin-left: 7px;
 		}
 	}
+
+
+	display: flex;
+	flex-direction: column;
+
+	.woocommerce-info{
+		padding: 6px 9px;
+		display: inline-block;
+	}
+
+	.showlogin, .showcoupon{
+		color: $primary;
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	.woocommerce-form-coupon-toggle{
+		order:3;
+		> .woocommerce-info{
+			background-color:$rosa;
+		}
+	}
+	.woocommerce-form-coupon{
+		order:4;
+		margin-top: 0;
+	}
+	.woocommerce-form-login-toggle{
+		order:1;
+	}
+	.woocommerce-form-login{
+		
+		order:2;
+	}
+
 }
 
 .wpbc-woo .woo-custom-checkout-review-order{

@@ -10385,29 +10385,49 @@ a.ui-box-card {
 .wpbc-woo .woocommerce-privacy-policy-text p {
   margin-bottom: 0; }
 
-.wpbc-woo .woo-custom-checkout-login-form .woocommerce-info {
-  border: 0;
-  background-color: transparent;
-  padding: 0;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  color: #222; }
-  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-info a {
-    color: #222;
-    text-decoration: underline; }
-  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-info:before {
-    display: none; }
-.wpbc-woo .woo-custom-checkout-login-form form.login {
-  padding: 20px;
-  background-color: #f5f5f5; }
-  @media (min-width: 992px) {
-    .wpbc-woo .woo-custom-checkout-login-form form.login {
-      margin-right: 100px; } }
-  .wpbc-woo .woo-custom-checkout-login-form form.login > p:first-child {
-    font-weight: 600; }
-  .wpbc-woo .woo-custom-checkout-login-form form.login .woocommerce-form-login__rememberme {
-    margin-left: 7px; }
+.wpbc-woo .woo-custom-checkout-login-form {
+  display: flex;
+  flex-direction: column; }
+  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-info {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    color: #222; }
+    .wpbc-woo .woo-custom-checkout-login-form .woocommerce-info:before {
+      display: none; }
+  .wpbc-woo .woo-custom-checkout-login-form form.login {
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 30px; }
+    @media (min-width: 992px) {
+      .wpbc-woo .woo-custom-checkout-login-form form.login {
+        margin-right: 100px; } }
+    .wpbc-woo .woo-custom-checkout-login-form form.login > p:first-child {
+      font-weight: 600; }
+    .wpbc-woo .woo-custom-checkout-login-form form.login .woocommerce-form-login__rememberme {
+      margin-left: 7px; }
+  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-info {
+    padding: 6px 9px;
+    display: inline-block; }
+  .wpbc-woo .woo-custom-checkout-login-form .showlogin, .wpbc-woo .woo-custom-checkout-login-form .showcoupon {
+    color: #6639b7;
+    text-decoration: none; }
+    .wpbc-woo .woo-custom-checkout-login-form .showlogin:hover, .wpbc-woo .woo-custom-checkout-login-form .showcoupon:hover {
+      text-decoration: underline; }
+  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-coupon-toggle {
+    order: 3; }
+    .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-coupon-toggle > .woocommerce-info {
+      background-color: #ffe6a3; }
+  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-coupon {
+    order: 4;
+    margin-top: 0; }
+  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-login-toggle {
+    order: 1; }
+  .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-login {
+    order: 2; }
 
 .wpbc-woo .woo-custom-checkout-review-order {
   border-radius: 11px;

@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 	<?php else : ?>
 
 		<h3>Detalle de facturación y envío<?php //esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
-		<p><i>Solo entrega en Montevideo. <a href="#" data-target="#modal_zonas" data-toggle="modal">Ver zonas</a></i></p>
+		<p><i>Entregas en Montevideo y Barra de Carrasco. <a href="#" data-target="#modal_zonas" data-toggle="modal">Ver zonas</a></i></p>
 	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>

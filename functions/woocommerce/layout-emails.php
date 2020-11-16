@@ -52,6 +52,10 @@ function woocommerce_email_grouped_details_custom($order){
 				<h3 style="color:#6639b7">PLAN</h3>
 				<p><span class="count_personas"><?php echo $value['grouped_personas']; ?></span> Personas<br> <span class="count_recetas"><?php echo $value['grouped_recetas']; ?></span> Recetas</p>
 			</td>
+			<td class="td" style="text-align:<?php echo esc_attr( $text_align ); ?>; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;">
+				<h3 style="color:#6639b7">Fecha y Horario de Envío</h3>
+				<p><strong>Fecha:</strong> <?php echo get_post_meta( $order->get_id(), 'Fecha de Envío', true ) ?> <br><strong>Horario:</strong> <?php echo get_post_meta( $order->get_id(), 'Horario de Envío', true ) ?>hrs</p>
+			</td>
 		</tr>
 	</tbody>
 </table>

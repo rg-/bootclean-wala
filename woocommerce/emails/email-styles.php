@@ -50,7 +50,7 @@ body {
 #wrapper {
 	background-color: <?php echo esc_attr( $bg ); ?>;
 	margin: 0;
-	padding: 70px 0;
+	padding: 40px 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
 }
@@ -167,7 +167,7 @@ body {
 }
 
 #header_wrapper {
-	padding: 36px 48px;
+	padding: 16px 48px;
 	display: block;
 }
 

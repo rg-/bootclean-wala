@@ -168,28 +168,7 @@ add_action( 'woocommerce_order_details_after_order_table', function($order){
 },10,1 );
 
 
-/*
-
-	Adding data into emails
-
-*/
-add_action( 'woocommerce_email_after_order_table', function($order, $sent_to_admin, $plain_text, $email){
-	?>
-	<table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top; margin-bottom: 40px; padding:0;" border="0">
-		<tr>
-			<td style="text-align:<?php echo esc_attr( $text_align ); ?>; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; border:0; padding:0;" valign="top" width="50%">
-				<h2>Fecha y Horario de Envío</h2>
-
-				<address class="address">
-					<p><strong>Fecha:</strong> <?php echo get_post_meta( $order->get_id(), 'Fecha de Envío', true ) ?></p>
-					<p><strong>Horario:</strong> <?php echo get_post_meta( $order->get_id(), 'Horario de Envío', true ) ?>hrs</p>
-				</address>
-
-			</td>
-		</tr>
-	</table>
-	<?php
-	},10, 4 );
+ 
 
 
 
