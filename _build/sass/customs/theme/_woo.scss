@@ -275,6 +275,7 @@
 		order:3;
 		> .woocommerce-info{
 			background-color:$rosa;
+			@include border-radius(2px);
 		}
 	}
 	.woocommerce-form-coupon{
@@ -283,6 +284,9 @@
 	}
 	.woocommerce-form-login-toggle{
 		order:1;
+		> .woocommerce-info{
+			font-size: 16px;
+		}
 	}
 	.woocommerce-form-login{
 		
@@ -1117,6 +1121,8 @@ body.woo_using_pasos_nav{
 }
 
 #grouped_recetas_hide_vinos{ 
+	display: block;
+	text-align: center;
 	@include breakpoint(sm){
 		position:absolute;
 		top:-8px;

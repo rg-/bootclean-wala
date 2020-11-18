@@ -10420,12 +10420,15 @@ a.ui-box-card {
   .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-coupon-toggle {
     order: 3; }
     .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-coupon-toggle > .woocommerce-info {
-      background-color: #ffe6a3; }
+      background-color: #ffe6a3;
+      border-radius: 2px; }
   .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-coupon {
     order: 4;
     margin-top: 0; }
   .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-login-toggle {
     order: 1; }
+    .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-login-toggle > .woocommerce-info {
+      font-size: 16px; }
   .wpbc-woo .woo-custom-checkout-login-form .woocommerce-form-login {
     order: 2; }
 
@@ -11029,14 +11032,17 @@ body.woocommerce-edit-address .woocommerce-address-fields {
 .is_none .singular {
   display: none; }
 
-@media (min-width: 576px) {
-  #grouped_recetas_hide_vinos {
-    position: absolute;
-    top: -8px;
-    left: 0; } }
-@media (min-width: 768px) {
-  #grouped_recetas_hide_vinos {
-    top: 0; } }
+#grouped_recetas_hide_vinos {
+  display: block;
+  text-align: center; }
+  @media (min-width: 576px) {
+    #grouped_recetas_hide_vinos {
+      position: absolute;
+      top: -8px;
+      left: 0; } }
+  @media (min-width: 768px) {
+    #grouped_recetas_hide_vinos {
+      top: 0; } }
 
 #grouped_recetas_mini_cart #grouped_recetas_add_to_cart {
   padding-left: 10px;
@@ -11340,8 +11346,8 @@ ul.gj-list-bootstrap .list-group-item {
 #whatsapp-web-link {
   position: fixed;
   z-index: 1020;
-  bottom: 37px;
-  right: 28px;
+  bottom: 20px;
+  right: 20px;
   transition: all 0.2s ease-in-out;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -11349,6 +11355,10 @@ ul.gj-list-bootstrap .list-group-item {
   @media (prefers-reduced-motion: reduce) {
     #whatsapp-web-link {
       transition: none; } }
+  @media (min-width: 768px) {
+    #whatsapp-web-link {
+      bottom: 30px;
+      right: 30px; } }
   #whatsapp-web-link:hover {
     -webkit-transform: scale(1.08);
     -ms-transform: scale(1.08);

@@ -504,10 +504,14 @@ ul.gj-list-bootstrap{
 #whatsapp-web-link{
 	position:fixed;
 	z-index: 1020;
-	bottom:37px;
-	right: 28px;
+	bottom:20px;
+	right: 20px;
 	@include transition();
 	@include scale(1);
+	@include breakpoint(md){
+		bottom:30px;
+		right: 30px;
+	}
 	&:hover{
 		@include scale(1.08);
 		.svg-hover-primary{
