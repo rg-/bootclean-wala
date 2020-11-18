@@ -342,7 +342,8 @@ function refresh_checkout_on_shipping_method_change() {
   			});
   			$('#datepicker').datepicker('destroy'); 
     		$('select[name="delivery_time"]').dropdown('destroy'); 
-    		//update_shipping_and_delivery();  
+    		
+    		update_shipping_and_delivery();  
     	});
     	$(document.body).on('updated_checkout',function(){  
     		update_shipping_and_delivery();  
@@ -365,7 +366,8 @@ function refresh_checkout_on_shipping_method_change() {
 				*/
 
 				// delivery_fields.val("").change();  
-
+				console.log('shipping_method_id '+shipping_method_id);
+				console.log('shipping_method_id_miramar '+<?php echo $shipping_method_id_miramar; ?>);
     		// Parque Miramar
     		if( shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_miramar; ?>'){  
 
@@ -373,6 +375,7 @@ function refresh_checkout_on_shipping_method_change() {
 
     			var date = new Date();
 					var minDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3); 
+					$('#datepicker').datepicker('destroy'); 
 			  	$('#datepicker').datepicker({ 
 							locale: 'es-es',
 				      uiLibrary: 'bootstrap4',
@@ -395,6 +398,7 @@ function refresh_checkout_on_shipping_method_change() {
 	    		$out = '<option value="18-21">18 a 21 hs</option>';
 	    		delivery_fields.find('select[name="delivery_time"]').append($out);  
 
+	    		$('select[name="delivery_time"]').dropdown('destroy'); 
     			$('select[name="delivery_time"]').dropdown({
 			 				uiLibrary: 'bootstrap4',
 			        change: function (e) {
@@ -418,6 +422,7 @@ function refresh_checkout_on_shipping_method_change() {
 
     			var date = new Date();
 					var minDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3); 
+					$('#datepicker').datepicker('destroy'); 
 			  	$('#datepicker').datepicker({ 
 							locale: 'es-es',
 				      uiLibrary: 'bootstrap4',
@@ -451,7 +456,7 @@ function refresh_checkout_on_shipping_method_change() {
 	    		$out += '<option value="18-20">18 a 20hs</option>';  
 
 	    		delivery_fields.find('select[name="delivery_time"]').append($out);  
-
+	    		$('select[name="delivery_time"]').dropdown('destroy'); 
     			$('select[name="delivery_time"]').dropdown({
 			 				uiLibrary: 'bootstrap4',
 			        change: function (e) {
