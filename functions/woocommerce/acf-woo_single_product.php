@@ -84,6 +84,22 @@ add_action('init',function(){
 			'button_label' => 'Agregar Ingrediente',
 		)); 
 
+		$receta_ingredientes_extra = array();
+
+			$receta_ingredientes_extra[] = WPBC_acf_make_text_field(array(
+				'label' => 'Ingrediente',
+				'name' => 'receta_ingredientes_extra',
+				'width' => '100%',
+			));  
+
+		$fields[] = WPBC_acf_make_repeater_field(array(
+			'label' =>  do_shortcode('[icon_porciones color="#6639b7"]').' Vas a necesitar...',
+			'name' => 'receta_ingredientes_extras',
+			'width' => '100%',
+			'sub_fields' => $receta_ingredientes_extra,
+			'button_label' => 'Agregar Item',
+		)); 
+
 		$receta_pasos = array();
 			$receta_pasos[] = WPBC_acf_make_image_field(array(
 				'label' => 'Imagen',

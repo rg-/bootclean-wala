@@ -114,12 +114,24 @@ html,body {
 }
 
 .ui-ingrediente-thumb{
-	width: 122px;
-	height: 122px;
+	width: 88px;
+	height: 88px;
 	border-radius:100%;
 	border: solid 1px #e6e6e6;
 	background-color: #fff;
 	overflow: hidden;
+	@include breakpoint(md){
+		width: 122px;
+		height: 122px;
+	}
+}
+.ui-ingrediente-text{
+	width: 88px;
+	overflow: hidden;
+	display: block;
+	@include breakpoint(md){
+		width: 122px;
+	}
 }
 
 .ui-box-paso{
