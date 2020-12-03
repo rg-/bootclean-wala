@@ -60,7 +60,7 @@
 
 		<div class="col-md-3 gpt-3 gpt-md-0">
 
-			<div class="bg-rosa gpy-1 gpx-2 font-size-15" style="border-radius: 4px;">
+			<div class="gml-md-n-4 bg-rosa gpy-1 gpx-2 font-size-15" style="border-radius: 4px;">
 				
 				<p class="mt-1"><b>VAS A NECESITAR</b></p>
 				<?php
