@@ -13,11 +13,13 @@ $call_to_action =  $args['call_to_action'];
  
 $slick = array(
 	'dots' => true,
-	'arrows' => true, 
+	'arrows' => false, 
 	'infinite' => true,
 	'speed' => 600,
-	'autoplay' => false,
-	'autoplaySpeed' => 6200, 
+	'fade' => true,
+	'autoplay' => true,
+	'speed' => 2000,
+	'autoplaySpeed' => 4200, 
 );
 $slick = json_encode($slick); 
 
