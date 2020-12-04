@@ -13,12 +13,15 @@ if(!empty($get_category_ids)){
 	$cats_classes = '';
 	foreach ($get_category_ids as $key => $value) {
 		$term = get_term( $value, 'product_cat' );
+
 		$term_name = $term->name;
 		$term_slug = $term->slug;
 		$term_link = get_term_link( $value, 'product_cat');
 		$color = get_field('woo_extra_taxonomy__style', $term);
 		$receta_url = get_permalink($recetas_id).$term_slug;
-		$cats .= '<a data-btn="fx" href="'.$receta_url.'" class="gmr-1 btn btn-sm btn-'.$color.'">'.$term_name.'</a>'; 
+		if(!empty($term->parent)){
+			$cats .= '<a data-btn="fx" href="'.$receta_url.'" class="gmr-1 btn btn-sm btn-'.$color.'">'.$term_name.'</a>'; 
+		}
 		$cats_classes .= ' cat-'.$term->slug.'';
 	} 
 }
@@ -50,7 +53,7 @@ if( $product->managing_stock() && $product->get_stock_quantity()==0 ) {
 		$receta_tiempo = WPBC_get_field('receta_tiempo', $product_id);
 		if(!empty($receta_tiempo)){
 			?>
-			<span class="meta gmb-1 gmb-md-0"><?php echo do_shortcode('[icon_time class="fill-violeta"]'); ?> <?php echo $receta_tiempo; ?></span> <span class="gmx-1 gmb-1 gmb-md-0">|</span>
+			<span class="meta gmb-1 gmb-md-0"><?php echo do_shortcode('[icon_time class="fill-violeta"]'); ?> <?php echo $receta_tiempo; ?></span> 
 			<?php
 		}
 		?>
@@ -63,9 +66,10 @@ if( $product->managing_stock() && $product->get_stock_quantity()==0 ) {
 			<?php
 		}
 		?>
+		<?php if(!empty($cats)){ ?>
+			<span class="gmx-1 gmb-1 gmb-md-0">|</span><span class="gmb-1 gmb-md-0"><?php echo $cats; ?></span>
+		<?php } ?>
 
-		<span class="gmb-1 gmb-md-0"><?php echo $cats; ?></span>
-	
 	</div>
 
 	<div class="pt-3 gmb-2 font-size-15">
