@@ -11221,6 +11221,29 @@ body.woocommerce-cart .button[name="update_cart"] {
 .wpbc-woo .woo-custom-checkout-review-order table.shop_table tfoot tr.woocommerce-shipping-totals {
   align-items: start; }
 
+/*
+		
+	.woocommerce-order-pay
+
+*/
+body.woocommerce-order-pay .entry-header .entry-title {
+  text-align: center; }
+body.woocommerce-order-pay .woocommerce-notices-wrapper .woocommerce-info {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 480px;
+  background: none !important;
+  color: #000;
+  font-size: 17px;
+  padding: 0;
+  text-align: center; }
+  body.woocommerce-order-pay .woocommerce-notices-wrapper .woocommerce-info p .button {
+    float: none; }
+body.woocommerce-order-pay .woocommerce-notices-wrapper .woocommerce-error {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 480px; }
+
 .hentry .entry-header {
   margin-bottom: 15px; }
 .hentry h1, .hentry h2, .hentry h3, .hentry h4, .hentry h5, .hentry h6, .hentry p {
