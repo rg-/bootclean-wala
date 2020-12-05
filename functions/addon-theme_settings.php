@@ -186,6 +186,10 @@ function WPBC_child_custom_theme_settings__general($fields){
 		'name' => 'shipping_method_id_miramar',
 		'label' => 'ID Miramar', 
 	));
+	$fields[] = WPBC_acf_make_text_field(array(
+		'name' => 'shipping_method_id_testeo',
+		'label' => 'ID Testeo (gratis)', 
+	));
 
 	return $fields;
 } 

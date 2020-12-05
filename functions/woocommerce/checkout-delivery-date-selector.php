@@ -292,7 +292,7 @@ function refresh_checkout_on_shipping_method_change() {
 
 		$shipping_method_id_montevideo = WPBC_get_theme_settings('shipping_method_id_montevideo');
 		$shipping_method_id_miramar = WPBC_get_theme_settings('shipping_method_id_miramar');
-
+		$shipping_method_id_testeo = WPBC_get_theme_settings('shipping_method_id_testeo');
 
     if( is_checkout() && ! is_wc_endpoint_url() ):
     ?>
@@ -418,7 +418,7 @@ function refresh_checkout_on_shipping_method_change() {
     		}
 
     		// Montevideo
-    		if( !shipping_method_id || shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_montevideo; ?>'){  
+    		if( !shipping_method_id || shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_montevideo; ?>' || shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_testeo; ?>' ){  
 
     			var date = new Date();
 					var minDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3); 
