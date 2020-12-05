@@ -190,7 +190,7 @@ add_action( 'woocommerce_review_order_after_order_total', function(){
 });
 
 add_filter('WPBC_post_header_class', function($class){
-	if( is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){
+	if( is_wc_endpoint_url( 'order-pay' ) || is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){
 		$class = 'text-center';
 	}
 	return $class;
@@ -198,7 +198,7 @@ add_filter('WPBC_post_header_class', function($class){
 
 
 add_filter( 'WPBC_post_header_title', function($_post_title, $title_tag, $title_class){
-	if( is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){  
+	if( is_wc_endpoint_url( 'order-pay' ) || is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){  
 		$_post_title = '[title_claim]Gracias. <br>Tu pedido ha sido recibido.[/title_claim]';
 	}
 	return $_post_title; 
@@ -206,7 +206,7 @@ add_filter( 'WPBC_post_header_title', function($_post_title, $title_tag, $title_
 
 
 add_filter( 'woocommerce_thankyou_order_received_text', function($text, $order){
-	if( is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){
+	if( is_wc_endpoint_url( 'order-pay' ) || is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){
 		$text = '';
 	}
 	return $text;
