@@ -10598,7 +10598,8 @@ a.ui-box-card {
         left: 11px; }
       .woo-is_checkout #payment ul.payment_methods li > label {
         position: relative;
-        top: 13px; }
+        top: 13px;
+        padding-left: 15px; }
       .woo-is_checkout #payment ul.payment_methods li .payment_box {
         border-top: solid 1px #d8d8d8;
         background-color: transparent;
