@@ -206,7 +206,10 @@ add_filter( 'WPBC_post_header_title', function($_post_title, $title_tag, $title_
 
 
 add_filter( 'woocommerce_thankyou_order_received_text', function($text, $order){
-	if( is_wc_endpoint_url( 'order-pay' ) || is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){
+		
+	// is_wc_endpoint_url( 'order-pay' )
+
+	if( is_wc_endpoint_url( 'order-received' ) && isset($_GET['key']) ){
 		$text = '';
 	}
 	return $text;

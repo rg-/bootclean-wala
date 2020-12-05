@@ -11240,7 +11240,7 @@ body.woocommerce-order-pay .woocommerce-notices-wrapper .woocommerce-info {
   text-align: center; }
   body.woocommerce-order-pay .woocommerce-notices-wrapper .woocommerce-info p .button {
     float: none; }
-body.woocommerce-order-pay .woocommerce-notices-wrapper .woocommerce-error {
+body.woocommerce-order-pay .woocommerce-error {
   margin: 0 auto;
   width: 100%;
   max-width: 480px; }
