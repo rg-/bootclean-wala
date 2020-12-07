@@ -42,11 +42,14 @@ add_action('init',function(){
 
 	$fields = array(); 
 
+		/*
 		$fields[] = WPBC_acf_make_text_field(array(
 			'label' => do_shortcode('[icon_money color="#6639b7"]').' Precio',
 			'name' => '_regular_price',
 			'width' => '20%',
 		)); 
+		*/
+
 
 		$fields[] = WPBC_acf_make_text_field(array(
 			'label' => do_shortcode('[icon_time color="#6639b7"]').' Tiempo de preparación',
