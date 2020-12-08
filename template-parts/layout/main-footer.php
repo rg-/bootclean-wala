@@ -33,13 +33,11 @@ if($use_footer=='none') return;
 				<img class="footer-brand" width="120" src="<?php echo $logo; ?>" alt="<?php echo get_bloginfo('title'); ?>" />
 			</div>
 
-			<div class="col-md-4 col-lg-6 col-xl-5 text-center text-md-left gpy-1 gpy-md-0 order-2">
-				<div class="row">
-					<div class="col-lg-6">
-						<?php
+			<div class="col-md-3 col-lg-3 col-xl-3 text-center text-md-left gpy-1 gpy-md-0 order-2">
+				<?php
 						$m_ar = array(
 							'theme_location'  => 'left_footer',
-							'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+							'depth'	          => 1, // 1 = no dropdowns, 2 = with dropdowns.
 							'container'       => 'div',
 							'container_class' => '',
 							'container_id'    => 'navbar-left_footer',
@@ -51,12 +49,13 @@ if($use_footer=='none') return;
 						);
 						wp_nav_menu($m_ar);
 						?>
-					</div>
-					<div class="col-lg-6">
-						<?php
+			</div>
+
+			<div class="col-md-3 col-lg-3 col-xl-3 text-center text-md-left gpy-1 gpy-md-0 order-2">
+				<?php
 						$m_ar = array(
 							'theme_location'  => 'right_footer',
-							'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+							'depth'	          => 1, // 1 = no dropdowns, 2 = with dropdowns.
 							'container'       => 'div',
 							'container_class' => '',
 							'container_id'    => 'navbar-right_footer',
@@ -84,15 +83,13 @@ if($use_footer=='none') return;
 							}
 
 						?></p>
-					</div>
-				</div>
 			</div>
 
-			<div class="col-md-5 col-lg-3 col-xl-4 text-center text-md-right order-1 order-md-3">
+			<div class="col-md-3 col-lg-3 col-xl-3 text-center text-md-right order-1 order-md-3">
 				<?php
 				$m_ar = array(
 					'theme_location'  => 'call_to_action_footer',
-					'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+					'depth'	          => 1, // 1 = no dropdowns, 2 = with dropdowns.
 					'container'       => 'div',
 					'container_class' => '',
 					'container_id'    => 'navbar-call_to_action_footer',
@@ -110,15 +107,32 @@ if($use_footer=='none') return;
 
 		<div class="row align-items-center gpt-2 gpt-md	-4">
 
-			<div class="col-md-3 text-center text-md-left order-2 order-md-1">
-				<p class="ui-footer-copy"><?php echo WPBC_get_theme_settings("footer_copyright"); ?></p>
+			<div class="col-md-6 text-center text-md-left order-2 order-md-1">
+				<p class="ui-footer-copy"><?php echo WPBC_get_theme_settings("footer_copyright"); ?> <?php
+				$m_ar = array(
+					'theme_location'  => 'copyright_footer',
+					'depth'	          => 1, // 1 = no dropdowns, 2 = with dropdowns.
+					'container'       => '',
+					'container_class' => '',
+					'container_id'    => 'navbar-copyright_footer',
+					'menu_class'      => 'navbar-nav navbar-nav-footer copyright_footer',
+					//'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					//'walker'          => new WP_Bootstrap_Navwalker(), 
+					'before_menu'			=> '',
+					'after_menu'			=> '',
+					'items_wrap' => '%3$s',
+					'echo' => false, 
+				);
+				$menu = wp_nav_menu($m_ar);
+				echo strip_tags($menu, '<a>' );
+				?></p>
 			</div>
 
-			<div class="col-md-4 text-center text-md-left order-3 order-md-2">
+			<div class="col-md-3 text-center text-md-left order-3 order-md-2">
 				<p class="ui-footer-copy"><a href="http://vrij.com.uy/" target="_blank">Vrij Diseño</a></p>
 			</div>
 
-			<div class="col-md-5 text-center text-md-right order-1 order-md-3 gmb-1 gmb-md-0">
+			<div class="col-md-3 text-center text-md-right order-1 order-md-3 gmb-1 gmb-md-0">
 				<div class="d-flex flex-wrap d-flex flex-wrap flex-row align-items-center justify-content-center justify-content-md-end">
 					<img width="61" class="mx-1" src="[WPBC_get_stylesheet_directory_uri]/images/theme/visa@2x.png" alt="VISA" /> <img width="64" class="mx-1" src="[WPBC_get_stylesheet_directory_uri]/images/theme/mastercard@2x.png" alt="Mastercard" />
 				</div>

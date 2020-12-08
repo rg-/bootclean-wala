@@ -14,6 +14,9 @@ function child_register_nav_menu(){
     register_nav_menus( array( 
         'call_to_action_footer'  => __( 'Footer Menu Call to Action'),
     ) );
+    register_nav_menus( array( 
+        'copyright_footer'  => __( 'Footer Menu Copyright'),
+    ) );
 }
 add_action( 'after_setup_theme', 'child_register_nav_menu', 0 );
 

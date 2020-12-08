@@ -9873,7 +9873,18 @@ span.lazybackground-loader{
   font-size: 12px;
   color: #666666; }
   .ui-footer-copy a {
-    color: #666666; }
+    color: #666666;
+    display: block;
+    margin: 5px 0; }
+    @media (min-width: 768px) {
+      .ui-footer-copy a {
+        display: inline-block;
+        margin: 0; }
+        .ui-footer-copy a:before {
+          content: "-";
+          display: inline-block;
+          position: relative;
+          margin-right: 6px; } }
 
 .navbar-nav-footer .nav-item {
   margin: 3px 0; }

@@ -3,6 +3,19 @@
 	color: #666666;
 	a{
 		color: #666666;
+		display: block;
+		margin:5px 0;
+		@include breakpoint(md){
+			display: inline-block;
+			margin:0;
+			&:before{
+				content: "-";
+				display: inline-block;
+				position: relative;
+				margin-right: 6px;
+
+			}
+		}
 	}
 }
 
