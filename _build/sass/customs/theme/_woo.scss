@@ -794,6 +794,21 @@ body.woocommerce-edit-address .woocommerce-address-fields{
 	}
 
 }
+.woo-custom-checkout-review-order td.product-quantity{
+ 
+}
+.woo-custom-checkout-review-order .qty-m{ 
+	font-size: 11px; 
+}
+#grouped_recetas_list_out{
+	.nn{
+		&:after{
+			content:"x";
+			display: inline-block;
+			font-size: 11px; 
+		}
+	}
+}
 
 .grouped_recetas_list_out,
 .grouped_recetas_list{

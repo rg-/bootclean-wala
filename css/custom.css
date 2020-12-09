@@ -9873,18 +9873,21 @@ span.lazybackground-loader{
   font-size: 12px;
   color: #666666; }
   .ui-footer-copy a {
-    color: #666666;
-    display: block;
-    margin: 5px 0; }
-    @media (min-width: 768px) {
-      .ui-footer-copy a {
+    color: #666666; }
+
+.footer_copyright a {
+  color: #666666;
+  display: block;
+  margin: 5px 0; }
+  @media (min-width: 768px) {
+    .footer_copyright a {
+      display: inline-block;
+      margin: 0; }
+      .footer_copyright a:before {
+        content: "-";
         display: inline-block;
-        margin: 0; }
-        .ui-footer-copy a:before {
-          content: "-";
-          display: inline-block;
-          position: relative;
-          margin-right: 6px; } }
+        position: relative;
+        margin-right: 6px; } }
 
 .navbar-nav-footer .nav-item {
   margin: 3px 0; }
@@ -10844,6 +10847,14 @@ body.woocommerce-edit-address .woocommerce-address-fields {
     bottom: 10px;
     left: 0;
     right: 0; }
+
+.woo-custom-checkout-review-order .qty-m {
+  font-size: 11px; }
+
+#grouped_recetas_list_out .nn:after {
+  content: "x";
+  display: inline-block;
+  font-size: 11px; }
 
 .grouped_recetas_list_out,
 .grouped_recetas_list {

@@ -71,13 +71,23 @@ $product_class = $args['product_class'];
 			} elseif ( $grouped_product_child->is_sold_individually() ) {
 				echo '<input type="checkbox" name="' . esc_attr( 'quantity[' . $grouped_product_child->get_id() . ']' ) . '" value="1" class="wc-grouped-product-add-to-cart-checkbox" />';
 			} else { 
+
+				$grouped_personas = WPBC_get_field('grouped_personas', $grouped_product_child->get_id());
+				$grouped_recetas = WPBC_get_field('grouped_recetas', $grouped_product_child->get_id());
+				if( ! empty( $_POST['grouped_personas_option'] ) ) { 
+					$grouped_personas = $_POST['grouped_personas_option'];  
+				}
+				if( ! empty( $_POST['grouped_recetas_option'] ) ) { 
+					$grouped_recetas = $_POST['grouped_recetas_option']; 
+				} 
+
 				woocommerce_quantity_input(
 					array(
 						'input_name'  => 'quantity[' . $grouped_product_child->get_id() . ']',
 						'input_value' => isset( $_POST['quantity'][ $grouped_product_child->get_id() ] ) ? wc_stock_amount( wc_clean( wp_unslash( $_POST['quantity'][ $grouped_product_child->get_id() ] ) ) ) : '', // phpcs:ignore WordPress.Security.NonceVerification.Missing
 						'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 0, $grouped_product_child ),
 						'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $grouped_product_child->get_max_purchase_quantity(), $grouped_product_child ),
-						'placeholder' => '0',
+						'placeholder' => '0' 
 					)
 				);  
 			}

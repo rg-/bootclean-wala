@@ -358,8 +358,10 @@ add_filter( 'woocommerce_cart_item_name', function($_product, $cart_item, $cart_
 	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
 	if(has_term( $vinos_include_cats, 'product_cat', $cart_item['product_id'] )) { 
 		 $_product = $product->get_name();
+	}else{
+		
 	}
-	
+	//$_product = '<span class="d-flex align-items-center position-relative"><span class="qty-m">x</span>'.$_product.'</span>';
 	return $_product;
 
 },10,3 ); 
@@ -394,6 +396,7 @@ add_filter( 'woocommerce_order_item_permalink', function($product_permalink, $ca
 	return $product_permalink;
  
 },10,3 );
+
 add_filter( 'woocommerce_cart_item_permalink', function($product_permalink, $cart_item, $cart_item_key){
 	$product = wc_get_product( $cart_item['product_id'] );
 	$vinos_include_cats = WPBC_woo_get_included_terms('general_post_object_vinos_cat');
@@ -406,3 +409,11 @@ add_filter( 'woocommerce_cart_item_permalink', function($product_permalink, $car
 	return $product_permalink;
  
 },10,3 );
+ 
+
+function remove_quantity_text( $cart_item, $cart_item_key ) {
+   $product_quantity= '';
+   return $product_quantity;
+}
+
+add_filter ('woocommerce_checkout_cart_item_quantity', 'remove_quantity_text', 10, 2 );

@@ -108,7 +108,7 @@ if($use_footer=='none') return;
 		<div class="row align-items-center gpt-2 gpt-md	-4">
 
 			<div class="col-md-6 text-center text-md-left order-2 order-md-1">
-				<p class="ui-footer-copy"><?php echo WPBC_get_theme_settings("footer_copyright"); ?> <?php
+				<p class="ui-footer-copy footer_copyright"><?php echo WPBC_get_theme_settings("footer_copyright"); ?> <?php
 				$m_ar = array(
 					'theme_location'  => 'copyright_footer',
 					'depth'	          => 1, // 1 = no dropdowns, 2 = with dropdowns.

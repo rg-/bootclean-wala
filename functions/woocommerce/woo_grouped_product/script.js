@@ -123,7 +123,14 @@
 
 	$(document.body).on('click', '[data-ordenar="receta"] .quantity-buttons .btn', function() {
 		var $button = $(this);
-	  var oldValue = $button.parent().parent().find("input.qty").val();
+	  //var oldValue = $button.parent().parent().find("input.qty").val();
+
+	  var oldValue = $button.parent().parent().find("span.qty[data-value]").attr('data-value');
+	  	oldValue = parseInt(oldValue);
+
+	  var steps = parseInt( $('#grouped_personas_count').html() );
+
+	  //console.log(steps);
 
 	  var data_elem = $button.parent(); 
 
@@ -137,6 +144,7 @@
 	  var list_totals = $('#grouped_recetas_list_totals');
 
 	  var list_count = list.find('div.is-recetas').length; 
+	  	list_count = list_count/steps;
 	  var list_vinos_count = list.find('div.is-vinos').length; 
 	  // If max reached, show modal 
 
@@ -158,19 +166,35 @@
 
 		  var div_class = $button.hasClass('btn-recetas') ? 'is-recetas' : '';
 		  div_class = $button.hasClass('btn-vinos') ? 'is-vinos' : div_class;
+ 			
+ 			if($button.hasClass('btn-recetas')){
+ 				for (var i = 0; i < steps; i++) {
+			  	 list.append('<div class="'+div_class+'" data-id="'+data_elem.attr('data-id')+'" data-price="'+data_elem.attr('data-price')+'" data-refid="cart_'+data_elem.attr('data-id')+'_'+newVal+'"><span class="nn">1</span>'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
 
-		  list.append('<div class="'+div_class+'" data-id="'+data_elem.attr('data-id')+'" data-price="'+data_elem.attr('data-price')+'" id="cart_'+data_elem.attr('data-id')+'_'+newVal+'"><span class="nn">1</span>'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
+			  		list_totals.append('<div class="'+div_class+'" data-refid="cart_total_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-price')+'</div>');
+			  }
+ 			}else{
+ 				list.append('<div class="'+div_class+'" data-id="'+data_elem.attr('data-id')+'" data-price="'+data_elem.attr('data-price')+'" id="cart_'+data_elem.attr('data-id')+'_'+newVal+'"><span class="nn">1</span>'+data_elem.attr('data-name')+' <b class="price">'+data_elem.attr('data-price-html')+'</b></div>');
 
-		  list_totals.append('<div class="'+div_class+'" id="cart_total_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-price')+'</div>');
+			  		list_totals.append('<div class="'+div_class+'" id="cart_total_'+data_elem.attr('data-id')+'_'+newVal+'">'+data_elem.attr('data-price')+'</div>');
+ 			}
+		  
 
 		} else {
 	   // Don't allow decrementing below zero
 	    if (oldValue > 0) {
 	      var newVal = parseFloat(oldValue) - 1;
 	      var rest = parseInt( $('#grouped_recetas_rest').html() ) - 1; 
-
-	      list.find('#cart_'+data_elem.attr('data-id')+'_'+parseFloat(oldValue)+'').remove();
-	      list_totals.find('#cart_total_'+data_elem.attr('data-id')+'_'+parseFloat(oldValue)+'').remove();
+	      if($button.hasClass('btn-recetas')){
+		      for (var i = 0; i < steps; i++) {
+		      	//console.log(data_elem.attr('data-id')+'_'+parseFloat(oldValue));
+			      list.find('[data-refid="cart_'+data_elem.attr('data-id')+'_'+parseFloat(oldValue)+'"]').remove();
+			      list_totals.find('[data-refid="cart_total_'+data_elem.attr('data-id')+'_'+parseFloat(oldValue)+'"]').remove();
+			    }
+			  }else{
+			  	list.find('#cart_'+data_elem.attr('data-id')+'_'+parseFloat(oldValue)+'').remove();
+			      list_totals.find('#cart_total_'+data_elem.attr('data-id')+'_'+parseFloat(oldValue)+'').remove();
+			  }
 
 	    } else {
 	      newVal = 0;
@@ -178,7 +202,8 @@
 	    }
 	  }  
 
-	  var list_count = list.find('div.is-recetas').length; 
+	  var list_count = list.find('div.is-recetas').length;
+	  list_count = list_count/steps; 
 
 	  list_vinos_count = list.find('div.is-vinos').length; 
 
@@ -309,8 +334,21 @@
 		        $('#grouped_recetas_items').removeClass('loading');
 		        $('#grouped_recetas_mini_cart').removeClass('loading');
 
-		        $button.parent().find(".qty").attr('data-value',newVal).html(newVal);
-					  $button.parent().parent().find("input.qty").val(newVal);
+		        var button_newVal = parseFloat($button.parent().find(".qty").attr('data-value'));
+		        if ( $button.hasClass('btn-plus') ) { 
+		        	button_newVal = button_newVal + 1;
+		        }else{
+		        	button_newVal = button_newVal - 1;
+		        } 
+		        
+		        $button.parent().find(".qty").attr('data-value',button_newVal).html(button_newVal);
+		        
+		        if ( $button.hasClass('btn-recetas') ) {
+		        	$button.parent().parent().find("input.qty").val(parseFloat(newVal)*steps);
+		        }else{
+		        	$button.parent().parent().find("input.qty").val(parseFloat(newVal));
+		        }
+					  
 					  $button.parent().parent().find("input.qty").trigger('input');
 
 		     }

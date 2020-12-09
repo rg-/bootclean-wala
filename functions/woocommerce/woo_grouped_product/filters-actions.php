@@ -1,4 +1,9 @@
 <?php  
+//add_filter( 'woocommerce_quantity_input_args', 'wala_woocommerce_quantity_input_args', 10, 2 );
+function wala_woocommerce_quantity_input_args( $args, $product ) {
+	$args['step'] 		= 2;    // Quantity steps
+	return $args;
+}
 
 add_filter( 'woocommerce_add_to_cart_redirect', 'WPBC_woo_skip_cart_redirect_checkout' ); 
 function WPBC_woo_skip_cart_redirect_checkout( $url ) {
@@ -304,7 +309,7 @@ function woocommerce_before_cart_contents_custom($is_cart=true,$order=false){
 							false
 						);
 					}
-					echo $cart_item['quantity'];
+					echo $cart_item['quantity'].'<span class="qty-m">x</span>';
 					//echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 					?>
 					</td>
