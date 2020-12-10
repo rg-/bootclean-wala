@@ -35,10 +35,10 @@ function build_ui_box_recetas($layouts){
 					'label'=> 'Ordenar por',  
 					'choices' => array(
 						'title' => 'Título',
-						'data' => 'Fecha',
+						'post_date' => 'Fecha',
 						'rand' => 'Randómico'
 					),
-					'default_value' => 'rand',
+					'default_value' => 'post_date',
 					'width' => '20%' 
 				)
 			);

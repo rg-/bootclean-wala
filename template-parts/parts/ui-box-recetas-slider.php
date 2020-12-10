@@ -36,6 +36,8 @@ $slick = array(
 
 );
 $slick = json_encode($slick);  
+
+_print_code($args);
 ?>
 
 <div class="container-fluid gpt-1 gpt-md-2 px-0">
@@ -43,11 +45,16 @@ $slick = json_encode($slick);
 		<div data-is-inview-once data-is-inview-fx="translateTop">
 			<div class="theme-slick-slider slick-dots-relative slick-dots-primary slick-focus-active-items slick-adjust-width slick-adjust-width-arrows row row-no-gutters" data-slick='<?php echo $slick; ?>'>
 
-				<?php 
+				<?php  
+
+					$posts_per_page = !empty($args['ui-box-recetas__max_posts']) ? $args['ui-box-recetas__max_posts'] : 12;
+					$orderby = !empty($args['ui-box-recetas__orderby']) ? $args['ui-box-recetas__orderby'] : 'post_date';
+
 					$args = array(
 						'post_status' => 'publish',
 						'post_type' => 'product',
-						'posts_per_page' => 12, 
+						'posts_per_page' => $posts_per_page, 
+						'orderby' => $orderby,
 					);
 					$general_post_object_recetas_cat = WPBC_get_theme_settings('general_post_object_recetas_cat');
 
