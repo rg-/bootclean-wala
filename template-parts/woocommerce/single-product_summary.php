@@ -76,6 +76,7 @@ if( $product->managing_stock() && $product->get_stock_quantity()==0 ) {
 		<?php
 			the_content();
 		?>
+		<p class="text-violeta mt-4" style="font-size: 18px; letter-spacing: 0.32px;"><?php echo $product->get_price_html(); ?></p>
 	</div>
 
 	<div class="pt-2 text-center text-md-left">
