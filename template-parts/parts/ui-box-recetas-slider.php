@@ -36,8 +36,7 @@ $slick = array(
 
 );
 $slick = json_encode($slick);  
-
-_print_code($args);
+ 
 ?>
 
 <div class="container-fluid gpt-1 gpt-md-2 px-0">
