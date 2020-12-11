@@ -43,7 +43,7 @@
 
 ?>
 
-<a href="<?php echo $args['permalink']; ?>" class="ui-box-card ui-hover-shadow bg-white text-dark <?php echo $cats_classes; ?>" <?php echo $box_attrs; ?>>
+<a href="<?php echo $args['permalink']; ?>" class="ui-box-card ui-hover-shadow bg-white text-dark <?php echo $cats_classes; ?>" <?php echo !empty($box_attrs) ? $box_attrs : ''; ?>>
 
 	<div class="position-relative ui-box-image">
 	
