@@ -366,8 +366,8 @@ function refresh_checkout_on_shipping_method_change() {
 				*/
 
 				// delivery_fields.val("").change();  
-				//console.log('shipping_method_id '+shipping_method_id);
-				//console.log('shipping_method_id_miramar '+<?php echo $shipping_method_id_miramar; ?>);
+				console.log('shipping_method_id '+shipping_method_id);
+				console.log('shipping_method_id_miramar '+<?php echo $shipping_method_id_miramar; ?>);
     		// Parque Miramar
     		if( shipping_method_id == 'szbd-shipping-method:<?php echo $shipping_method_id_miramar; ?>'){  
 
