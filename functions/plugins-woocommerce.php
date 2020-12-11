@@ -83,12 +83,31 @@ function dequeue_woocommerce_cart_fragments() {
 
 }
 
+
+//Remove Gutenberg Block Library CSS from loading on the frontend
+function smartwp_remove_wp_block_library_css(){
+    
+
+    if( !is_user_logged_in() ){
+
+    	wp_dequeue_style( 'wp-block-library' );
+	    wp_dequeue_style( 'wp-block-library-theme' );
+	    wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+
+			wp_dequeue_style( 'bootclean-admin' );
+
+    }
+
+} 
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+
 /** Disable All WooCommerce  Styles and Scripts Except Shop Pages*/
 add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_styles_scripts', 99 );
 function dequeue_woocommerce_styles_scripts() {
-	if ( function_exists( 'is_woocommerce' ) ) {
+
 		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
-			# Styles
+			# Styles 
+
 			wp_dequeue_style( 'woocommerce-general' );
 			wp_dequeue_style( 'woocommerce-layout' );
 			wp_dequeue_style( 'woocommerce-smallscreen' );
@@ -113,6 +132,6 @@ function dequeue_woocommerce_styles_scripts() {
 			wp_dequeue_script( 'jquery-placeholder' );
 			wp_dequeue_script( 'fancybox' );
 			wp_dequeue_script( 'jqueryui' );
-		}
-	}
+		} 
+		
 }
