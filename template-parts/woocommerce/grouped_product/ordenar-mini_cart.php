@@ -38,9 +38,9 @@
 
 		<span id="grouped_recetas_rest_count" class="count"><?php echo !empty($grouped_recetas) ? $grouped_recetas : '0'; ?></span> 
 		
-		<span class="rest_count <?php echo $rest_count_class; ?>">
-			<span class="singular <?php echo $singular_class; ?>">receta pendiente para elegir</span>
-			<span class="plural <?php echo $plural_class; ?>">recetas pendientes para elegir</span>
+		<span class="rest_count <?php echo !empty($rest_count_class) ? $rest_count_class : ''; ?>">
+			<span class="singular <?php echo !empty($singular_class) ? $singular_class : ''; ?>">receta pendiente para elegir</span>
+			<span class="plural <?php echo !empty($plural_class) ? $plural_class : ''; ?>">recetas pendientes para elegir</span>
 			<span class="msg"><span class="ui-badge badge badge-success">Has completado <?php echo !empty($grouped_recetas) ? $grouped_recetas : '0'; ?> recetas</span></span>
 			<span class="msg_vinos d-none"><span class="ui-badge badge badge-secondary mt-1">Seleccionadas <span class="n">0</span> bebidas</span></span>
 		</span>

@@ -61,7 +61,7 @@
 		$myaccount_menu_label = '<i><b>'.$wp_get_current_user->user_login.'</b></i>'; 
 	}
 
-	$start_menu_item .= '<a title="'.$myaccount_page_title.'" href="'.$myaccount_page_url.'" class="nav-link text-primary">'.$myaccount_menu_label.'</a>';
+	$start_menu_item = '<a title="'.$myaccount_page_title.'" href="'.$myaccount_page_url.'" class="nav-link text-primary">'.$myaccount_menu_label.'</a>';
 
 	echo $start_menu_item; 
 	?>

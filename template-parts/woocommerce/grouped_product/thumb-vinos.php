@@ -1,5 +1,6 @@
 <?php
 $grouped_product_child = $args['grouped_product_child'];
+$grouped_product_price = !empty($args['grouped_product_price']) ? $args['grouped_product_price'] : '';
 $product_class = $args['product_class'];
 ?>
 

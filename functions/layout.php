@@ -133,7 +133,7 @@ function WPBC_build_lazyloader_image($attachment_id=null, $type=null, $embed='16
 
 		if($type=='inview'){
 
-			$attrs .= ' data-lazybackground-spinner="false" data-lazybackground-target="parent" data-lazybackground="simple" data-is-inview-lazybackground="'.$img_hi[0].'" ';
+			$attrs = ' data-lazybackground-spinner="false" data-lazybackground-target="parent" data-lazybackground="simple" data-is-inview-lazybackground="'.$img_hi[0].'" ';
 			$attrs .= ' style="background-image: none;"';
 			$box_attrs = '  ';
 
