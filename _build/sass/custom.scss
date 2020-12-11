@@ -15,7 +15,64 @@
 // Customs
 @import "customs/custom-variables"; 
 
-@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/all";  
+//@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/all";  
+
+
+// Utilities
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/z-index";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/overflow";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/color-variants";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/color-social";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/col-border";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/col-gutters";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/text-util";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/gutter-spacing"; 
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/grid";
+// @import "embed"; // NOT WORKING
+// Components
+// @import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/breadcrumb";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/btn";
+// @import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/hr";
+// @import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/card"; 
+// @import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/caret";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/dropdown";
+// @import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/list-group";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/close";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/pagination";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/modal";
+// 
+//	Included
+//		.bc-custom-range[type='range']
+//
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/forms";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/forms-wpcf7";
+
+//
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/collapse"; 
+
+// navs
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/nav";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/navbar";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/navbar-toggler";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/main-navbar"; // Used?
+//@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/megamenu";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/page-header";
+// body & effects things 
+//@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/transitions";
+//@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/ripple";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/go-up";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/loaders";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/scroll-affix"; 
+//@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/inview";  
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/scrollbars";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/body-loader";
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/image-cover";
+//@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/post-share"; 
+// For addons ?? See addons/ folder :)
+
+// For plugins
+@import "C:/xampp/htdocs/_www/_BC_builder_v4/_source/bootclean/sass/core/slick";
+
 // BC Core
 
 
