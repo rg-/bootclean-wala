@@ -101,12 +101,22 @@ function smartwp_remove_wp_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
+/* add custom woc styles (general) */ 
+add_action( 'wp_enqueue_scripts', function(){
+
+	wp_register_style( 'custom-woo', CHILD_THEME_URI.'/css/custom-woo.css', array(), __scripts_version() ); 
+	wp_enqueue_style( 'custom-woo' );    
+
+}, 99 );
+
 /** Disable All WooCommerce  Styles and Scripts Except Shop Pages*/
 add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_styles_scripts', 99 );
 function dequeue_woocommerce_styles_scripts() {
 
 		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
 			# Styles 
+
+			wp_dequeue_style( 'custom-woo' );
 
 			wp_dequeue_style( 'woocommerce-general' );
 			wp_dequeue_style( 'woocommerce-layout' );

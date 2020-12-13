@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 
 /*
 	Dont include iconmoon styles
