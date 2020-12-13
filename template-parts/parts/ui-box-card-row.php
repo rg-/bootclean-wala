@@ -54,10 +54,8 @@
 							$attrs = ' data-is-inview-lazybackground="'.$img_hi.'" ';
 							$attrs .= ' style="background-image: url('.$img_blured.');"';
 						?>
-						<div class="embed-responsive embed-responsive-16by9">
-							<div class="embed-responsive-item image-cover" <?php echo $attrs; ?>>
-							</div>
-						</div>
+						
+						<?php WPBC_build_lazyloader_image($attachment_id, 'inview'); ?>
 
 					</div>
 
